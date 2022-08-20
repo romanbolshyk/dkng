@@ -1,0 +1,16 @@
+{
+    "require": {
+        "dompdf/dompdf": "^0.8.3",
+        "phpoffice/phpword": "^0.17.0",
+        "phpoffice/phpexcel": "~1.8.0",
+        "phpmailer/phpmailer": "^6.1",
+        "sendgrid/sendgrid": "~7",
+        "facebook/graph-sdk": "^5.7",
+        "guzzlehttp/guzzle": "^7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Seven\\Wp\\": "src/"
+        }
+    }
+}

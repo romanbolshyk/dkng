@@ -1,0 +1,37 @@
+.title-icon {
+    padding-left: 30px;
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        width: 19px;
+        height: 19px;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background-repeat: no-repeat;
+        background-position: left center;
+    }
+
+    &--article {
+
+        &:before {
+            background-image: url("./img/icons/article-icon.png");
+        }
+    }
+
+    &--email {
+
+        &:before {
+            background-image: url("./img/icons/email-icon.png");
+        }
+    }
+
+    &--video {
+
+        &:before {
+            background-image: url("./img/icons/video-icon.png");
+        }
+    }
+}

@@ -1,0 +1,45 @@
+.sv-tabs {
+    border-radius: 8px;
+    background-color: #edeff1;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+
+    @include medium-size-max {
+        margin-bottom: 20px;
+    }
+
+    @include extra-small-size-max {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    &__tab {
+        opacity: 0.6;
+        color: $c-black;
+        font-family: "Work Sans", sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        padding: 8px 20px;
+        min-width: 180px;
+        text-align: center;
+        line-height: normal;
+        border-radius: 6px;
+        margin-bottom: 0;
+        cursor: pointer;
+        transition: all .3s ease;
+        border: 1px solid transparent;
+
+        @include extra-small-size-max {
+            width: 100%;
+        }
+
+        &.active {
+            color: $c-green;
+            opacity: 1;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-color: #f1f1f1;
+            background-color: $c-white;
+        }
+    }
+}

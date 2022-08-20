@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="73px" height="60px" viewBox="0 0 73 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>icon_fast</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1" transform="translate(-249.000000, -1224.000000)">
+            <g id="our-phylosophy" transform="translate(0.000000, 1053.000000)">
+                <g id="we-move-fast" transform="translate(250.000000, 172.000000)">
+                    <g id="icon_fast">
+                        <g id="Group-9" transform="translate(22.000000, 0.000000)">
+                            <circle id="Oval" stroke="#12234C" stroke-width="1.5" fill="#FAFCFF" cx="24.5" cy="33.5" r="24.5"></circle>
+                            <path d="M24.5,54 C35.8218374,54 45,45.0435424 45,33.995192 C45,30.6375611 43.7167552,28.3389197 40.6173326,27.8196399 C36.6714975,27.1585514 32.1399029,23.43768 31.3916242,20.2999089 C30.8327775,17.9564862 28.6813489,13.9903839 24.6177388,14 C22.2089382,14.0057281 21.3836392,14.1845688 20.1986712,14.4314658 C19.749451,14.5250642 19.3056821,14.6330232 18.8678934,14.7548267 C10.2845472,17.142924 4,24.852869 4,33.995192 C4,45.0435424 13.1781626,54 24.5,54 Z" id="Combined-Shape" fill="#00C7C7"></path>
+                            <circle id="Oval" stroke="#12234C" stroke-width="1.5" fill="#D8D8D8" stroke-linejoin="round" transform="translate(24.500000, 34.500000) scale(1, -1) translate(-24.500000, -34.500000) " cx="24.5" cy="34.5" r="2.5"></circle>
+                            <rect id="Rectangle" stroke="#12234C" stroke-width="1.5" stroke-linejoin="round" x="19" y="0" width="11" height="4" rx="2"></rect>
+                            <path d="M24.5,4 L24.5,9" id="Path-2" stroke="#12234C" stroke-width="1.5" fill="#D8D8D8" stroke-linejoin="round"></path>
+                            <path d="M17.8033009,35.793464 L17.8033009,20.0584667" id="Path-5" stroke="#12234C" stroke-width="1.5" fill="#D8D8D8" stroke-linejoin="round" transform="translate(17.303301, 27.596194) rotate(135.000000) translate(-17.303301, -27.596194) "></path>
+                            <path d="M30.0961941,34.961688 L30.0961941,25.8868939" id="Path-5-Copy" stroke="#12234C" stroke-width="1.5" fill="#D8D8D8" stroke-linejoin="round" transform="translate(30.596194, 30.424621) scale(-1, 1) rotate(135.000000) translate(-30.596194, -30.424621) "></path>
+                            <path d="M24.5,12 L24.5,15.4035213" id="Path-6" stroke="#12234C" stroke-width="1.5" fill="#D8D8D8" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M24.5,52 L24.5,55.4035213" id="Path-6-Copy" stroke="#12234C" stroke-width="1.5" fill="#D8D8D8" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M4.5,32 L4.5,35.4035213" id="Path-6-Copy-2" stroke="#12234C" stroke-width="1.5" fill="#D8D8D8" stroke-linecap="round" stroke-linejoin="round" transform="translate(4.500000, 34.000000) rotate(-90.000000) translate(-4.500000, -34.000000) "></path>
+                            <path d="M45,32 L45,35.4035213" id="Path-6-Copy-3" stroke="#12234C" stroke-width="1.5" fill="#D8D8D8" stroke-linecap="round" stroke-linejoin="round" transform="translate(45.000000, 34.000000) rotate(-90.000000) translate(-45.000000, -34.000000) "></path>
+                        </g>
+                        <path d="M17.5,44.5 L7.11469224,44.5" id="Path-7" stroke="#12234C" stroke-width="1.5" fill="#D8D8D8" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M17.6553497,18.5 L11.5,18.5" id="Path-7-Copy-2" stroke="#12234C" stroke-width="1.5" fill="#D8D8D8" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M13.5776748,30.5 L0,30.5" id="Path-7-Copy" stroke="#12234C" stroke-width="1.5" fill="#D8D8D8" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

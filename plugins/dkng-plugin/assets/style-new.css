@@ -1,0 +1,8 @@
+body.page-postcard .header .header_top_nav ul li a, body.page-podcast .header .header_top_nav ul li a {
+    color: #fff;
+}
+img.aligncenter  {
+    text-align: center !important;
+    display: block;
+    margin: 0 auto;
+}

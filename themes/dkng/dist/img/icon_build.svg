@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="66px" height="66px" viewBox="0 0 66 66" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>icon_custom</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0.209632098" y="0" width="72" height="70"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1" transform="translate(-731.000000, -1288.000000)">
+            <g id="our-phylosophy" transform="translate(0.000000, 1053.000000)">
+                <g id="we-build" transform="translate(730.000000, 232.000000)">
+                    <g id="icon_custom">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Rectangle"></g>
+                        <g id="Group-12" mask="url(#mask-2)">
+                            <g transform="translate(-31.000000, -9.000000)">
+                                <g id="Group-10" transform="translate(49.000000, 60.986454) rotate(-135.000000) translate(-49.000000, -60.986454) translate(3.000000, 37.986454)">
+                                    <polygon id="Path" fill="#00C7C7" points="91.9238816 45.9619408 0 45.9619408 45.9619408 0 72.1293213 26.1673805"></polygon>
+                                    <polygon id="Path" fill="#FAFCFF" points="45.9619408 14.1421356 24.1421356 35.9619408 67.7817459 35.9619408"></polygon>
+                                    <path d="M9.96194078,43.0057512 L9.96194078,45.9619408 L9.96194078,43.0057512 Z M18.9619408,43.0057512 L18.9619408,45.9619408 L18.9619408,43.0057512 Z M27.9619408,43.0057512 L27.9619408,45.9619408 L27.9619408,43.0057512 Z M36.9619408,43.0057512 L36.9619408,45.9619408 L36.9619408,43.0057512 Z M45.9619408,43.0057512 L45.9619408,45.9619408 L45.9619408,43.0057512 Z M54.9619408,43.0057512 L54.9619408,45.9619408 L54.9619408,43.0057512 Z M63.9619408,43.0057512 L63.9619408,45.9619408 L63.9619408,43.0057512 Z M72.9619408,43.0057512 L72.9619408,45.9619408 L72.9619408,43.0057512 Z M81.9619408,43.0057512 L81.9619408,45.9619408 L81.9619408,43.0057512 Z" id="Shape" stroke="#12234C" stroke-width="1.5" fill="#D8D8D8" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </g>
+                                <g id="Group-11" transform="translate(76.284083, 39.248117) rotate(38.000000) translate(-76.284083, -39.248117) translate(51.784083, 9.748117)">
+                                    <path d="M18,2 L18.3841267,1.69469756 C19.7647883,0.597352982 21.4764221,9.09818675e-13 23.2400523,9.09494702e-13 C25.0167878,9.09168321e-13 26.754539,0.520905172 28.2383024,1.49826655 L29,2 L29,49 L23.7295939,59 L18,49 L18,2 Z" id="Rectangle" stroke="#12234C" stroke-width="1.5" fill="#FAFCFF" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M36.7896094,5.87290048 L11.3648923,39.2765335 L13.4236937,42.5611506 L39.5213908,9.05015806 C38.8811333,7.65413228 38.2163101,6.58355522 37.5269212,5.83842689 C36.8375324,5.09329855 36.5917617,5.10478975 36.7896094,5.87290048 Z" id="Path-9" fill="#00C7C7" transform="translate(25.443142, 23.924609) rotate(-38.000000) translate(-25.443142, -23.924609) "></path>
+                                    <path d="M8.95331177,42.6863031 L37.5633773,4.79389046" id="Path-8" stroke="#12234C" stroke-width="1.5" fill="#D8D8D8" stroke-linejoin="round" transform="translate(23.258345, 23.740097) rotate(-37.000000) translate(-23.258345, -23.740097) "></path>
+                                    <path d="M25.8377564,55 L21.4377564,55 L18,49.2048559 C20.511869,48.4016186 22.4217336,48 23.7295939,48 C25.0374542,48 26.7942563,48.4016186 29,49.2048559 L25.8377564,55 Z" id="Combined-Shape" stroke="#12234C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </g>
+                            </g>
+                        </g>
+                        <path d="M26,23.5 L39.9167699,23.5" id="Path-3" stroke="#12234C" stroke-width="1.5" fill="#D8D8D8" stroke-linejoin="round" mask="url(#mask-2)" transform="translate(32.958385, 23.500000) rotate(-86.000000) translate(-32.958385, -23.500000) "></path>
+                        <path d="M66,30 L59,39" id="Path-4" stroke="#12234C" stroke-width="1.5" fill="#D8D8D8" stroke-linejoin="round" mask="url(#mask-2)"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

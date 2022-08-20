@@ -1,0 +1,28 @@
+.sv-blog-post {
+    margin-bottom: 40px;
+    display: grid;
+}
+
+.one-card {
+    margin-bottom: 0!important;
+}
+
+.blog-top-card {
+
+    a {
+        display: block;
+        height: 0;
+        padding-bottom: 66.25%;
+        border-radius: 12px 12px 0 0;
+        overflow: hidden;
+        position: relative;
+    }
+
+    img {
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}

@@ -1,0 +1,16 @@
+# Ignore everything
+node_modules/*
+uploads
+upgrade
+languages/*
+.idea
+plugins/*
+plugins/dkng-plugin/vendor
+themes/*
+ai1wm-backups
+.DS_Store
+
+# But not these files...
+!.gitignore
+!themes/dkng
+!/plugins/dkng-plugin/
