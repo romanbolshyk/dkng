@@ -84,11 +84,8 @@ class PageTemplater {
             'templates/blog.php'                    => 'Blog',
             'templates/contact.php'                 => 'Contact',
             'templates/login.php'                   => 'Login page',
-            'templates/sign-up.php'                 => 'Sign Up page',
-            'templates/sign-up-without-payment.php' => 'Sign Up page - without payment block',
-            'templates/pricing.php'                 => 'Pricing Page',
-            'templates/checkemail.php'                 => 'Check Email Page',
-            'templates/invoices-history.php'        => 'History of Invoices',
+            'templates/gallery-video-template.php'  => 'Gallery Video',
+            'templates/gallery-photo-template.php'  => 'Gallery Photo',
         );
 
     }

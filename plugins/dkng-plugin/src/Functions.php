@@ -16,8 +16,6 @@ class Functions {
         self::register_specialities();
         self::register_courses();
         self::register_webinars();
-        self::register_recomendations();
-        self::creating_not_for_me_recomendations_table();
 
         add_filter('template_include',  [ $this, 'template_chooser' ], 99 );
 
@@ -493,18 +491,18 @@ class Functions {
         register_taxonomy( 'specialities-tag', array( 'specialities' ), $taxonomy_args );
 
         $post_type_labels = array(
-            'name'               => 'Specialities',
-            'singular_name'      => 'Speciality',
-            'menu_name'          => 'Specialities',
-            'parent_item_colon'  => 'Parent Specialities:',
-            'all_items'          => 'All Specialities',
-            'view_item'          => 'View Speciality',
-            'add_new_item'       => 'Add Speciality',
-            'add_new'            => 'Add New',
-            'edit_item'          => 'Edit Speciality',
-            'update_item'        => 'Update Speciality',
-            'search_items'       => 'Search Speciality',
-            'not_found'          => 'No Specialities found',
+            'name'               => 'Спеціальності',
+            'singular_name'      => 'Спеціальність',
+            'menu_name'          => 'Спеціальності',
+            'parent_item_colon'  => 'Parent Спеціальності:',
+            'all_items'          => 'Всі Спеціальності',
+            'view_item'          => 'Дивитись Спеціальність',
+            'add_new_item'       => 'Додати Спеціальність',
+            'add_new'            => 'Додати нову Спеціальність',
+            'edit_item'          => 'Редагувати Спеціальність',
+            'update_item'        => 'Оновити Спеціальність',
+            'search_items'       => 'Search Спеціальність',
+            'not_found'          => 'Спеціальностей не знайдено',
             'not_found_in_trash' => 'No Article found in Trash',
         );
 
@@ -912,130 +910,6 @@ class Functions {
         register_post_type( 'webinars', $post_type_args );
     }
 
-    /**
-     * Function register of recomendations
-     *
-     */
-    public static function register_recomendations() {
-
-        $recomendations_url_slug          = 'recomendations';
-        $recomendations_category_url_slug = 'recomendations-category';
-
-        $taxonomy_labels = array(
-            'name'                       => 'Category',
-            'singular_name'              => 'Category',
-            'menu_name'                  => 'Categories',
-            'all_items'                  => 'All Categories',
-            'parent_item'                => 'Parent Category',
-            'parent_item_colon'          => 'Parent Category:',
-            'new_item_name'              => 'New Category Name',
-            'add_new_item'               => 'Add New Category',
-            'edit_item'                  => 'Edit Category',
-            'update_item'                => 'Update Category',
-            'separate_items_with_commas' => 'Separate categories with commas',
-            'search_items'               => 'Search categories',
-            'add_or_remove_items'        => 'Add or remove categories',
-            'choose_from_most_used'      => 'Choose from the most used categories',
-        );
-
-        $taxonomy_rewrite = array(
-            'slug'         => $recomendations_category_url_slug,
-            'with_front'   => true,
-            'hierarchical' => true,
-        );
-
-        $taxonomy_args = array(
-            'labels'            => $taxonomy_labels,
-            'hierarchical'      => true,
-            'public'            => true,
-            'show_ui'           => true,
-            'show_admin_column' => true,
-            'show_in_nav_menus' => true,
-            'query_var'         => true,
-            'show_tagcloud'     => true,
-            'rewrite'           => $taxonomy_rewrite,
-        );
-        register_taxonomy( 'recomendations-category', array( 'recomendations' ), $taxonomy_args );
-
-        $taxonomy_labels = array(
-            'name'                       => 'Tag',
-            'singular_name'              => 'Tag',
-            'menu_name'                  => 'Tags',
-            'all_items'                  => 'All Tags',
-            'parent_item'                => 'Parent Tag',
-            'parent_item_colon'          => 'Parent Tag:',
-            'new_item_name'              => 'New Tag Name',
-            'add_new_item'               => 'Add New Tag',
-            'edit_item'                  => 'Edit Tag',
-            'update_item'                => 'Update Tag',
-            'separate_items_with_commas' => 'Separate categories with commas',
-            'search_items'               => 'Search categories',
-            'add_or_remove_items'        => 'Add or remove categories',
-            'choose_from_most_used'      => 'Choose from the most used categories',
-        );
-
-        $taxonomy_rewrite = array(
-            'slug'         => 'recomendations-tag',
-            'with_front'   => true,
-            'hierarchical' => true,
-        );
-
-        $taxonomy_args = array(
-            'labels'            => $taxonomy_labels,
-            'hierarchical'      => true,
-            'public'            => true,
-            'show_ui'           => true,
-            'show_admin_column' => true,
-            'show_in_nav_menus' => true,
-            'query_var'         => true,
-            'show_tagcloud'     => true,
-            'rewrite'           => $taxonomy_rewrite,
-        );
-        register_taxonomy( 'recomendations-tag', array( 'recomendations' ), $taxonomy_args );
-
-        $post_type_labels = array(
-            'name'               => 'Recomendations',
-            'singular_name'      => 'Recomendations',
-            'menu_name'          => 'Recomendations',
-            'parent_item_colon'  => 'Parent Recomendations:',
-            'all_items'          => 'All Recomendations',
-            'view_item'          => 'View Recomendation',
-            'add_new_item'       => 'Add New Recomendation',
-            'add_new'            => 'Add New',
-            'edit_item'          => 'Edit Recomendation',
-            'update_item'        => 'Update Recomendation',
-            'search_items'       => 'Search Recomendation',
-            'not_found'          => 'No recomendations found',
-            'not_found_in_trash' => 'No recomendations found in Trash',
-        );
-
-        $post_type_rewrite = array(
-            'slug'       => 'recomendations-item',
-            'with_front' => true,
-            'pages'      => true,
-            'feeds'      => true,
-        );
-
-        $post_type_args = array(
-            'label'              => 'Recomendations',
-            'description'        => 'Recomendations information pages',
-            'labels'             => $post_type_labels,
-            'supports'           => array( 'title', 'editor', 'excerpt', 'thumbnail', 'comments', 'revisions'),
-            'taxonomies'         => array( 'post' ),
-            'hierarchical'       => false,
-            'public'             => true,
-            'show_ui'            => true,
-            'show_in_menu'       => true,
-            'menu_icon'          => 'dashicons-calendar-alt',
-            'menu_position'      =>  46,
-            'has_archive'        => true,
-            'publicly_queryable' => true,
-            'rewrite'            => array( 'slug' => $recomendations_url_slug ),
-            'capability_type'    => 'post',
-        );
-
-        register_post_type( 'recomendations', $post_type_args );
-    }
 
     /**
      * Replace page templates for single posts from plugin
@@ -1190,27 +1064,6 @@ class Functions {
     }
 
 
-
-    /**
-     * Function creating table for Not For Me Recommendations
-     *
-     */
-    public function creating_not_for_me_recomendations_table() {
-
-        global $wpdb;
-        $table_name      = $wpdb->prefix . 'not_for_me_recommendations';
-        $charset_collate = $wpdb->get_charset_collate();
-
-        $sql = "CREATE TABLE IF NOT EXISTS $table_name (
-            id INT(9) NOT NULL AUTO_INCREMENT,
-            id_u INT(9) NULL,
-            id_r INT(9) NULL,
-            PRIMARY KEY(id)
-	    ) $charset_collate;";
-
-        require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-        dbDelta( $sql );
-    }
 
     /**
      * Function for body class
