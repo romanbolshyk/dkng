@@ -14,6 +14,7 @@ class Functions {
         self::register_articles();
         self::register_announces();
         self::register_specialities();
+        self::register_specialities_programs();
         self::register_courses();
         self::register_webinars();
 
@@ -532,6 +533,131 @@ class Functions {
         );
 
         register_post_type( 'specialities', $post_type_args );
+    }
+
+    /**
+     * Register CPT Announces
+     *
+     */
+    public static function register_specialities_programs() {
+
+        $announces_url_slug          = 'speciality_detail';
+        $announces_category_url_slug = 'speciality_detail-category';
+
+        $taxonomy_labels = array(
+            'name'                       => 'Category',
+            'singular_name'              => 'Category',
+            'menu_name'                  => 'Categories',
+            'all_items'                  => 'All Categories',
+            'parent_item'                => 'Parent Category',
+            'parent_item_colon'          => 'Parent Category:',
+            'new_item_name'              => 'New Category Name',
+            'add_new_item'               => 'Add New Category',
+            'edit_item'                  => 'Edit Category',
+            'update_item'                => 'Update Category',
+            'separate_items_with_commas' => 'Separate categories with commas',
+            'search_items'               => 'Search categories',
+            'add_or_remove_items'        => 'Add or remove categories',
+            'choose_from_most_used'      => 'Choose from the most used categories',
+        );
+
+        $taxonomy_rewrite = array(
+            'slug'         => $announces_category_url_slug,
+            'with_front'   => true,
+            'hierarchical' => true,
+        );
+
+        $taxonomy_args = array(
+            'labels'            => $taxonomy_labels,
+            'hierarchical'      => true,
+            'public'            => true,
+            'show_ui'           => true,
+            'show_admin_column' => true,
+            'show_in_nav_menus' => true,
+            'query_var'         => true,
+            'show_tagcloud'     => true,
+            'rewrite'           => $taxonomy_rewrite,
+        );
+        register_taxonomy( $announces_category_url_slug, array( $announces_url_slug ), $taxonomy_args );
+
+        $taxonomy_labels = array(
+            'name'                       => 'Tag',
+            'singular_name'              => 'Tag',
+            'menu_name'                  => 'Tags',
+            'all_items'                  => 'All Tags',
+            'parent_item'                => 'Parent Tag',
+            'parent_item_colon'          => 'Parent Tag:',
+            'new_item_name'              => 'New Tag Name',
+            'add_new_item'               => 'Add New Tag',
+            'edit_item'                  => 'Edit Tag',
+            'update_item'                => 'Update Tag',
+            'separate_items_with_commas' => 'Separate categories with commas',
+            'search_items'               => 'Search categories',
+            'add_or_remove_items'        => 'Add or remove categories',
+            'choose_from_most_used'      => 'Choose from the most used categories',
+        );
+
+        $taxonomy_rewrite = array(
+            'slug'         => 'specialities-tag',
+            'with_front'   => true,
+            'hierarchical' => true,
+        );
+
+        $taxonomy_args = array(
+            'labels'            => $taxonomy_labels,
+            'hierarchical'      => true,
+            'public'            => true,
+            'show_ui'           => true,
+            'show_admin_column' => true,
+            'show_in_nav_menus' => true,
+            'query_var'         => true,
+            'show_tagcloud'     => true,
+            'rewrite'           => $taxonomy_rewrite,
+        );
+        register_taxonomy( 'speciality_details-tag', array( $announces_url_slug ), $taxonomy_args );
+
+        $post_type_labels = array(
+            'name'               => 'Освітні Програми',
+            'singular_name'      => 'Освітня Програма',
+            'menu_name'          => 'Освітні Програми',
+            'parent_item_colon'  => 'Parent Освітні Програми:',
+            'all_items'          => 'Всі Освітні Програми',
+            'view_item'          => 'Дивитись Освітню Програму',
+            'add_new_item'       => 'Додати Освітню Програмуь',
+            'add_new'            => 'Додати нову Освітню Програму',
+            'edit_item'          => 'Редагувати Освітню Програму',
+            'update_item'        => 'Оновити Освітню Програму',
+            'search_items'       => 'Search Освітню Програму',
+            'not_found'          => 'Освітні Програм не знайдено',
+            'not_found_in_trash' => 'No Article found in Trash',
+        );
+
+        $post_type_rewrite = array(
+            'slug'       => 'specialities-item',
+            'with_front' => true,
+            'pages'      => true,
+            'feeds'      => true,
+        );
+
+        $post_type_args = array(
+            'label'              => 'Speciality Programs',
+            'description'        => 'Speciality Programs information pages',
+            'labels'             => $post_type_labels,
+            'supports'           => array( 'title', 'editor', 'excerpt', 'thumbnail', 'comments', 'revisions', 'author'),
+            'taxonomies'         => array( 'post' ),
+            'hierarchical'       => false,
+            'public'             => true,
+            'show_ui'            => true,
+            'show_in_menu'       => true,
+            'menu_icon'          => 'dashicons-list-view',
+            'menu_position'      =>  31,
+            'has_archive'        => true,
+            'publicly_queryable' => true,
+            'rewrite'            => array( 'slug' => $announces_url_slug ),
+            'capability_type'    => 'post',
+        );
+
+        register_post_type( $announces_url_slug, $post_type_args );
     }
 
     /**
