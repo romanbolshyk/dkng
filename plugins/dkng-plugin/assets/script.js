@@ -611,39 +611,6 @@ jQuery(document).ready(function ($) {
 
     }
 
-    /**
-     * Functionality js for sign up page
-     *
-     */
-    function sign_up_page() {
-
-        if ( $(".inner_container").hasClass('sign_up_page') ) {
-
-            const privacyBlock = $(".privacy_block").detach();
-
-            setTimeout(function () {
-                $("#rcp_gateway_extra_fields").removeClass('col-12 one-card pxy-20 mt-3 mb-1').addClass( "col-lg-8 offset-lg-2 col-sm-12 case-studies text-center" );
-                $("#rcp_card_name_wrap").addClass("col-lg-12");
-                $("#rcp_card_wrap").addClass('col-lg-12');
-
-                var bef_text  = '<div class="before_pr"></div>';
-                let price      = $(".sign_up_page").attr('data-price');
-                let total_txt  = $("#rcp_registration_form .totat_area_text").text();
-                price          = ( price ) ? price : 0;
-                let total_price_html = '<div class="col-lg-12 d-flex justify-content-start align-items-center flex-row">\n' +
-                    '                       <label>'+ total_txt +'</label>\n' +
-                    '                   </div>';
-
-                $("#rcp_gateway_extra_fields").wrap('<div class="row"><div class="col-lg-12"></div></div>');
-                $("#rcp_submit_wrap").wrap('<div class="col-lg-6 offset-lg-3 col-sm-12 before_privacy"></div>');
-                $(".before_privacy").before( bef_text );
-                privacyBlock.appendTo('.before_pr');
-                // $(".before_privacy").before(privacy_block);
-                $('#email_block').after( $('#additional_fields_rcp>div') );
-                $("#rcp_gateway_extra_fields").append(total_price_html);
-            }, 2500);
-        }
-    }
 
     /**
      * Function for replacing login page button when user is logged
@@ -970,54 +937,6 @@ jQuery(document).ready(function ($) {
                 });
             }
         });
-    }
-
-    /**
-     * Function notifications li clicking - seen notification
-     *
-     */
-    function notifications_li_function() {
-        $("li.sv-notifications__item a.sv-notifications__link").on( "click", function(e){
-            e.preventDefault();
-
-            let data_id  = $(this).attr('data-id');
-            let href     = $(this).attr('href');
-            let redirect = true;
-            let check    = false;
-            if ( $(this).hasClass('empty_list') ) {
-                check = true;
-            }
-            if ( $(this).hasClass('empty_list') ) {
-                redirect = false;
-            }
-
-            let info = {
-                data_id: data_id,
-                action: 'notification_seen'
-            };
-
-            $.post({
-                url: get.ajaxurl,
-                data: info,
-                success: function (data) {
-                    console.log('success');
-                    if ( redirect ) {
-                        window.location.replace( href );
-                    }
-                    else {
-                        if ( !check ) {
-                            $("li.sv-notifications__item."+data_id).hide();
-                            let count = ( parseFloat( $(".sv-notifications__counter").text() ) ) - 1;
-                            $(".sv-notifications__counter").text(count);
-                        }
-                    }
-                },
-                error: function (data) {
-                    console.log('error');
-                },
-            });
-
-        })
     }
 
     /**
@@ -1513,9 +1432,7 @@ jQuery(document).ready(function ($) {
     resetPassword();
     leaving_page_function();
     exit_popup_function();
-    sign_up_page();
     notifications();
-    notifications_li_function();
     close_popup();
     read_article();
     account_info();

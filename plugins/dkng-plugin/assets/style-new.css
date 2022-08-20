@@ -6,3 +6,7 @@ img.aligncenter  {
     display: block;
     margin: 0 auto;
 }
+
+header {
+   height:  100px;
+}

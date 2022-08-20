@@ -51,8 +51,7 @@ $user_list_limit = !empty( $user_list_limit ) ? (int)$user_list_limit : 5;
 $count_allowed_lists = \Dkng\Wp\UsersLists::get_leads_by_user_id( $user->ID );
 $style_allowed_lists = ( $count_allowed_lists['count'] >= $user_list_limit ) ? 'pointer-events: none; opacity: 0.5;' : '';
 
-$wealthbox_api_key   = get_field( 'wealthbox_api_key', 'user_' . $user->ID );
-$wealthbox_api_key   = ( !empty( $wealthbox_api_key ) ) ? $wealthbox_api_key : "";
+
 ?>
 
     <div class="container campaigns" data-count-userlists-limit="<?php echo $user_list_limit;?>">

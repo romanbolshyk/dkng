@@ -76,8 +76,8 @@ class Campaigns {
 
         add_action( 'wp_ajax_upload_image_js',                    [ $this,    'upload_campaign_image_js' ] );
         add_action( 'wp_ajax_nopriv_upload_image_js',             [ $this,    'upload_campaign_image_js' ] );
-
         */
+
         add_action( 'restrict_manage_posts',                      [ $this,    'categories_filters'], 10, 2 );
     }
 

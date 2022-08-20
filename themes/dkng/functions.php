@@ -56,14 +56,14 @@ function my_style_loader_tag_filter($html, $handle) {
 add_theme_support('menus');
 add_action( 'after_setup_theme', 'theme_register_nav_menu' );
 function theme_register_nav_menu() {
-    register_nav_menu( 'primary',         'Primary Menu' );
-    register_nav_menu( 'seven_group',     'DKNG group Menu' );
+    register_nav_menu( 'primary',         'Головне Меню Хедера' );
+    register_nav_menu( 'dkng_group',      'DKNG group Menu' );
     register_nav_menu( 'advisors_group',  'Advisors Menu' );
     register_nav_menu( 'resources_group', 'Resources Menu' );
 
-    register_nav_menu( 'footer_top_sign_group',      'Footer Sign Top Menu' );
-    register_nav_menu( 'footer_bottom_sign_group',   'Footer Sign Bottom Menu' );
-    register_nav_menu( 'footer_copyright_sign_group','Footer Sign Copyright Menu' );
+    register_nav_menu( 'footer_top_sign_group',      'Footer Меню1 Top Menu' );
+    register_nav_menu( 'footer_bottom_sign_group',   'Footer Меню2 Bottom Menu' );
+    register_nav_menu( 'footer_copyright_sign_group','Footer Меню3 Copyright Menu' );
 }
 
 class My_Walker_Nav_Menu extends Walker_Nav_Menu {
