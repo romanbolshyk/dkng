@@ -9,6 +9,7 @@ plugins/dkng-plugin/vendor
 themes/*
 ai1wm-backups
 .DS_Store
+debug.log
 
 # But not these files...
 !.gitignore
