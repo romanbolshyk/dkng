@@ -118,6 +118,26 @@ class Ogoloshennya {
                 'value_field'     => 'slug',
             ] );
         }
+        if ( 'speciality_detail' === $post_type ) {
+            $taxonomy = 'speciality_detail-category';
+            $tax = get_taxonomy( $taxonomy );
+            $cat = filter_input( INPUT_GET, $taxonomy );
+
+            echo '<label class="screen-reader-text" for="campaigns-category">Filter by ' .
+                esc_html( $tax->labels->singular_name ) . '</label>';
+
+            wp_dropdown_categories( [
+                'show_option_all' => $tax->labels->all_items,
+                'hide_empty'      => 0,
+                'hierarchical'    => $tax->hierarchical,
+                'show_count'      => 1,
+                'orderby'         => 'name',
+                'selected'        => $cat,
+                'taxonomy'        => $taxonomy,
+                'name'            => $taxonomy,
+                'value_field'     => 'slug',
+            ] );
+        }
     }
 
 

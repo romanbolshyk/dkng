@@ -12,6 +12,7 @@ class Functions {
 
         self::register_campaigns();
         self::register_articles();
+        self::register_news();
         self::register_announces();
         self::register_specialities();
         self::register_specialities_programs();
@@ -283,6 +284,132 @@ class Functions {
         );
 
         register_post_type( 'articles', $post_type_args );
+    }
+
+
+    /**
+     * Register CPT News
+     *
+     */
+    public static function register_news() {
+
+        $articles_url_slug          = 'news';
+        $articles_category_url_slug = 'news-category';
+
+        $taxonomy_labels = array(
+            'name'                       => 'Category',
+            'singular_name'              => 'Category',
+            'menu_name'                  => 'Categories',
+            'all_items'                  => 'All Categories',
+            'parent_item'                => 'Parent Category',
+            'parent_item_colon'          => 'Parent Category:',
+            'new_item_name'              => 'New Category Name',
+            'add_new_item'               => 'Add New Category',
+            'edit_item'                  => 'Edit Category',
+            'update_item'                => 'Update Category',
+            'separate_items_with_commas' => 'Separate categories with commas',
+            'search_items'               => 'Search categories',
+            'add_or_remove_items'        => 'Add or remove categories',
+            'choose_from_most_used'      => 'Choose from the most used categories',
+        );
+
+        $taxonomy_rewrite = array(
+            'slug'         => $articles_category_url_slug,
+            'with_front'   => true,
+            'hierarchical' => true,
+        );
+
+        $taxonomy_args = array(
+            'labels'            => $taxonomy_labels,
+            'hierarchical'      => true,
+            'public'            => true,
+            'show_ui'           => true,
+            'show_admin_column' => true,
+            'show_in_nav_menus' => true,
+            'query_var'         => true,
+            'show_tagcloud'     => true,
+            'rewrite'           => $taxonomy_rewrite,
+        );
+        register_taxonomy( 'news-category', array( 'news' ), $taxonomy_args );
+
+        $taxonomy_labels = array(
+            'name'                       => 'Tag',
+            'singular_name'              => 'Tag',
+            'menu_name'                  => 'Tags',
+            'all_items'                  => 'All Tags',
+            'parent_item'                => 'Parent Tag',
+            'parent_item_colon'          => 'Parent Tag:',
+            'new_item_name'              => 'New Tag Name',
+            'add_new_item'               => 'Add New Tag',
+            'edit_item'                  => 'Edit Tag',
+            'update_item'                => 'Update Tag',
+            'separate_items_with_commas' => 'Separate categories with commas',
+            'search_items'               => 'Search categories',
+            'add_or_remove_items'        => 'Add or remove categories',
+            'choose_from_most_used'      => 'Choose from the most used categories',
+        );
+
+        $taxonomy_rewrite = array(
+            'slug'         => 'news-tag',
+            'with_front'   => true,
+            'hierarchical' => true,
+        );
+
+        $taxonomy_args = array(
+            'labels'            => $taxonomy_labels,
+            'hierarchical'      => true,
+            'public'            => true,
+            'show_ui'           => true,
+            'show_admin_column' => true,
+            'show_in_nav_menus' => true,
+            'query_var'         => true,
+            'show_tagcloud'     => true,
+            'rewrite'           => $taxonomy_rewrite,
+        );
+        register_taxonomy( 'news-tag', array( 'news' ), $taxonomy_args );
+
+        $post_type_labels = array(
+            'name'               => 'Новини',
+            'singular_name'      => 'Новини',
+            'menu_name'          => 'Новини',
+            'parent_item_colon'  => 'Батьківські Новини:',
+            'all_items'          => 'Всі Новини',
+            'view_item'          => 'Переглянути Новину',
+            'add_new_item'       => 'Додати Новину',
+            'add_new'            => 'Додати Нову',
+            'edit_item'          => 'Редагувати Новину',
+            'update_item'        => 'Оновити Новину',
+            'search_items'       => 'Шукати Новину',
+            'not_found'          => 'Новин не знайдено',
+            'not_found_in_trash' => 'No Новини found in Trash',
+        );
+
+        $post_type_rewrite = array(
+            'slug'       => 'news-item',
+            'with_front' => true,
+            'pages'      => true,
+            'feeds'      => true,
+        );
+
+        $post_type_args = array(
+            'label'              => 'Новини',
+            'description'        => 'Меню Новин',
+            'labels'             => $post_type_labels,
+            'supports'           => array( 'title', 'editor', 'excerpt', 'thumbnail', 'comments', 'revisions', 'author'),
+            'taxonomies'         => array( 'post' ),
+            'hierarchical'       => false,
+            'public'             => true,
+            'show_ui'            => true,
+            'show_in_menu'       => true,
+            'menu_icon'          => 'dashicons-list-view',
+            'menu_position'      =>  31,
+            'has_archive'        => true,
+            'publicly_queryable' => true,
+            'rewrite'            => array( 'slug' => $articles_url_slug ),
+            'capability_type'    => 'post',
+        );
+
+        register_post_type( 'news', $post_type_args );
     }
 
     /**
