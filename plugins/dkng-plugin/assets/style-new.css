@@ -7,6 +7,17 @@ img.aligncenter  {
     margin: 0 auto;
 }
 
+.alignleft {
+    float: left;
+    margin: 0.5em 1em 0.5em 0;
+}
+
+.alignright {
+    float: right;
+    margin: 0.5em 0 0.5em 1em;
+}
+
 header {
    height:  100px;
+    overflow: hidden;
 }

@@ -85,13 +85,13 @@ class Start {
      */
     public function custom_settings() {
         if ( function_exists( 'acf_add_options_page' ) ) {
-            acf_add_options_page( array(
-                'page_title' => 'Pricing Block',
-                'menu_title' => 'Pricing Block',
-                'menu_slug'  => 'pricing-block',
-                'capability' => 'edit_posts',
-                'redirect'   => false
-            ));
+//            acf_add_options_page( array(
+//                'page_title' => 'Pricing Block',
+//                'menu_title' => 'Pricing Block',
+//                'menu_slug'  => 'pricing-block',
+//                'capability' => 'edit_posts',
+//                'redirect'   => false
+//            ));
 
             acf_add_options_page( array(
                 'page_title' => 'Налаштування сайту',
