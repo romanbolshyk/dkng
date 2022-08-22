@@ -1,6 +1,4 @@
 jQuery(document).ready(function ($) {
-
-
     /**
      * Load More function for campoigns
      *
@@ -49,5 +47,73 @@ jQuery(document).ready(function ($) {
     }
     load_more_announces();
 
+
+   
+
+    /**
+     * Mobile Menu
+     */
+    const NavMenu = function() {
+        const menu = function() {
+            const navItem = $('.menu-item-has-children > a');
+            const burger = $('.js-burger');
+            const closeNav = $('.js-close-nav');
+            const nav = $('.c-header__menu');
+
+            navItem.on('click', function(e) {
+                e.preventDefault();
+
+                $(this).next().toggleClass('open');
+            });
+
+            burger.on('click', function(e) {
+                e.preventDefault();
+
+                nav.toggleClass('open');
+            });
+
+            closeNav.on('click', function(e) {
+                e.preventDefault();
+
+                nav.removeClass('open');
+            });
+        }
+    
+        return {
+            init: function () {
+                menu();
+            }
+        }
+    }();
+    
+    NavMenu.init();
+
+    /**
+     * Toggle Search Form
+     */
+
+    function toggleSearch() {
+        const openBtn = $('.js-search-open');
+        const closeBtn = $('.js-search-close');
+        const form = $('.js-search-form');
+
+        openBtn.on('click', function(e) {
+            e.preventDefault();
+
+            form.addClass('active');
+        });
+
+        closeBtn.on('click', function(e) {
+            e.preventDefault();
+
+            form.removeClass('active');
+        });
+    }
+
+    toggleSearch();
+
 });
+
+
+
 

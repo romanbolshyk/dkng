@@ -101,9 +101,9 @@ $post_image = !empty( $id_post ) ? get_the_post_thumbnail_url( $id, 'medium' ) :
 
         ?>
 
-        <div class="header_blocl <?php echo $class;?> without_banner">
+        <!-- <div class="header_blocl <?php echo $class;?> without_banner"> -->
             <!-- Header -->
-            <header class="header <?php echo $mobile;?>" id="header" data-logged="<?php echo $looged_in;?>" data-base="<?php echo site_url(); ?>">
+            <!-- <header class="header <?php echo $mobile;?>" id="header" data-logged="<?php echo $looged_in;?>" data-base="<?php echo site_url(); ?>">
                 <div>
                     <div class="header_top">
                         <div class="container">
@@ -134,5 +134,92 @@ $post_image = !empty( $id_post ) ? get_the_post_thumbnail_url( $id, 'medium' ) :
                         </div>
                     </div>
                 </div>
-            </header>
+            </header> -->
+        <!-- </div> -->
+
+
+
+
+<div class="c-header">
+    <div class="c-header__bg">
+        <div class="c-header__top container">           
+            <div class="c-header__top--left">
+                <div class="c-header__logo">
+                    <img src="https://www.dkng.net.ua/templates/nafta/images/logo2020.png" alt="logo">
+                </div>
+
+                <div class="c-header__name">
+                    <h2 class="c-header__title">ДРОГОБИЦЬКИЙ ФАХОВИЙ КОЛЕДЖ НАФТИ І ГАЗУ</h2>
+                    <h2 class="c-header__subtitle">DROGOBYCH APPLIED COLLEGE OF OIL AND GAS</h2>
+                </div>
+            </div>       
+        
+            <div class="c-header__info">
+                <div class="c-header__info--item">
+                    <span>e-mail:</span>
+                    <span>dkng@ukr.net</span>
+                </div>
+
+                <div class="c-header__info--item">
+                    <span>skype:</span>
+                    <span>dkng_drohobych</span>
+                </div>
+
+                <div class="c-header__info--item">
+                    <span>тел.:</span>
+                    <span>+38 0324438969</span>
+                </div>
+
+                <div class="c-header__info--item">
+                    <span>приймальна комісія:</span>
+                    <span>+38 0681245325</span>
+                </div>
+
+                <div class="c-header__social">
+                    <a href="#" target="_blank" class="c-header__social--item">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+
+                    <a href="#" target="_blank" class="c-header__social--item">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+
+                    <a href="#" target="_blank" class="c-header__social--item">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
         </div>
+    </div>
+
+
+    <div class="c-header__menu">
+        <div class="c-header__nav-toggle js-burger"></div>
+
+        <div class="c-header__menu--overlay js-close-nav"></div>
+
+        <nav>
+            <span class="c-header__menu--close js-close-nav">✕</span>
+
+            <?php wp_nav_menu( array(
+                'theme_location' => 'primary',
+                'walker'         => new My_Walker_Nav_Menu(),
+                'items_wrap'     => '<ul><li class="a_%2$s_block"></li>%3$s</ul>'
+            ) ); ?>
+        </nav>
+
+        <div class="c-header__search">
+            <div class="c-header__search--btn js-search-open">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
+
+            <form class="c-header__search--form js-search-form">
+                <input type="text" placeholder="Search">
+                
+                <div class="c-header__search--btn js-search-close">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+            </form>
+        </div>  
+    </div>
+</div>
