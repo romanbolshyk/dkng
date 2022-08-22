@@ -13,8 +13,6 @@ if ( !empty( $udata ) ) {
 $upload_dir = wp_upload_dir();
 
 $file_name  = get_user_meta( $user->ID, 'avatar', true );
-//$fileurl    = $upload_dir['path'] . '/' . $file_name;
-//$filepath   = $upload_dir['url'] . '/' . $file_name;
 $fileurl      = $upload_dir['basedir'] . '/' . $file_name;
 $filepath     = $upload_dir['baseurl'] . '/' . $file_name;
 $fileurl    = ( file_exists( $fileurl ) ) ? $filepath : "./dist/img/info-img.png";
@@ -22,32 +20,10 @@ $fileurl    = ( file_exists( $fileurl ) ) ? $filepath : "./dist/img/info-img.png
 global $post;
 $looged_in  = ( is_user_logged_in() ) ? 'yes' : 'no';
 
-/*
-$id_post    = get_the_ID();
-$post_image = !empty( $id_post ) ? get_the_post_thumbnail_url( $id, 'medium' ) : '';
-*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-5B5XRPG');</script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155268703-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-155268703-1');
-    </script>
-
     <title><?php wp_title(''); ?></title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -65,15 +41,6 @@ $post_image = !empty( $id_post ) ? get_the_post_thumbnail_url( $id, 'medium' ) :
 
 <body  <?php body_class();?>>
 
-    <script> (function(){ var s = document.createElement('script'); var h = document.querySelector('head') || document.body; s.src = 'https://acsbapp.com/apps/app/dist/js/app.js'; s.async = true; s.onload = function(){ acsbJS.init({ statementLink : '', footerHtml : '', hideMobile : false, hideTrigger : false, disableBgProcess : false, language : 'en', position : 'left', leadColor : '#00C7C7', triggerColor : '#00C7C7', triggerRadius : '50%', triggerPositionX : 'left', triggerPositionY : 'bottom', triggerIcon : 'people', triggerSize : 'bottom', triggerOffsetX : 20, triggerOffsetY : 20, mobile : { triggerSize : 'small', triggerPositionX : 'left', triggerPositionY : 'bottom', triggerOffsetX : 20, triggerOffsetY : 20, triggerRadius : '20' } }); }; h.appendChild(s); })(); </script>
-
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5B5XRPG"
-                height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <div class="super_container">
         <div class="preloader">
             <div class="preloader__row">

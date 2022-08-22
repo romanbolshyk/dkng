@@ -18,7 +18,7 @@ function my_enqueue_scripts() {
 //    wp_enqueue_style( 'owl-theme-default', get_template_directory_uri() . '/plugins/OwlCarousel2-2.2.1/owl.theme.default.css' );
 //    wp_enqueue_style( 'bootstrap-slider',  get_template_directory_uri() . '/plugins/bootstrap-slider/bootstrap-slider.min.css' );
     //TODO Check after front
-    if ( isset( $_GET['s'])  || strpos( $_SERVER['REQUEST_URI'], 'admin' ) || strpos( $_SERVER['REQUEST_URI'], 'contact-list' ) || is_singular( array( 'articles', 'edited_articles', 'courses', 'campaigns' ) ) && !is_page() ) {
+    if ( ( isset( $_GET['s'])  || strpos( $_SERVER['REQUEST_URI'], 'admin' ) || strpos( $_SERVER['REQUEST_URI'], 'contact-list' ) || is_singular( array( 'articles', 'edited_articles', 'courses', 'campaigns' ) ) && !is_page() ) || is_front_page() ) {
         wp_enqueue_style( 'dashboard1',    get_template_directory_uri() . '/styles/dashboard.css' );
     }
     wp_enqueue_style( 'responsive',        get_template_directory_uri() . '/styles/responsive.css' );

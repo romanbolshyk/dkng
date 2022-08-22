@@ -110,7 +110,6 @@ $downloads_left     = (int)$get_downloads;
     </head>
     <body <?php body_class();?> data-timezone="<?php echo $user_timezone;?>" data-default-timezone="<?php echo $default_timezone;?>" data-time-backend="<?php echo $date_format;?>">
 
-        <script> (function(){ var s = document.createElement('script'); var h = document.querySelector('head') || document.body; s.src = 'https://acsbapp.com/apps/app/dist/js/app.js'; s.async = true; s.onload = function(){ acsbJS.init({ statementLink : '', footerHtml : '', hideMobile : false, hideTrigger : false, disableBgProcess : false, language : 'en', position : 'left', leadColor : '#00C7C7', triggerColor : '#00C7C7', triggerRadius : '50%', triggerPositionX : 'left', triggerPositionY : 'bottom', triggerIcon : 'people', triggerSize : 'bottom', triggerOffsetX : 20, triggerOffsetY : 20, mobile : { triggerSize : 'small', triggerPositionX : 'left', triggerPositionY : 'bottom', triggerOffsetX : 20, triggerOffsetY : 20, triggerRadius : '20' } }); }; h.appendChild(s); })();</script>
 
         <div class="preloader">
             <div class="preloader__row">

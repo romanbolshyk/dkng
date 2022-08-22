@@ -85,17 +85,17 @@ class Start {
      */
     public function custom_settings() {
         if ( function_exists( 'acf_add_options_page' ) ) {
-            acf_add_options_page( array(
-                'page_title' => 'Pricing Block',
-                'menu_title' => 'Pricing Block',
-                'menu_slug'  => 'pricing-block',
-                'capability' => 'edit_posts',
-                'redirect'   => false
-            ));
+//            acf_add_options_page( array(
+//                'page_title' => 'Pricing Block',
+//                'menu_title' => 'Pricing Block',
+//                'menu_slug'  => 'pricing-block',
+//                'capability' => 'edit_posts',
+//                'redirect'   => false
+//            ));
 
             acf_add_options_page( array(
-                'page_title' => 'Налаштування сайту',
-                'menu_title' => 'Налаштування сайту',
+                'page_title' => 'Додаткові Налаштування сайту',
+                'menu_title' => 'Додаткові Налаштування сайту',
                 'menu_slug'  => 'theme_settings',
                 'capability' => 'edit_posts',
                 'redirect'   => false
