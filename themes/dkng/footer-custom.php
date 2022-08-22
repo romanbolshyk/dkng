@@ -32,67 +32,16 @@ $exit_popup_email_txt  = !empty( $exit_popup_email_txt )  ? $exit_popup_email_tx
 $exit_popup_btn_name   = !empty( $exit_popup_btn_name )   ? $exit_popup_btn_name   : '';
 $exit_popup_cancel_txt = !empty( $exit_popup_cancel_txt ) ? $exit_popup_cancel_txt : '';
 
+$logo                  = get_field('logo_image', 'options');
 ?>
 
 <div class="footer">
-    <?php if ( !is_user_logged_in() ) { ?>
-        <div class="footer_popup_block">
-            <div class="footer-popup">
-                <div class="left block" >
-                    <div class="img_block">
-                        <img src="<?php echo  $bottom_popup_image;?>" alt="<?php echo esc_attr( $bottom_popup_image_alt ); ?>">
-                    </div>
-                    <div class="txt_block">
-                        <p ><?php echo $bottom_popup_text1;?></p>
-                        <p ><?php echo $bottom_popup_text2;?></p>
-                    </div>
-                </div>
-                <div class="right block">
-                    <a href="<?php echo $bottom_popup_btn_link;?>" >
-                        <?php echo $bottom_popup_btn_name;?>
-                    </a>
-                </div>
-                <span class="exit_b_popup">x</span>
-            </div>
-        </div>
 
-        <div class="modal exit_popup_block" id="exit_popup_block" >
-            <div class="exit-popup">
-                <div class="top">
-                    <h3 ><?php echo $exit_popup_text1;?></h3>
-                </div>
-                <div class="bottom">
-                    <div class="left block" >
-                        <div class="img_block">
-                            <img src="<?php echo $exit_popup_image;?>" alt="<?php echo esc_attr( $exit_popup_image_alt ); ?>">
-                        </div>
-                    </div>
-                    <div class="right block form_contact_box">
-                        <p class="under_form"><?php echo $exit_popup_text2;?></p>
-                        <form action="" id="contact_form" method="post">
-                            <input type="hidden" name="company" value="" />
-							<input type="text" class="email top" name="name"  placeholder="First Name"  required/>
-							<input type="text" class="email top" name="lastname"  placeholder="Last Name"  required/>
-                            <input type="email" class="email"  name="email"  placeholder="<?php echo $exit_popup_email_txt;?>" required />
-                            <input type="submit" value="Send Me the Details" class="btn btn-primary contact_submit"/>
-                        </form>
-                        <div class="success_message_block success_message_block_none" >
-                            <h3><?php if ( $success_message ) echo  $success_message;?></h3>
-                        </div>
-                        <img src="./dist/img/loader.gif" alt="loader"  id="loader" style="display: none;"/>
-                        <span class="exit_e_popup" data-dismiss="modal"><?php echo $exit_popup_cancel_txt;?></span>
-                    </div>
-                </div>
-                <span class="exit_b_popup exit_exit_popup">x</span>
-            </div>
-        </div>
-
-    <?php } ?>
     <div class="default-padding">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-xs-12 col-md-12">
-                    <a href="<?php echo get_site_url();?>"><img src="./dist/img/footer-logo.svg" alt="footer logo" /></a>
+                    <a href="<?php echo get_site_url();?>"><img src="<?php echo $logo;?>" style="height: 100px;  width: auto;" alt="footer logo" /></a>
                     <p>
                         <?php echo esc_html__("3 Park Avenue, 36th Floor", "dkng");?><br/>
                         <?php echo esc_html__("New York, NY 10016", "dkng");?>

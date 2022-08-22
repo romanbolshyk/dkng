@@ -94,8 +94,8 @@ class Start {
 //            ));
 
             acf_add_options_page( array(
-                'page_title' => 'Налаштування сайту',
-                'menu_title' => 'Налаштування сайту',
+                'page_title' => 'Додаткові Налаштування сайту',
+                'menu_title' => 'Додаткові Налаштування сайту',
                 'menu_slug'  => 'theme_settings',
                 'capability' => 'edit_posts',
                 'redirect'   => false

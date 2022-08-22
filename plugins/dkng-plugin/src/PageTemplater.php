@@ -69,6 +69,7 @@ class PageTemplater {
         // Add your templates to this array.
         $this->templates = array(
 //            'templates/search.php'                  => 'Search Page',
+            //'templates/home-page.php'                => 'Frontend Home Page',
             'templates/dashboard-home.php'          => 'Dashboard Home',
             'templates/dashboard-training.php'      => 'Dashboard Training',
             'templates/dashboard-content.php'       => 'Dashboard Content',
