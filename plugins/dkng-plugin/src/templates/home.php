@@ -2,7 +2,8 @@
 
 get_header('custom');
 
-$slider_block        = get_field( 'home_slider_block');
+$slider_block        = get_field( 'banner_block');
+$slider_block        = $slider_block['home_slider_block'];
 $video_block1        = get_field( 'video_block_home');
 $video_block2        = get_field( 'video_block_presentation');
 $materialna_baza_block  = get_field( 'materialna_baza_block');
@@ -26,7 +27,7 @@ $args = array(
     'fields'    => 'ids',
     'orderby'   => 'date',
     'order'     => 'DESC',
-    'posts_per_page' => 10
+    'posts_per_page' => 6
 );
 $the_last_updated_posts = new WP_Query( $args );
 
@@ -34,7 +35,7 @@ $the_last_updated_posts = new WP_Query( $args );
 
 <?php if ( !empty( $slider_block ) ) { ?>
     <div class="home_container">
-        <div class="container">
+        <div class="container slider_banner_block">
             <div class="row">
                 <div class="col">
                     <div class="home_content">
@@ -95,25 +96,7 @@ $the_last_updated_posts = new WP_Query( $args );
                             </div>
                         </div>
                     </div>
-                    <div class="white-element mb-100">
-                        <div class="row">
-                            <?php require_once 'template-parts/home_page/courses_section.php';?>
-                        </div>
-                    </div>
-                    <div class="white-element mb-100">
-                        <div class="row1">
-                            <h3>
-                                <a href="<?php echo $vidguk_block['link_title'];?>" target="_blank">
-                                    <?php echo $vidguk_block['title'];?>
-                                </a>
-                            </h3>
-                            <p style="text-align: center;">
-                                <a href="<?php echo $vidguk_block['image_link'];?>" target="_blank">
-                                    <img src="<?php echo $vidguk_block['image'];?>" border="0" alt="" width="251" height="140">
-                                </a>
-                            </p>
-                        </div>
-                    </div>
+
                 </div>
 
                 <div class="col-12 col-lg-5">
@@ -176,9 +159,23 @@ $the_last_updated_posts = new WP_Query( $args );
                                 <p style="text-align: justify;">
                                      <?php echo get_the_excerpt( $id_vidguk );?>
                                 </p>
-                                </div>
                             </div>
 
+                        </div>
+                    </div>
+
+                    <div class="white-element mb-100 vidguk_block">
+                        <div class="row1">
+                            <h3>
+                                <a href="<?php echo $vidguk_block['link_title'];?>" target="_blank">
+                                    <?php echo $vidguk_block['title'];?>
+                                </a>
+                            </h3>
+                            <p style="text-align: center;">
+                                <a href="<?php echo $vidguk_block['image_link'];?>" target="_blank">
+                                    <img src="<?php echo $vidguk_block['image'];?>" border="0" alt="" width="251" height="140">
+                                </a>
+                            </p>
                         </div>
                     </div>
                 </div>

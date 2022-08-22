@@ -2,12 +2,6 @@ h1,h2,h3,h4,h5,h6{
     line-height: normal;
 }
 
-.home{
-    height:748px;
-}
-.home_container{
-    top:176px;
-}
 .inner_container{
     margin-top: 100px;
     position: relative;

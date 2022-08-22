@@ -888,10 +888,7 @@ section
 }
 .home_container,.email_container
 {
-	position: absolute;
-	top: 38%;
-	left: 0;
-	width: 100%;
+
 }
 .email_container{
     top:0;
