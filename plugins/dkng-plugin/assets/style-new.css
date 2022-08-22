@@ -21,3 +21,13 @@ header {
    height:  100px;
     overflow: hidden;
 }
+
+.cemiy_koledzh_block p {
+    color: #555555;
+    font-family: "Work Sans", sans-serif;
+    text-shadow: none;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: normal;
+    line-height: 1.5;
+}

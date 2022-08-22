@@ -160,7 +160,7 @@ class Start {
                     'siteurl' => get_template_directory_uri(),
                 )
             );
-        });
+        }, 999);
     }
 
     /**

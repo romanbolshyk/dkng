@@ -17,7 +17,7 @@ class Functions {
         self::register_specialities();
         self::register_specialities_programs();
         self::register_courses();
-        self::register_webinars();
+        self::register_cemiykoldzh_vidgгky();
 
         add_filter('template_include',  [ $this, 'template_chooser' ], 99 );
 
@@ -410,6 +410,132 @@ class Functions {
         );
 
         register_post_type( 'news', $post_type_args );
+    }
+
+
+    /**
+     * Register CPT News
+     *
+     */
+    public static function register_cemiykoldzh_vidgгky() {
+
+        $articles_url_slug          = 'cemijkoledzh';
+        $articles_category_url_slug = 'cemijkoledzh-category';
+
+        $taxonomy_labels = array(
+            'name'                       => 'Category',
+            'singular_name'              => 'Category',
+            'menu_name'                  => 'Categories',
+            'all_items'                  => 'All Categories',
+            'parent_item'                => 'Parent Category',
+            'parent_item_colon'          => 'Parent Category:',
+            'new_item_name'              => 'New Category Name',
+            'add_new_item'               => 'Add New Category',
+            'edit_item'                  => 'Edit Category',
+            'update_item'                => 'Update Category',
+            'separate_items_with_commas' => 'Separate categories with commas',
+            'search_items'               => 'Search categories',
+            'add_or_remove_items'        => 'Add or remove categories',
+            'choose_from_most_used'      => 'Choose from the most used categories',
+        );
+
+        $taxonomy_rewrite = array(
+            'slug'         => $articles_category_url_slug,
+            'with_front'   => true,
+            'hierarchical' => true,
+        );
+
+        $taxonomy_args = array(
+            'labels'            => $taxonomy_labels,
+            'hierarchical'      => true,
+            'public'            => true,
+            'show_ui'           => true,
+            'show_admin_column' => true,
+            'show_in_nav_menus' => true,
+            'query_var'         => true,
+            'show_tagcloud'     => true,
+            'rewrite'           => $taxonomy_rewrite,
+        );
+        register_taxonomy( 'cemijkoledzh-category', array( 'cemijkoledzh' ), $taxonomy_args );
+
+        $taxonomy_labels = array(
+            'name'                       => 'Tag',
+            'singular_name'              => 'Tag',
+            'menu_name'                  => 'Tags',
+            'all_items'                  => 'All Tags',
+            'parent_item'                => 'Parent Tag',
+            'parent_item_colon'          => 'Parent Tag:',
+            'new_item_name'              => 'New Tag Name',
+            'add_new_item'               => 'Add New Tag',
+            'edit_item'                  => 'Edit Tag',
+            'update_item'                => 'Update Tag',
+            'separate_items_with_commas' => 'Separate categories with commas',
+            'search_items'               => 'Search categories',
+            'add_or_remove_items'        => 'Add or remove categories',
+            'choose_from_most_used'      => 'Choose from the most used categories',
+        );
+
+        $taxonomy_rewrite = array(
+            'slug'         => 'cemijkoledzh-tag',
+            'with_front'   => true,
+            'hierarchical' => true,
+        );
+
+        $taxonomy_args = array(
+            'labels'            => $taxonomy_labels,
+            'hierarchical'      => true,
+            'public'            => true,
+            'show_ui'           => true,
+            'show_admin_column' => true,
+            'show_in_nav_menus' => true,
+            'query_var'         => true,
+            'show_tagcloud'     => true,
+            'rewrite'           => $taxonomy_rewrite,
+        );
+        register_taxonomy( 'cemijkoledzh-tag', array( 'cemijkoledzh' ), $taxonomy_args );
+
+        $post_type_labels = array(
+            'name'               => 'ЦеМійКоледж Відгуки',
+            'singular_name'      => 'ЦеМійКоледж Відгуки',
+            'menu_name'          => 'ЦеМійКоледж Відгуки',
+            'parent_item_colon'  => 'Батьківські ЦеМійКоледж Відгуки:',
+            'all_items'          => 'Всі ЦеМійКоледж Відгуки',
+            'view_item'          => 'Переглянути ЦеМійКоледж Відгук',
+            'add_new_item'       => 'Додати ЦеМійКоледж Відгук',
+            'add_new'            => 'Додати Новий',
+            'edit_item'          => 'Редагувати ЦеМійКоледж Відгук',
+            'update_item'        => 'Оновити ЦеМійКоледж Відгук',
+            'search_items'       => 'Шукати ЦеМійКоледж Відгук',
+            'not_found'          => 'Новин не знайдено',
+            'not_found_in_trash' => 'No ЦеМійКоледж Відгуків found in Trash',
+        );
+
+        $post_type_rewrite = array(
+            'slug'       => 'cemijkoledzh-item',
+            'with_front' => true,
+            'pages'      => true,
+            'feeds'      => true,
+        );
+
+        $post_type_args = array(
+            'label'              => 'ЦеМійКоледж Відгуки',
+            'description'        => 'Меню Відгуків',
+            'labels'             => $post_type_labels,
+            'supports'           => array( 'title', 'editor', 'excerpt', 'thumbnail', 'comments', 'revisions', 'author'),
+            'taxonomies'         => array( 'post' ),
+            'hierarchical'       => false,
+            'public'             => true,
+            'show_ui'            => true,
+            'show_in_menu'       => true,
+            'menu_icon'          => 'dashicons-list-view',
+            'menu_position'      =>  31,
+            'has_archive'        => true,
+            'publicly_queryable' => true,
+            'rewrite'            => array( 'slug' => $articles_url_slug ),
+            'capability_type'    => 'post',
+        );
+
+        register_post_type( 'cemijkoledzh', $post_type_args );
     }
 
     /**
@@ -1036,131 +1162,6 @@ class Functions {
 
         register_post_type( 'courses', $post_type_args );
 
-    }
-
-    /**
-     * Register CPT webinars
-     *
-     */
-    public function register_webinars() {
-
-        $webinars_url_slug          = 'webinars';
-        $webinars_category_url_slug = 'webinars-category';
-
-        $taxonomy_labels = array(
-            'name'                       => 'Category',
-            'singular_name'              => 'Category',
-            'menu_name'                  => 'Categories',
-            'all_items'                  => 'All Categories',
-            'parent_item'                => 'Parent Category',
-            'parent_item_colon'          => 'Parent Category:',
-            'new_item_name'              => 'New Category Name',
-            'add_new_item'               => 'Add New Category',
-            'edit_item'                  => 'Edit Category',
-            'update_item'                => 'Update Category',
-            'separate_items_with_commas' => 'Separate categories with commas',
-            'search_items'               => 'Search categories',
-            'add_or_remove_items'        => 'Add or remove categories',
-            'choose_from_most_used'      => 'Choose from the most used categories',
-        );
-
-        $taxonomy_rewrite = array(
-            'slug'         => $webinars_category_url_slug,
-            'with_front'   => true,
-            'hierarchical' => true,
-        );
-
-        $taxonomy_args = array(
-            'labels'            => $taxonomy_labels,
-            'hierarchical'      => true,
-            'public'            => true,
-            'show_ui'           => true,
-            'show_admin_column' => true,
-            'show_in_nav_menus' => true,
-            'query_var'         => true,
-            'show_tagcloud'     => true,
-            'rewrite'           => $taxonomy_rewrite,
-        );
-        register_taxonomy( 'webinars-category', array( 'webinars' ), $taxonomy_args );
-
-        $taxonomy_labels = array(
-            'name'                       => 'Tag',
-            'singular_name'              => 'Tag',
-            'menu_name'                  => 'Tags',
-            'all_items'                  => 'All Tags',
-            'parent_item'                => 'Parent Tag',
-            'parent_item_colon'          => 'Parent Tag:',
-            'new_item_name'              => 'New Tag Name',
-            'add_new_item'               => 'Add New Tag',
-            'edit_item'                  => 'Edit Tag',
-            'update_item'                => 'Update Tag',
-            'separate_items_with_commas' => 'Separate categories with commas',
-            'search_items'               => 'Search categories',
-            'add_or_remove_items'        => 'Add or remove categories',
-            'choose_from_most_used'      => 'Choose from the most used categories',
-        );
-
-        $taxonomy_rewrite = array(
-            'slug'         => 'webinars-tag',
-            'with_front'   => true,
-            'hierarchical' => true,
-        );
-
-        $taxonomy_args = array(
-            'labels'            => $taxonomy_labels,
-            'hierarchical'      => true,
-            'public'            => true,
-            'show_ui'           => true,
-            'show_admin_column' => true,
-            'show_in_nav_menus' => true,
-            'query_var'         => true,
-            'show_tagcloud'     => true,
-            'rewrite'           => $taxonomy_rewrite,
-        );
-        register_taxonomy( 'webinars-tag', array( 'webinars' ), $taxonomy_args );
-
-        $post_type_labels = array(
-            'name'               => 'Webinars',
-            'singular_name'      => 'Webinars',
-            'menu_name'          => 'Webinars',
-            'parent_item_colon'  => 'Parent Webinars:',
-            'all_items'          => 'All Webinars',
-            'view_item'          => 'View Webinar',
-            'add_new_item'       => 'Add New Webinar',
-            'add_new'            => 'Add New',
-            'edit_item'          => 'Edit Webinar',
-            'update_item'        => 'Update Webinar',
-            'search_items'       => 'Search Webinar',
-            'not_found'          => 'No Webinars found',
-            'not_found_in_trash' => 'No Webinars found in Trash',
-        );
-
-        $post_type_rewrite = array(
-            'slug'       => 'webinars-item',
-            'with_front' => true,
-            'pages'      => true,
-            'feeds'      => true,
-        );
-
-        $post_type_args = array(
-            'label'              => 'Webinars',
-            'description'        => 'Webinars information pages',
-            'labels'             => $post_type_labels,
-            'supports'           => array( 'title', 'editor', 'excerpt', 'thumbnail', 'comments', 'revisions'),
-            'taxonomies'         => array( 'post' ),
-            'hierarchical'       => false,
-            'public'             => true,
-            'show_ui'            => true,
-            'show_in_menu'       => true,
-            'menu_icon'          => 'dashicons-buddicons-buddypress-logo',
-            'menu_position'      =>  31,
-            'has_archive'        => true,
-            'publicly_queryable' => true,
-            'rewrite'            => array( 'slug' => $webinars_url_slug ),
-            'capability_type'    => 'post',
-        );
-
-        register_post_type( 'webinars', $post_type_args );
     }
 
 

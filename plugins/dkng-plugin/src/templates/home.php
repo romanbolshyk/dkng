@@ -8,6 +8,7 @@ $video_block2        = get_field( 'video_block_presentation');
 $materialna_baza_block  = get_field( 'materialna_baza_block');
 $block3              = get_field( 'block3');
 $vidguk_block        = get_field( 'vidguk_block');
+$cemiykoldzh_block   = get_field( 'cemiykoldzh_block');
 
 $object              = new \Dkng\Wp\Ogoloshennya();
 $object1             = new \Dkng\Wp\Novyny();
@@ -19,6 +20,15 @@ $philosophy_block    = get_field( 'philosophy_block');
 
 $video_module_title  = get_field( 'video_module_title', 'option' );
 $video_module_link   = get_field( 'video_module_link',  'option' );
+
+$args = array(
+    'post_type' => array( 'post', 'page', 'announces', 'news' ),
+    'fields'    => 'ids',
+    'orderby'   => 'date',
+    'order'     => 'DESC',
+    'posts_per_page' => 10
+);
+$the_last_updated_posts = new WP_Query( $args );
 
 ?>
 
@@ -50,11 +60,7 @@ $video_module_link   = get_field( 'video_module_link',  'option' );
                             <p><?php echo $video_block2['video_text'];?></p>
                         </div>
                     </div>
-                    <div class="white-element mb-100">
-                        <div class="row">
-                            <?php require_once 'template-parts/home_page/articles_section.php';?>
-                        </div>
-                    </div>
+
                     <div class="white-element mb-100 page-template-podcast">
                         <div class="row">
                             <div class="podcast_block-list">
@@ -119,19 +125,19 @@ $video_module_link   = get_field( 'video_module_link',  'option' );
                         </div>
                     </div>
 
-                    <div class="white-element right-holder">
+                    <div class="white-element right-holder all_updated_posts_block">
                         <div class="row">
-                            <?php require_once 'template-parts/home_page/things_to_do_section.php';?>
+                            <?php require_once 'template-parts/home_page/all_updated_posts_section.php';?>
                         </div>
                     </div>
 
-                    <div class="white-element webinars-holder">
+                    <div class="white-element materialna_baza_block">
                         <div class="row1">
                             <h3><?php echo $materialna_baza_block['title'];?></h3>
                             <?php echo $materialna_baza_block['video_text'];?>
                         </div>
                     </div>
-                    <div class="white-element webinars-holder">
+                    <div class="white-element used_links">
                         <div class="row1">
                             <h3><?php echo $block3['title'];?></h3>
                             <?php if ( !empty( $block3['repeater'] ) ) {
@@ -147,13 +153,37 @@ $video_module_link   = get_field( 'video_module_link',  'option' );
                             }?>
                         </div>
                     </div>
+
+                    <div class="white-element cemiy_koledzh_block">
+                        <div class="row1">
+                            <h3><?php echo $cemiykoldzh_block['title'];?></h3>
+                            <?php $id_vidguk = $cemiykoldzh_block['vidguk'];
+
+                            $original_thumbnail = get_the_post_thumbnail_url( $id_vidguk );
+                            $grupa = get_field( 'grupa', $id_vidguk );
+                            ?>
+                            <div class="newsflash">
+                                <h4 class="newsflash-title">
+                                    <a href="<?php echo get_permalink( $id_vidguk );?>">
+                                       <?php echo get_the_title( $id_vidguk ) ?>
+                                    </a>
+                                </h4>
+                                <br/>
+                                <p>
+                                    <img src="<?php echo $original_thumbnail;?>" border="0" width="71" height="69" style="float: left; margin-left: 4px; margin-right: 4px;">
+                                    <?php echo $grupa;?>
+                                </p>
+                                <p style="text-align: justify;">
+                                     <?php echo get_the_excerpt( $id_vidguk );?>
+                                </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
-<!--            <div class="row">-->
-<!--                <div class="col-12">-->
-<!--                    --><?php //include 'template-parts/home_page/home_dashboard_campaigns.php';?>
-<!--                </div>-->
-<!--            </div>-->
+
         </div>
     </div>
 </div>
