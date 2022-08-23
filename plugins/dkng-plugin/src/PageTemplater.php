@@ -71,6 +71,7 @@ class PageTemplater {
             'templates/search.php'                  => 'Search Page',
             'templates/cemiy_koledzh_template.php'  => 'ЦеМійКоледж Шаблон',
             'templates/kerivnytstvo_template.php'   => 'Керівництво Шаблон',
+            'templates/vidomi_vypusknyky_template.php'  => 'Відомі Випускники Шаблон',
             'templates/dashboard-home.php'          => 'Dashboard Home',
             'templates/dashboard-training.php'      => 'Dashboard Training',
             'templates/dashboard-content.php'       => 'Dashboard Content',
