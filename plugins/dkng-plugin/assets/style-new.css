@@ -24,10 +24,7 @@ img.alignright {
     float: right;
     margin: 0.5em 0 0.5em 1em;
 }
-.c-header__bg {
-  background: url(http://www.dkng.net.ua/images/fon1.jpg) 100% 100%;
-  background-size: contain;
-}
+
 .c-header__top {
   display: flex;
   align-items: center;
