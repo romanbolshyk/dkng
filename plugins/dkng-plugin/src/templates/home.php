@@ -160,7 +160,6 @@ $the_last_updated_posts = new WP_Query( $args );
                                      <?php echo get_the_excerpt( $id_vidguk );?>
                                 </p>
                             </div>
-
                         </div>
                     </div>
 

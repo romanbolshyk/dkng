@@ -68,23 +68,21 @@ class PageTemplater {
 
         // Add your templates to this array.
         $this->templates = array(
-//            'templates/search.php'                  => 'Search Page',
+            'templates/search.php'                  => 'Search Page',
             //'templates/home-page.php'                => 'Frontend Home Page',
+            'templates/cemiy_koledzh_template.php'  => 'CeMiyKoledzh Template',
             'templates/dashboard-home.php'          => 'Dashboard Home',
             'templates/dashboard-training.php'      => 'Dashboard Training',
             'templates/dashboard-content.php'       => 'Dashboard Content',
             'templates/dashboard-template.php'      => 'Dashboard Template',
             'templates/dashboard-campaigns.php'     => 'Dashboard Campaigns',
             'templates/contact-list.php'            => 'Contact List',
-            'templates/user_lists/admin-add-new-list.php'    => 'Add New List',
-            'templates/user_lists/admin-create-new-list.php' => 'Build New List',
             'templates/home.php'                    => 'Home page',
             'templates/about-us.php'                => 'About us',
             'templates/podcast.php'                 => 'Podcast',
             'templates/services.php'                => 'Services',
             'templates/blog.php'                    => 'Blog',
             'templates/contact.php'                 => 'Contact',
-            'templates/login.php'                   => 'Login page',
             'templates/gallery-video-template.php'  => 'Gallery Video',
             'templates/gallery-photo-template.php'  => 'Gallery Photo',
         );

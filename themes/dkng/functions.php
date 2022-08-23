@@ -1,6 +1,5 @@
 <?php
 
-
 add_action( 'wp_enqueue_scripts', 'my_enqueue_scripts' );
 function my_enqueue_scripts() {
 
@@ -15,14 +14,13 @@ function my_enqueue_scripts() {
     wp_enqueue_style( 'main_styles',       get_template_directory_uri() . '/styles/main_styles.css' );
     wp_enqueue_style( 'font-awesome',      get_template_directory_uri() . '/plugins/font-awesome-4.7.0/css/font-awesome.min.css' );
     wp_enqueue_style('font-awesome-font', get_template_directory_uri() . '/plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2', array(), null);
-//    wp_enqueue_style( 'owl-theme-default', get_template_directory_uri() . '/plugins/OwlCarousel2-2.2.1/owl.theme.default.css' );
-//    wp_enqueue_style( 'bootstrap-slider',  get_template_directory_uri() . '/plugins/bootstrap-slider/bootstrap-slider.min.css' );
-    //TODO Check after front
+
     if ( ( isset( $_GET['s'])  || strpos( $_SERVER['REQUEST_URI'], 'admin' ) || strpos( $_SERVER['REQUEST_URI'], 'contact-list' ) || is_singular( array( 'articles', 'edited_articles', 'courses', 'campaigns' ) ) && !is_page() ) || is_front_page() ) {
         wp_enqueue_style( 'dashboard1',    get_template_directory_uri() . '/styles/dashboard.css' );
     }
     wp_enqueue_style( 'responsive',        get_template_directory_uri() . '/styles/responsive.css' );
     wp_enqueue_style( 'home',              get_template_directory_uri() . '/styles/home.css' );
+
     if ( strpos( $_SERVER['REQUEST_URI'], 'blog' ) ||  is_single() ) {
         wp_enqueue_style('blog',          get_template_directory_uri() . '/styles/blog.css');
     }
@@ -32,15 +30,6 @@ function my_enqueue_scripts() {
     wp_enqueue_script( 'styles',           get_template_directory_uri() . '/styles/bootstrap4/popper.js', array( 'jquery' ), '', true );
     wp_enqueue_script( 'bootstrap1',       get_template_directory_uri() . '/styles/bootstrap4/bootstrap.min.js', array( 'jquery' ), '', true );
     wp_enqueue_script( 'jscustom',         get_template_directory_uri() . '/js/jscustom.js', array( 'jquery' ), '', true );
-//    wp_enqueue_script( 'easing',           get_template_directory_uri() . '/plugins/easing/easing.js', array( 'jquery' ), '', true );
-//    wp_enqueue_script( 'bootstrap-slider', get_template_directory_uri() . '/plugins/bootstrap-slider/bootstrap-slider.min.js', array( 'jquery' ), '', true );
-//    
-    //services
-    if (is_page_template('templates/services.php')) {
-        wp_enqueue_style( 'owl-carousel',      get_template_directory_uri() . '/plugins/OwlCarousel2-2.2.1/owl.carousel.css' );
-        wp_enqueue_script( 'owl-carousel-js',  get_template_directory_uri() . '/plugins/OwlCarousel2-2.2.1/owl.carousel.js', array( 'jquery' ), '', true );
-        wp_enqueue_style( 'animate',           get_template_directory_uri() . '/plugins/OwlCarousel2-2.2.1/animate.css' );
-    }
 
 }
 
@@ -360,25 +349,3 @@ function sv_add_favicon() {
 add_action( 'login_head', 'sv_add_favicon' );
 add_action( 'admin_head', 'sv_add_favicon' );
 
-/**
- * Function checking if timezone is valid
- *
- * @param $timezoneId
- * @return bool
- */
-function isValidTimezoneId( $timezoneId ) {
-    try{
-        new \DateTimeZone( $timezoneId );
-    }catch(Exception $e){
-        return FALSE;
-    }
-    return TRUE;
-}
-
-//Filter for custom password reset result page
-add_filter( 'lostpassword_redirect', 'change_lostpassword_redirect_url' );
-function change_lostpassword_redirect_url( $lostpassword_redirect ){
-	$lostpassword_redirect = home_url( '/check-email' );
-
-	return $lostpassword_redirect;
-}
