@@ -1656,7 +1656,7 @@ table.sv-email-campaign__table tbody tr.canceled .js-cancel-email {
 
 
 .inner_container  {
-	margin-top: 100px;
+	margin-top: 40px;
 	position: relative;
 	padding-top: 30px;
 }
@@ -2569,3 +2569,6 @@ table.sv-filter-table thead .sv-filter-table__th, div.sv-contact-list-form__remo
 }
 
 
+.footer {
+	margin-top: 45px;
+}
