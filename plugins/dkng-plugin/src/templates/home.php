@@ -99,7 +99,7 @@ $the_last_updated_posts = new WP_Query( $args );
 
                 </div>
 
-                <div class="col-12 col-lg-5">
+                <div class="col-12 col-lg-5  page-template-podcast">
                     <div class="white-element right-holder-video">
                         <div class="row video_module_block" id="video_module player3">
                             <div class="col-12">
@@ -137,28 +137,36 @@ $the_last_updated_posts = new WP_Query( $args );
                         </div>
                     </div>
 
-                    <div class="white-element cemiy_koledzh_block">
+                    <div class="white-element home_cemiy_koledzh_block podcast_block-list" >
                         <div class="row1">
                             <h3><?php echo $cemiykoldzh_block['title'];?></h3>
                             <?php $id_vidguk = $cemiykoldzh_block['vidguk'];
 
+                            $excerpt = get_the_excerpt( $id_vidguk );
                             $original_thumbnail = get_the_post_thumbnail_url( $id_vidguk );
                             $grupa = get_field( 'grupa', $id_vidguk );
                             ?>
-                            <div class="newsflash">
-                                <h4 class="newsflash-title">
-                                    <a href="<?php echo get_permalink( $id_vidguk );?>">
-                                       <?php echo get_the_title( $id_vidguk ) ?>
+                            <div class="podcast_block-item" data-num="1">
+                                <div class="podcast_block-item-image">
+                                    <a href="<?php echo get_permalink( $id_vidguk )?>">
+                                        <img src="<?php echo $original_thumbnail;?>" alt="logo of people" style="height: 100%;">
                                     </a>
-                                </h4>
-                                <br/>
-                                <p>
-                                    <img src="<?php echo $original_thumbnail;?>" border="0" width="71" height="69" style="float: left; margin-left: 4px; margin-right: 4px;">
-                                    <?php echo $grupa;?>
-                                </p>
-                                <p style="text-align: justify;">
-                                     <?php echo get_the_excerpt( $id_vidguk );?>
-                                </p>
+                                </div>
+                                <div class="podcast_block-item-text">
+                                    <div class="podcast_block-item-top-text">
+                                        <?php echo $grupa;?>
+                                    </div>
+                                    <h4 class="podcast_block-item-t">
+                                        <a href="<?php echo get_permalink( $id_vidguk )?>">
+                                            <?php echo get_the_title( $id_vidguk );?>
+                                        </a>
+                                    </h4>
+
+                                    <div class="podcast_block-item-desc">
+                                        <p><?php echo $excerpt;?></p>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>

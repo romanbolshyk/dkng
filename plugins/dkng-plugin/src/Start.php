@@ -150,9 +150,9 @@ class Start {
             wp_enqueue_style( 'podcast',    plugins_url( '../assets/podcast.css', __FILE__ ), 'all', $date_now );
 
             wp_enqueue_style( 'fonts',  get_template_directory_uri() . '/dist/fonts/fonts.css' );
+            wp_enqueue_style( 'dkng',      plugins_url( '../assets/dkng.css', __FILE__ ), 'all', $date_now );
             wp_enqueue_style( 'style',      plugins_url( '../assets/style.css', __FILE__ ), 'all', $date_now );
             wp_enqueue_style( 'style-new',      plugins_url( '../assets/style-new.css', __FILE__ ), 'all', $date_now );
-            wp_enqueue_style( 'dkng',      plugins_url( '../assets/dkng.css', __FILE__ ), 'all', $date_now );
 
             wp_localize_script( 'script', 'get',
                 array (

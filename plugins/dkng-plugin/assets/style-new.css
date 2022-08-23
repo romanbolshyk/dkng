@@ -357,3 +357,16 @@ img.alignright {
     letter-spacing: normal;
     line-height: 1.5;
 }
+
+
+.home_cemiy_koledzh_block {
+  padding: 30px 28px 6px !important;;
+}
+.home_cemiy_koledzh_block .podcast_block-item {
+  padding: 23px 0px 19px !important;
+  box-shadow: none !important;
+  border:none !important;
+}
+.home_cemiy_koledzh_block .podcast_block-item-desc {
+  margin-top: 10px;
+}
