@@ -11,9 +11,9 @@ $count          = $vidguky->found_posts;
 <div class="super_container">
     <div class="container content ">
 
-        <div class="white-element mb-100 page-template-podcast">
+        <div class="white-element mb-100 page-template-announces">
                 <div class="row">
-                    <div class="podcast_block-list">
+                    <div class="announces_block-list">
                         <div class="container">
                             <h2>Список Відгуків:</h2>
                             <?php foreach ( $vidguky->posts as $vidguk ) {
@@ -22,23 +22,23 @@ $count          = $vidguky->found_posts;
 
                                 $grupa = get_field( 'grupa', $vidguk );
                                 ?>
-                                <div class="podcast_block-item" data-num="1">
-                                    <div class="podcast_block-item-image">
+                                <div class="announces_block-item" data-num="1">
+                                    <div class="announces_block-item-image">
                                         <a href="<?php echo get_permalink( $vidguk )?>">
                                             <img src="<?php echo $original_thumbnail;?>" alt="logo of people" style="height: 100%;">
                                         </a>
                                     </div>
-                                    <div class="podcast_block-item-text">
-                                        <div class="podcast_block-item-top-text">
+                                    <div class="announces_block-item-text">
+                                        <div class="announces_block-item-top-text">
                                             <?php echo $grupa;?>
                                         </div>
-                                        <h4 class="podcast_block-item-t">
+                                        <h4 class="announces_block-item-t">
                                             <a href="<?php echo get_permalink( $vidguk )?>">
                                                 <?php echo get_the_title( $vidguk );?>
                                             </a>
                                         </h4>
 
-                                        <div class="podcast_block-item-desc">
+                                        <div class="announces_block-item-desc">
                                             <p><?php echo $excerpt;?></p>
                                         </div>
 

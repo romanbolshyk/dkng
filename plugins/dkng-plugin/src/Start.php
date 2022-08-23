@@ -34,20 +34,17 @@ class Start {
     private function registerHooks() {
 
         $functions         = new Functions();
-        //$pdf               = new Pdf();
         $api               = new ApiActions();
-        //$word              = new Word();
         $custom_actions    = new CustomActions();
-        //$sendgrid_actions  = new SendgridActions();
         $user_account      = new UserAccount();
-        //$mail              = new Mail();
-        $completed_things  = new CompletedRecomendations();
         $courses_actions   = new CoursesActions();
         $articles_actions  = new ArticlesActions();
         $campaigns         = new Campaigns();
         $templates         = new Templates();
         $user_lists        = new UsersLists();
         $ogoloshennya      = new Ogoloshennya();
+        $novyny            = new Novyny();
+
 
         add_theme_support( 'post-thumbnails' );
 
@@ -62,9 +59,7 @@ class Start {
         add_action( 'init',            [ $user_lists,        'user_list_settings' ] );
         add_action( 'rest_api_init',   [ $api,               'register_api' ] );
 
-//        add_action( 'phpmailer_init',  [ $mail,              'send_smtp_email' ] );
-        add_action( 'init',            [ $completed_things,  'main' ] );
-        //add_action( 'init',            [ $sendgrid_actions,  'init_actions' ] );
+        add_action( 'init',            [ $novyny,  'init_actions' ] );
 
         add_action( 'init',            [ $this,              'change_permalinks' ] );
         add_action( 'init',            [ $this,              'custom_settings' ] );
@@ -147,7 +142,7 @@ class Start {
             wp_register_script('sorter',    plugins_url( '../assets/table-sorter.min.js', __FILE__ ), array('jquery') );
             wp_enqueue_script( 'sorter' );
 
-            wp_enqueue_style( 'podcast',    plugins_url( '../assets/podcast.css', __FILE__ ), 'all', $date_now );
+            wp_enqueue_style( 'announces',    plugins_url( '../assets/announces.css', __FILE__ ), 'all', $date_now );
 
             wp_enqueue_style( 'fonts',  get_template_directory_uri() . '/dist/fonts/fonts.css' );
             wp_enqueue_style( 'dkng',      plugins_url( '../assets/dkng.css', __FILE__ ), 'all', $date_now );

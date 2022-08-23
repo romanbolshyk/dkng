@@ -28,7 +28,7 @@ jQuery(document).ready(function ($) {
                 success:function(response) {
                     $("#loader_more").hide();
                     if ( response ) {
-                        $(".podcast_block-list .container").append(response.html);
+                        $(".announces_block-list .container").append(response.html);
                         page++;
                         $('.announced_loadmore').attr('data-page', page );
                         if ( response.count >= response.all ) {

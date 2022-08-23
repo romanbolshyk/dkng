@@ -1,4 +1,4 @@
-body.page-postcard .header .header_top_nav ul li a, body.page-podcast .header .header_top_nav ul li a {
+body.page-postcard .header .header_top_nav ul li a, body.page-announces .header .header_top_nav ul li a {
   color: #fff;
 }
 
@@ -359,11 +359,11 @@ img.alignright {
 .home_cemiy_koledzh_block {
   padding: 30px 28px 6px !important;;
 }
-.home_cemiy_koledzh_block .podcast_block-item {
+.home_cemiy_koledzh_block .announces_block-item {
   padding: 23px 0px 19px !important;
   box-shadow: none !important;
   border:none !important;
 }
-.home_cemiy_koledzh_block .podcast_block-item-desc {
+.home_cemiy_koledzh_block .announces_block-item-desc {
   margin-top: 10px;
 }

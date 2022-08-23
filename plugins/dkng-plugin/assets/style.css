@@ -2221,8 +2221,8 @@ div.home_content h1,  div.one-program-card h3,  div.one-program-card h4,  div.ou
 div.our-philosophy h3,  h2.sv-social-proof__title,  .page-home h2,  .page-home h3, div.our-story h2,
 div.sv-pricing__heading h2,  div.platform h3,  .page-about h2,  .page-the-platform h2, .the-platform h2,  div.box h4,
 div.box .h1,  div.inner_container.sign_up_page h1,  .page-blog h2,  .page-sign-up h2,
-body.page-podcast div.podcast_block-list h2, .page-contact div.inner_container h1,
-body.page-podcast div.podcast_block-list .podcast_block-item-title, .page-contact h2, div.sv-pricing__heading span,
+body.page-announces div.announces_block-list h2, .page-contact div.inner_container h1,
+body.page-announces div.announces_block-list .announces_block-item-title, .page-contact h2, div.sv-pricing__heading span,
 div.sv-price__items span, h5.sv-price__title, .left-border-with-circles h3, .page-the-platform h5, .page-the-platform h3,
 .page-sign-up h5, .page-sign-up h3, .page-blog h4, div.card-content.blog_list h3 a, div.inner__container.profile h4,
 div.box form label, div.contact-form h4,  .post_single_container h2, .post_single_container h3,
@@ -2589,6 +2589,6 @@ table.sv-filter-table thead .sv-filter-table__th, div.sv-contact-list-form__remo
 	height: 170px;
 	width: auto ;
 }
-.vypusknyky_block .page-template-podcast h3 {
+.vypusknyky_block .page-template-announces h3 {
 	font-size: 18px;
 }
