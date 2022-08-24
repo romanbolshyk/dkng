@@ -7,13 +7,18 @@ img.aligncenter  {
   margin: 0 auto;
 }
 
-// header {
-//  height:  100px;
-// }
+
 
 .super_container {
   overflow: visible !important;
 }
+
+@media screen and (max-width: 1200px) {
+  div.home_container {
+    top: 0;
+  }
+}
+
 
 // Header
 .c-header {
@@ -26,7 +31,8 @@ img.aligncenter  {
     display: flex;
     align-items: center;
     margin: 0 auto;
-    padding: 20px 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
 
     &--left {
       display: flex;
@@ -130,7 +136,7 @@ img.aligncenter  {
   }
 
   &__search {
-    padding: 10px 0;
+    padding: 2.5px 0;
     position: initial;
 
     &--btn {
@@ -207,11 +213,13 @@ img.aligncenter  {
   &__menu {
     background-color: rgb(0, 199, 199);
     width: 100%;
-    padding: 0 20px;
     z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    
+    &--container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
     &--overlay {
       display: none;
@@ -297,7 +305,7 @@ img.aligncenter  {
             font-weight: 400;
 
             @media (max-width: 991px) {
-              padding-left: 40px;
+              padding-left: 24px;
             }
           }
         }
@@ -314,7 +322,7 @@ img.aligncenter  {
           li {
             a {
               @media (max-width: 991px) {
-                padding-left: 60px;
+                padding-left: 36px;
               }
             }
           }
@@ -336,7 +344,7 @@ img.aligncenter  {
         a {
           display: block;
           color: #fff;
-          padding: 20px;
+          padding: 12px;
           font-weight: 600;
         }
 
@@ -374,3 +382,6 @@ img.aligncenter  {
     }
   }
 }
+
+
+

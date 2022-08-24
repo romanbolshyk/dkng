@@ -161,32 +161,34 @@ $looged_in  = ( is_user_logged_in() ) ? 'yes' : 'no';
 
 
     <div class="c-header__menu">
-        <div class="c-header__nav-toggle js-burger"></div>
+        <div class="c-header__menu--container container">
+            <div class="c-header__nav-toggle js-burger"></div>
 
-        <div class="c-header__menu--overlay js-close-nav"></div>
+            <div class="c-header__menu--overlay js-close-nav"></div>
 
-        <nav>
-            <span class="c-header__menu--close js-close-nav">✕</span>
+            <nav>
+                <span class="c-header__menu--close js-close-nav">✕</span>
 
-            <?php wp_nav_menu( array(
-                'theme_location' => 'primary',
-                'walker'         => new My_Walker_Nav_Menu(),
-                'items_wrap'     => '<ul><li class="a_%2$s_block"></li>%3$s</ul>'
-            ) ); ?>
-        </nav>
+                <?php wp_nav_menu( array(
+                    'theme_location' => 'primary',
+                    'walker'         => new My_Walker_Nav_Menu(),
+                    'items_wrap'     => '<ul><li class="a_%2$s_block"></li>%3$s</ul>'
+                ) ); ?>
+            </nav>
 
-        <div class="c-header__search">
-            <div class="c-header__search--btn js-search-open">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </div>
-
-            <form class="c-header__search--form js-search-form">
-                <input type="text" placeholder="Search">
-                
-                <div class="c-header__search--btn js-search-close">
-                    <i class="fa fa-times" aria-hidden="true"></i>
+            <div class="c-header__search">
+                <div class="c-header__search--btn js-search-open">
+                    <i class="fa fa-search" aria-hidden="true"></i>
                 </div>
-            </form>
-        </div>  
+
+                <form class="c-header__search--form js-search-form">
+                    <input type="text" placeholder="Search">
+                    
+                    <div class="c-header__search--btn js-search-close">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </div>
+                </form>
+            </div>  
+        </div>
     </div>
 </div>

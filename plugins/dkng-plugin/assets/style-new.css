@@ -9,17 +9,13 @@ img.aligncenter {
 }
 
 .super_container {
-    overflow: visible !important;
-}
-
-.super_container {
   overflow: visible !important;
 }
 
-
-img.alignright {
-    float: right;
-    margin: 0.5em 0 0.5em 1em;
+@media screen and (max-width: 1200px) {
+  div.home_container {
+    top: 0;
+  }
 }
 .c-header__bg {
   background: url(http://www.dkng.net.ua/images/fon1.jpg) 100% 100%;
@@ -29,7 +25,8 @@ img.alignright {
   display: flex;
   align-items: center;
   margin: 0 auto;
-  padding: 20px 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .c-header__top--left {
   display: flex;
@@ -129,7 +126,7 @@ img.alignright {
   font-size: 14px;
 }
 .c-header__search {
-  padding: 10px 0;
+  padding: 2.5px 0;
   position: initial;
 }
 .c-header__search--btn {
@@ -197,8 +194,9 @@ img.alignright {
 .c-header__menu {
   background-color: rgb(0, 199, 199);
   width: 100%;
-  padding: 0 20px;
   z-index: 999;
+}
+.c-header__menu--container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -282,7 +280,7 @@ img.alignright {
 }
 @media (max-width: 991px) {
   .c-header__menu .menu-custom-header-menu-container .sub-menu li a {
-    padding-left: 40px;
+    padding-left: 24px;
   }
 }
 .c-header__menu .menu-custom-header-menu-container .sub-menu .sub-menu {
@@ -297,7 +295,7 @@ img.alignright {
 }
 @media (max-width: 991px) {
   .c-header__menu .menu-custom-header-menu-container .sub-menu .sub-menu li a {
-    padding-left: 60px;
+    padding-left: 36px;
   }
 }
 .c-header__menu .menu-custom-header-menu-container > ul {
@@ -315,7 +313,7 @@ img.alignright {
 .c-header__menu .menu-custom-header-menu-container li a {
   display: block;
   color: #fff;
-  padding: 20px;
+  padding: 12px;
   font-weight: 600;
 }
 .c-header__menu .menu-custom-header-menu-container li:hover {
@@ -344,13 +342,3 @@ img.alignright {
   right: 20px;
   top: calc(50% - 3px);
 }/*# sourceMappingURL=style-new.css.map */
-
-.cemiy_koledzh_block p {
-    color: #555555;
-    font-family: "Work Sans", sans-serif;
-    text-shadow: none;
-    font-size: 13px;
-    font-weight: 300;
-    letter-spacing: normal;
-    line-height: 1.5;
-}
