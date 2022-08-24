@@ -13,7 +13,7 @@ $cemiykoldzh_block   = get_field( 'cemiykoldzh_block');
 
 $object              = new \Dkng\Wp\Ogoloshennya();
 $object1             = new \Dkng\Wp\Novyny();
-$announces           = $object->get_announces();
+$announces           = $object->get_announces( false, false, 3);
 $novyny              = $object1->get_news( 6 );
 
 $video_block         = get_field( 'video_block');
@@ -58,7 +58,7 @@ $the_last_updated_posts = new WP_Query( $args );
                     <div class="white-element">
                         <div class="row">
                             <h3><?php echo $video_block2['title'];?></h3>
-                            <p><?php echo $video_block2['video_text'];?></p>
+                            <p><?php  echo apply_filters('the_content', $video_block2['video_text'] );?></p>
                         </div>
                     </div>
 

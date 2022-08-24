@@ -2576,13 +2576,20 @@ table.sv-filter-table thead .sv-filter-table__th, div.sv-contact-list-form__remo
 	width: 100%;
 	float: left;
 	padding: 20px 20px 20px;
-	margin-top: 20px;
 	position: relative;
 	z-index: 5;
-	box-shadow: none!important;
-	background-color: #f6f9fb!important;
-	border-radius: 0;
-	border: 2px solid lightgray;
+	box-shadow: 0 4px 12px rgb(0 0 0 / 6%);
+	border-radius: 12px;
+}
+
+.vypusknyky_block .vypysknyky_rows .item {
+	width: 100%;
+	float: left;
+	padding: 20px 20px 20px;
+	position: relative;
+	z-index: 5;
+	box-shadow: 0 4px 12px rgb(0 0 0 / 6%);
+	border-radius: 12px;
 }
 
 .vypusknyky_block .vypysknyky_rows .item  .photo{
@@ -2603,4 +2610,28 @@ table.sv-filter-table thead .sv-filter-table__th, div.sv-contact-list-form__remo
 	font-weight: bolder;
 	line-height: 22px;
 	position: relative;
+}
+
+.specialities_details_block .announces_block-item {
+	width: 100%;
+	padding: 42px 60px !important;
+	max-width: 100% !important;
+}
+.specialities_details_block .announces_block-item .announces_block-item-text {
+	width: 100%;
+}
+.custom_pagination .page-numbers {
+	padding: 7px;
+}
+.custom_pagination {
+	text-align: center;
+	display: block;
+}
+
+.zno_templates .box {
+	min-height: 170px;
+}
+.zno_templates {
+	margin-top: 40px;
+	text-align: center;
 }

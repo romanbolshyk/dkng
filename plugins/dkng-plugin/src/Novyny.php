@@ -36,7 +36,10 @@ class Novyny {
      */
     public function enqueue_scripts_styles() {
 
-        if ( is_page_template( 'templates/novyny_template.php' ) || ( is_singular( 'news') ) ) {
+        if (
+             is_page_template( 'templates/novyny_template.php' ) || ( is_singular( 'news') )
+            ||  is_page_template( 'templates/gallery-video-template.php' )
+        ) {
             wp_enqueue_style( 'template',   plugins_url( '../assets/template.css', __FILE__ ), 'all',  date('m.d.H') );
         }
 

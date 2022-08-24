@@ -91,7 +91,6 @@ class Campaigns {
             || ( strstr( $_SERVER['REQUEST_URI'], 'admin-campaigns/?page=' ) )
         ) {
             wp_enqueue_script( 'campaign-scripts', SVN_PLUGIN_URL . '/assets/campaigns.js', array( 'jquery' ), date('ds'), true );
-//            wp_enqueue_style( 'template',   plugins_url( '../assets/scss/blocks/template.css', __FILE__ ), 'all', date('m.d.H') );
         }
     }
 

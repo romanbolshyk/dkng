@@ -4,7 +4,7 @@ namespace Dkng\Wp;
 
 class Specialities {
 
-    public $count = 3;
+    public $count = 5;
 
     /**
      * Function construct of class
@@ -37,34 +37,63 @@ class Specialities {
      * @param null $campaign_type
      * @return int[]|\WP_Post[]
      */
-    public function get_programs( $category ) {
+    public function get_programs( $category, $count = NULL, $page = NULL ) {
 
         $count = !empty( $count ) ? $count : $this->count;
+        $page  = !empty( $page ) ? $page : 1;
 
-        $user = wp_get_current_user();
+        $query = array (
+            'post_type'      => 'speciality_detail',
+            'fields'         => 'ids',
+            'posts_per_page' => $count,
+            'paged'          => $page,
+        );
+
+        if ( !empty( $category ) ) {
+            $add_array = array(
+                'tax_query' => array(
+                    array (
+                        'taxonomy' => 'speciality_detail-category',
+                        'field'    => 'slug',
+                        'terms'    => array( $category->slug ),
+                        'operator' => 'IN',
+                    ),
+                ),
+            );
+        } else {
+            $add_array = array();
+        }
+
+        $query = array_merge( $query, $add_array );
+
+        $programs  = new \WP_Query( $query );
+        $programs  = $programs->posts;
+
+        return $programs;
+
+    }
+
+
+    /**
+     * Function getting all programs
+     *
+     * @param $count
+     * @return int
+     */
+    public function get_all_programs( $count ) {
+
         $query = array (
             'post_type'      => 'speciality_detail',
             'fields'         => 'ids',
             'posts_per_page' => -1,
         );
 
-        $add_array = array(
-            'tax_query' => array(
-                array(
-                    'taxonomy' => 'speciality_detail-category',
-                    'field'    => 'slug',
-                    'terms'    => array( $category->slug ),
-                    'operator' => 'IN',
-                ),
-            ),
-        );
-        $query = array_merge( $query, $add_array );
-
-
         $programs  = new \WP_Query( $query );
-        $programs  = $programs->posts;
+        $programs  = count( $programs->posts );
+        $programs  = (int)( $programs / $count );
 
-        return $programs;
+
+        return $programs+1;
 
     }
 
