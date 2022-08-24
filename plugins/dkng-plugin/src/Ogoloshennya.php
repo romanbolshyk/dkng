@@ -53,7 +53,7 @@ class Ogoloshennya {
      * @param null $campaign_type
      * @return int[]|\WP_Post[]
      */
-    public function get_announces( $campaign_type = NULL, $page = 1, $count ) {
+    public function get_announces( $campaign_type = NULL, $page = 1, $count = 1 ) {
 
         $count = !empty( $count ) ? $count : $this->count;
 
