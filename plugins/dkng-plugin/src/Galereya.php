@@ -29,6 +29,7 @@ class Galereya {
      */
     public function enqueue_scripts_styles() {
 
+
     }
 
 

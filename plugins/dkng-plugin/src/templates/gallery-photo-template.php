@@ -1,10 +1,7 @@
 <?php
 get_header('custom');
 
-$object    = new \Dkng\Wp\Ogoloshennya();
-$count     = $object->count;
-$announces_type = ( isset( $_GET['old'] ) ) ? true : false;
-$announces = $object->get_announces( $announces_type );
+$photos = get_field( 'photos', get_the_ID() );
 
 ?>
 
@@ -13,16 +10,82 @@ $announces = $object->get_announces( $announces_type );
 			<div class="announces_block-banner"
 				 style="background-image: url(<?php if ( $banner['background'] ) echo $banner['background']; ?>)">
 				<div class="announces_block-banner-center">
-					<h1><?php  echo "Оголошення"; ?></h1>
-                    <h4><?php  echo "Список оголошень."; ?></h4>
-                    <h4>
-                        <a href="<?php echo get_site_url() . $_SERVER['REQUEST_URI'] . "?old";?>">
-                        <?php  echo "Історія оголошень."; ?>
-                    </h4>
+					<h2><?php  echo "Фото"; ?></h2>
                 </div>
 			</div>
 		</div>
 	</div>
+
+
+    <div id="P_MS63069b7ce1132" class="master-slider-parent msl ms-parent-id-14" style="max-width: 800px; position: relative;">
+
+
+        <!-- MasterSlider Main -->
+        <div id="MS63069b7ce1132" class="master-slider ms-skin-default ms-wk" style="visibility: visible; opacity: 1; margin: 0px;"><div class="ms-container"><div class="ms-inner-controls-cont" style="max-width: 800px;"><div class="ms-view ms-basic-view ms-grab-cursor" style="width: 800px; height: 480px;"><div class="ms-slide-container" style="transform: translateX(-1600px) translateZ(0px);"><div class="ms-slide" data-delay="3" data-fill-mode="fill" style="width: 800px; height: 480px; left: 0px;">
+
+
+
+
+
+                                <div class="ms-slide-bgcont" style="height: 100%; opacity: 1;"><img src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1629.jpeg" alt="" title="" style="width: 800px; height: 530.469px; margin-top: -25px; margin-left: 0px;"></div></div><div class="ms-slide" data-delay="3" data-fill-mode="fill" style="width: 800px; height: 480px; left: 800px;">
+
+
+
+
+
+                                <div class="ms-slide-bgcont" style="height: 100%; opacity: 1;"><img src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1655.jpeg" alt="" title="" style="width: 800px; height: 530.469px; margin-top: -25px; margin-left: 0px;"></div></div><div class="ms-slide ms-sl-selected" data-delay="3" data-fill-mode="fill" style="width: 800px; height: 480px; left: 1600px;">
+
+
+
+
+
+                                <div class="ms-slide-bgcont" style="height: 100%; opacity: 1;"><img src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1658.jpeg" alt="" title="" style="width: 800px; height: 530.469px; margin-top: -25px; margin-left: 0px;"></div></div><div class="ms-slide" data-delay="3" data-fill-mode="fill" style="width: 800px; height: 480px; left: 2400px;">
+
+
+
+
+
+                                <div class="ms-slide-bgcont" style="height: 100%; opacity: 1;"><img src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1660.jpeg" alt="" title="" style="width: 800px; height: 530.469px; margin-top: -25px; margin-left: 0px;"></div></div><div class="ms-slide" data-delay="3" data-fill-mode="fill" style="width: 800px; height: 480px; left: 3200px;">
+
+
+
+
+
+                                <div class="ms-slide-bgcont" style="height: 100%; opacity: 1;"><img src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1663.jpeg" alt="" title="" style="width: 800px; height: 530.469px; margin-top: -25px; margin-left: 0px;"></div></div><div class="ms-slide" data-delay="3" data-fill-mode="fill" style="width: 800px; height: 480px; left: 4000px;">
+
+
+
+
+
+                                <div class="ms-slide-bgcont" style="height: 100%; opacity: 1;"><img src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1664.jpeg" alt="" title="" style="width: 800px; height: 530.469px; margin-top: -25px; margin-left: 0px;"></div></div><div class="ms-slide" data-delay="3" data-fill-mode="fill" style="width: 800px; height: 480px; left: 4800px;">
+
+
+
+
+
+                                <div class="ms-slide-bgcont" style="height: 100%; opacity: 1;"><img src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1665.jpeg" alt="" title="" style="width: 800px; height: 530.469px; margin-top: -25px; margin-left: 0px;"></div></div><div class="ms-slide" data-delay="3" data-fill-mode="fill" style="width: 800px; height: 480px; left: 5600px;">
+
+
+
+
+
+                                <div class="ms-slide-bgcont" style="height: 100%; opacity: 1;"><img src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1672.jpeg" alt="" title="" style="width: 800px; height: 530.469px; margin-top: -25px; margin-left: 0px;"></div></div></div></div><div class="ms-nav-next"></div><div class="ms-nav-prev"></div><div class="ms-bullets ms-dir-h ms-align-bottom" style="bottom: 10px; width: 160px;"><div class="ms-bullets-count"><div class="ms-bullet" style="margin: 5px;"></div><div class="ms-bullet" style="margin: 5px;"></div><div class="ms-bullet ms-bullet-selected" style="margin: 5px;"></div><div class="ms-bullet" style="margin: 5px;"></div><div class="ms-bullet" style="margin: 5px;"></div><div class="ms-bullet" style="margin: 5px;"></div><div class="ms-bullet" style="margin: 5px;"></div><div class="ms-bullet" style="margin: 5px;"></div></div></div></div></div>
+
+
+
+            <div class="ms-thumb-list ms-dir-h ms-align-bottom" style="margin-top: 5px; position: relative; height: 80px;"><div class="ms-thumbs-cont" style="width: 1160px; transform: translateX(-290px) translateZ(0px);"><div class="ms-thumb-frame" style="width: 140px; height: 80px; margin-right: 5px;"><img class="ms-thumb" src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1629-140x80.jpeg" alt="" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-thumb" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-tab-context"><div class="&quot;ms-tab-context&quot;"></div></div>
+                        </div><div class="ms-thumb-ol"></div></div><div class="ms-thumb-frame" style="width: 140px; height: 80px; margin-right: 5px;"><img class="ms-thumb" src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1655-140x80.jpeg" alt="" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-thumb" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-tab-context"><div class="&quot;ms-tab-context&quot;"></div></div>
+                        </div><div class="ms-thumb-ol"></div></div><div class="ms-thumb-frame ms-thumb-frame-selected" style="width: 140px; height: 80px; margin-right: 5px;"><img class="ms-thumb" src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1658-140x80.jpeg" alt="" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-thumb" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-tab-context"><div class="&quot;ms-tab-context&quot;"></div></div>
+                        </div><div class="ms-thumb-ol"></div></div><div class="ms-thumb-frame" style="width: 140px; height: 80px; margin-right: 5px;"><img class="ms-thumb" src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1660-140x80.jpeg" alt="" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-thumb" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-tab-context"><div class="&quot;ms-tab-context&quot;"></div></div>
+                        </div><div class="ms-thumb-ol"></div></div><div class="ms-thumb-frame" style="width: 140px; height: 80px; margin-right: 5px;"><img class="ms-thumb" src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1663-140x80.jpeg" alt="" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-thumb" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-tab-context"><div class="&quot;ms-tab-context&quot;"></div></div>
+                        </div><div class="ms-thumb-ol"></div></div><div class="ms-thumb-frame" style="width: 140px; height: 80px; margin-right: 5px;"><img class="ms-thumb" src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1664-140x80.jpeg" alt="" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-thumb" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-tab-context"><div class="&quot;ms-tab-context&quot;"></div></div>
+                        </div><div class="ms-thumb-ol"></div></div><div class="ms-thumb-frame" style="width: 140px; height: 80px; margin-right: 5px;"><img class="ms-thumb" src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1665-140x80.jpeg" alt="" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-thumb" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-tab-context"><div class="&quot;ms-tab-context&quot;"></div></div>
+                        </div><div class="ms-thumb-ol"></div></div><div class="ms-thumb-frame" style="width: 140px; height: 80px; margin-right: 5px;"><img class="ms-thumb" src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1672-140x80.jpeg" alt="" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-thumb" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-tab-context"><div class="&quot;ms-tab-context&quot;"></div></div>
+                        </div><div class="ms-thumb-ol"></div></div></div></div></div>
+        <!-- END MasterSlider Main -->
+
+
+    </div>
 
 
 <?php if ( !empty( $announces ) ) { ?>
@@ -60,247 +123,7 @@ $announces = $object->get_announces( $announces_type );
             </div>
             <?php } ?>
 
-            <!--
-            <div class="announces_block-item" data-num="2">
-                <div class="announces_block-item-image">
-                    <img src="https://ssl-static.libsyn.com/p/assets/f/1/7/0/f170eb47e4d8545e/White_Logo2x.jpg " alt="announces image">
-                </div>
-                <div class="announces_block-item-text">
-                    <div class="announces_block-item-top-text">
-                        Wed Aug 03 2022 | Episode 108 | Advisor I/O, A CION Investments Company
-                    </div>
-                    <h4 class="announces_block-item-title">
-                        exp2: Shifting From Busy to Productive: A Conversation with SEI's Shauna Mace
-                    </h4>
-
-                    <div class="announces_block-item-desc">
-                        <p>In this episode, we sit down with SEI's Head of Practice Management, Shauna Mace. We get into her experience in working with advisors on how to go from busy to productive. We also dive into the launch of SEI's Growth Lab - a place where advisors can find resources and tools to help them build their practice.&nbsp;</p> <p>Learn more: <a href="https://info.seic.com/welcome-to-the-sei-growth-lab">https://info.seic.com/welcome-to-the-sei-growth-lab</a></p> <p>Learn more about us: advisorio.co</p>
-                    </div>
-                    <audio src="https://traffic.libsyn.com/secure/advisorlab/cioninvestments_mixdown_12.mp3?dest-id=1706015" id="track"></audio>
-                    <div class="player-container">
-                        <div class="box">
-                            <div class="next-prev">
-                                <i title="Back 30 seconds" id="back30"></i>
-                                <div class="play-pause">
-                                    <i id="play"></i>
-                                    <i id="pause"></i>
-                                </div>
-                                <i title="Forward 30 seconds" id="forward30"></i>
-                            </div>
-                            <div class="progress-bar">
-                                <input type="range" id="progressBar" min="0" max="1670.903667" value="0">
-                            </div>
-                            <div class="track-time">
-                                <div id="currentTime">0:00</div>
-                                <div id="durationTime">27:50</div>
-                            </div>
-                            <div class="volume-container">
-                                <div class="volume-button">
-                                    <div class="volume icono-volumeMedium"></div>
-                                </div>
-                                <div class="volume-slider">
-                                    <span class="slide" style="width: 100%;"><span class="slide-icon"></span></span>
-                                    <input id="volumeslider" type="range" min="0" max="100" value="100" step="1">
-                                </div>
-                            </div>
-                            <div class="audio-buttons">
-                                <div class="audio-buttons-share">
-                                    <div class="audio-buttons-share-container">
-                                        <a href="http://www.facebook.com/sharer.php?u=https://traffic.libsyn.com/secure/advisorlab/cioninvestments_mixdown_12.mp3?dest-id=1706015" title="facebook" target="_blank"></a>
-                                        <a href="https://twitter.com/share?url=https://traffic.libsyn.com/secure/advisorlab/cioninvestments_mixdown_12.mp3?dest-id=1706015" title="twitter" target="_blank"></a>
-                                        <a href=" http://www.linkedin.com/shareArticle?mini=true&amp;url=https://traffic.libsyn.com/secure/advisorlab/cioninvestments_mixdown_12.mp3?dest-id=1706015" title="linkedin" target="_blank"></a>
-                                        <a href=" http://pinterest.com/pin/create/button/?url=https://traffic.libsyn.com/secure/advisorlab/cioninvestments_mixdown_12.mp3?dest-id=1706015" title="pinterest" target="_blank"></a>
-                                    </div>
-                                </div>
-                                <a class="audio-buttons-download" href="https://traffic.libsyn.com/secure/advisorlab/cioninvestments_mixdown_12.mp3?dest-id=1706015" target="_blank">	</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="announces_block-item" data-num="3">
-                <div class="announces_block-item-image">
-                    <img src="https://ssl-static.libsyn.com/p/assets/f/1/7/0/f170eb47e4d8545e/White_Logo2x.jpg " alt="announces image">
-                </div>
-                <div class="announces_block-item-text">
-                    <div class="announces_block-item-top-text">
-                        Wed Jul 20 2022 | Episode 107 | Seven Group
-                    </div>
-                    <h4 class="announces_block-item-title">
-                        Aligning Your Practice &amp; Life: How to Work and Live With Purpose
-                    </h4>
-
-                    <div class="announces_block-item-desc">
-                        <p>No matter where you are in your practice life cycle, setting goals and objectives is a major part of your practice. In this episode, we welcome Matt Spielman, Chief Performance Officer and Head Coach of Inflection Point Partners, an organizational, career, and executive coaching firm. Matt has coached folks like Alex Rodriguez to optimize their lives throughout the years.&nbsp;</p> <p>Find out more about Matt: https://www.theinflectionpointsbook.com/</p>
-                    </div>
-                    <audio src="https://traffic.libsyn.com/secure/advisorlab/cioninvestments_mixdown_11.mp3?dest-id=1706015" id="track"></audio>
-                    <div class="player-container">
-                        <div class="box">
-                            <div class="next-prev">
-                                <i title="Back 30 seconds" id="back30"></i>
-                                <div class="play-pause">
-                                    <i id="play"></i>
-                                    <i id="pause"></i>
-                                </div>
-                                <i title="Forward 30 seconds" id="forward30"></i>
-                            </div>
-                            <div class="progress-bar">
-                                <input type="range" id="progressBar" min="0" max="1841.879917" value="0">
-                            </div>
-                            <div class="track-time">
-                                <div id="currentTime">0:00</div>
-                                <div id="durationTime">30:41</div>
-                            </div>
-                            <div class="volume-container">
-                                <div class="volume-button">
-                                    <div class="volume icono-volumeMedium"></div>
-                                </div>
-                                <div class="volume-slider">
-                                    <span class="slide" style="width: 100%;"><span class="slide-icon"></span></span>
-                                    <input id="volumeslider" type="range" min="0" max="100" value="100" step="1">
-                                </div>
-                            </div>
-                            <div class="audio-buttons">
-                                <div class="audio-buttons-share">
-                                    <div class="audio-buttons-share-container">
-                                        <a href="http://www.facebook.com/sharer.php?u=https://traffic.libsyn.com/secure/advisorlab/cioninvestments_mixdown_11.mp3?dest-id=1706015" title="facebook" target="_blank"></a>
-                                        <a href="https://twitter.com/share?url=https://traffic.libsyn.com/secure/advisorlab/cioninvestments_mixdown_11.mp3?dest-id=1706015" title="twitter" target="_blank"></a>
-                                        <a href=" http://www.linkedin.com/shareArticle?mini=true&amp;url=https://traffic.libsyn.com/secure/advisorlab/cioninvestments_mixdown_11.mp3?dest-id=1706015" title="linkedin" target="_blank"></a>
-                                        <a href=" http://pinterest.com/pin/create/button/?url=https://traffic.libsyn.com/secure/advisorlab/cioninvestments_mixdown_11.mp3?dest-id=1706015" title="pinterest" target="_blank"></a>
-                                    </div>
-                                </div>
-                                <a class="audio-buttons-download" href="https://traffic.libsyn.com/secure/advisorlab/cioninvestments_mixdown_11.mp3?dest-id=1706015" target="_blank">	</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="announces_block-item" data-num="4">
-                <div class="announces_block-item-image">
-                    <img src="https://ssl-static.libsyn.com/p/assets/f/1/7/0/f170eb47e4d8545e/White_Logo2x.jpg " alt="announces image">
-                </div>
-                <div class="announces_block-item-text">
-                    <div class="announces_block-item-top-text">
-                        Thu Jul 14 2022 | Episode 106 | Seven Group
-                    </div>
-                    <h4 class="announces_block-item-title">
-                        The Power of Workflows and Systems: A Conversation with Kate Guillen
-                    </h4>
-
-                    <div class="announces_block-item-desc">
-                        <p>Operations and optimizing your CRM is something near and dear to every advisors heart and in this episode, we welcome Kate Guillen – founder of Simplicity Ops, a firm that helps advisors fix and optimize their CRM, we get into how to clean up your CRM data and begin to extra true value for your business and the pivots you should make going forward. We cover the exact blueprint to help you do this.&nbsp;</p>
-                    </div>
-                    <audio src="https://traffic.libsyn.com/secure/advisorlab/cioninvestments_mixdown_10.mp3?dest-id=1706015" id="track"></audio>
-                    <div class="player-container">
-                        <div class="box">
-                            <div class="next-prev">
-                                <i title="Back 30 seconds" id="back30"></i>
-                                <div class="play-pause">
-                                    <i id="play"></i>
-                                    <i id="pause"></i>
-                                </div>
-                                <i title="Forward 30 seconds" id="forward30"></i>
-                            </div>
-                            <div class="progress-bar">
-                                <input type="range" id="progressBar" min="0" max="1881.73525" value="0">
-                            </div>
-                            <div class="track-time">
-                                <div id="currentTime">0:00</div>
-                                <div id="durationTime">31:21</div>
-                            </div>
-                            <div class="volume-container">
-                                <div class="volume-button">
-                                    <div class="volume icono-volumeMedium"></div>
-                                </div>
-                                <div class="volume-slider">
-                                    <span class="slide" style="width: 100%;"><span class="slide-icon"></span></span>
-                                    <input id="volumeslider" type="range" min="0" max="100" value="100" step="1">
-                                </div>
-                            </div>
-                            <div class="audio-buttons">
-                                <div class="audio-buttons-share">
-                                    <div class="audio-buttons-share-container">
-                                        <a href="http://www.facebook.com/sharer.php?u=https://traffic.libsyn.com/secure/advisorlab/cioninvestments_mixdown_10.mp3?dest-id=1706015" title="facebook" target="_blank"></a>
-                                        <a href="https://twitter.com/share?url=https://traffic.libsyn.com/secure/advisorlab/cioninvestments_mixdown_10.mp3?dest-id=1706015" title="twitter" target="_blank"></a>
-                                        <a href=" http://www.linkedin.com/shareArticle?mini=true&amp;url=https://traffic.libsyn.com/secure/advisorlab/cioninvestments_mixdown_10.mp3?dest-id=1706015" title="linkedin" target="_blank"></a>
-                                        <a href=" http://pinterest.com/pin/create/button/?url=https://traffic.libsyn.com/secure/advisorlab/cioninvestments_mixdown_10.mp3?dest-id=1706015" title="pinterest" target="_blank"></a>
-                                    </div>
-                                </div>
-                                <a class="audio-buttons-download" href="https://traffic.libsyn.com/secure/advisorlab/cioninvestments_mixdown_10.mp3?dest-id=1706015" target="_blank">	</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="announces_block-item" data-num="5">
-                <div class="announces_block-item-image">
-                    <img src="https://ssl-static.libsyn.com/p/assets/f/1/7/0/f170eb47e4d8545e/White_Logo2x.jpg " alt="announces image">
-                </div>
-                <div class="announces_block-item-text">
-                    <div class="announces_block-item-top-text">
-                        Wed Jul 06 2022 | Episode 105 | Seven Group
-                    </div>
-                    <h4 class="announces_block-item-title">
-                        Voice, Video, and the Future of Marketing Media
-                    </h4>
-
-                    <div class="announces_block-item-desc">
-                        <p>This episode is from a recent panel we did at Snappy Kraken’s Jolt conference with some others in the space, including Taylor Schulte, Matt Halloran, Emily Binder, and David Armstrong. We dove into voice and video marketing – including the ins and outs of how to get started, what you need to produce, and why your early data won’t tell you the full picture.&nbsp;</p>
-                    </div>
-                    <audio src="https://traffic.libsyn.com/secure/advisorlab/cioninvestments_mixdown_9.mp3?dest-id=1706015" id="track"></audio>
-                    <div class="player-container">
-                        <div class="box">
-                            <div class="next-prev">
-                                <i title="Back 30 seconds" id="back30"></i>
-                                <div class="play-pause">
-                                    <i id="play"></i>
-                                    <i id="pause"></i>
-                                </div>
-                                <i title="Forward 30 seconds" id="forward30"></i>
-                            </div>
-                            <div class="progress-bar">
-                                <input type="range" id="progressBar" min="0" max="2941.735833" value="0">
-                            </div>
-                            <div class="track-time">
-                                <div id="currentTime">0:00</div>
-                                <div id="durationTime">49:01</div>
-                            </div>
-                            <div class="volume-container">
-                                <div class="volume-button">
-                                    <div class="volume icono-volumeMedium"></div>
-                                </div>
-                                <div class="volume-slider">
-                                    <span class="slide" style="width: 100%;"><span class="slide-icon"></span></span>
-                                    <input id="volumeslider" type="range" min="0" max="100" value="100" step="1">
-                                </div>
-                            </div>
-                            <div class="audio-buttons">
-                                <div class="audio-buttons-share">
-                                    <div class="audio-buttons-share-container">
-                                        <a href="http://www.facebook.com/sharer.php?u=https://traffic.libsyn.com/secure/advisorlab/cioninvestments_mixdown_9.mp3?dest-id=1706015" title="facebook" target="_blank"></a>
-                                        <a href="https://twitter.com/share?url=https://traffic.libsyn.com/secure/advisorlab/cioninvestments_mixdown_9.mp3?dest-id=1706015" title="twitter" target="_blank"></a>
-                                        <a href=" http://www.linkedin.com/shareArticle?mini=true&amp;url=https://traffic.libsyn.com/secure/advisorlab/cioninvestments_mixdown_9.mp3?dest-id=1706015" title="linkedin" target="_blank"></a>
-                                        <a href=" http://pinterest.com/pin/create/button/?url=https://traffic.libsyn.com/secure/advisorlab/cioninvestments_mixdown_9.mp3?dest-id=1706015" title="pinterest" target="_blank"></a>
-                                    </div>
-                                </div>
-                                <a class="audio-buttons-download" href="https://traffic.libsyn.com/secure/advisorlab/cioninvestments_mixdown_9.mp3?dest-id=1706015" target="_blank">	</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            -->
         </div>
-
-
-        <?php $type = ( !empty( $announces_type ) ) ? 0 : 1; ?>
-        <?php if ( count( $announces ) > $count  ) { ?>
-            <a href="#" class="announces_loadmore announced_loadmore" data-type="<?php echo $type;?>" data-page="1">
-                Загрузити більше оголошень
-                <img src="./dist/img/loader.gif" alt="loader_more"  id="loader_more" />
-            </a>
-        <?php } ?>
-
 	</div>
 <?php  } ?>
 

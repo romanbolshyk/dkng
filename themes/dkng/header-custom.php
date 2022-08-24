@@ -17,6 +17,8 @@ $template_dir = get_template_directory_uri();
             window.$ = jQuery.noConflict();
         })(jQuery);
     </script>
+
+    <script type="text/javascript" src="http://dkng.loc/wp-content/plugins/master-slider/public/assets/js/masterslider.min.js?ver=3.8.1" id="masterslider-core-js"></script>
 </head>
 
 <body  <?php body_class();?>>
