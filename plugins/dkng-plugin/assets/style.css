@@ -2592,3 +2592,15 @@ table.sv-filter-table thead .sv-filter-table__th, div.sv-contact-list-form__remo
 .vypusknyky_block .page-template-announces h3 {
 	font-size: 18px;
 }
+.specialities_block .sv-table tbody td {
+	padding: 15px  !important;
+}
+.specialities_block .sv-table  th {
+	padding: 15px;
+	color: rgba(0,0,0,.8);
+	font-family: Roboto,sans-serif;
+	font-size: 14px;
+	font-weight: bolder;
+	line-height: 22px;
+	position: relative;
+}

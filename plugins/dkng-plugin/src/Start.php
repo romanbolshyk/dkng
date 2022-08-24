@@ -44,6 +44,7 @@ class Start {
         $user_lists        = new UsersLists();
         $ogoloshennya      = new Ogoloshennya();
         $novyny            = new Novyny();
+        $specialities      = new Specialities();
 
 
         add_theme_support( 'post-thumbnails' );
@@ -53,11 +54,12 @@ class Start {
         add_action( 'init',            [ $campaigns,         'init_actions' ] );
         add_action( 'init',            [ $courses_actions,   'init_actions' ] );
         add_action( 'init',            [ $articles_actions,  'init_actions' ] );
-        add_action( 'init',            [ $ogoloshennya,  'init_actions' ] );
+        add_action( 'init',            [ $ogoloshennya,      'init_actions' ] );
         add_action( 'init',            [ $custom_actions,    'init_actions' ] );
         add_action( 'init',            [ $user_account,      'init_actions' ] );
+        add_action( 'init',            [ $specialities,      'init_actions' ] );
         add_action( 'init',            [ $user_lists,        'user_list_settings' ] );
-        add_action( 'rest_api_init',   [ $api,               'register_api' ] );
+//        add_action( 'rest_api_init',   [ $api,               'register_api' ] );
 
         add_action( 'init',            [ $novyny,  'init_actions' ] );
 
