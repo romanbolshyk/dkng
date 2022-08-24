@@ -13,9 +13,7 @@ $success_message     = get_field( 'success_message', 'option' )
                         <div class="inner_content">
                             <div class="row">
                                 <div class="col-xs-12 col-lg-8">
-                                    <h4><?php if ( $form_block['title'] ) echo $form_block['title'];?></h4>
-
-                                    <h1><?php if ( $form_block['text'] ) echo $form_block['text'];?></h1>
+                                    <h2>Контакти</h2>
                                 </div>
                             </div>
                         </div>
@@ -23,52 +21,42 @@ $success_message     = get_field( 'success_message', 'option' )
                 </div>
             </div>
         </div>
-    </div>
+
     <div class="contact-form">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-lg-8 contact_page_block">
                     <div class="box form_contact_box form_contact_box_css">
-                        <form action="" id="contact_form">
-                            <label><?php echo __( "Company", "dkng" );?></label>
-                            <input type="text" name="company"/>
-                            <label><?php echo __( "First Name*", "dkng" );?></label>
-                            <input type="text" name="name"  required/>
-							<label><?php echo __( "Last Name*", "dkng" );?></label>
-                            <input type="text" name="lastname"  required/>
-                            <label><?php echo __( "Email*", "dkng" );?></label>
-                            <input type="email" name="email" required/>
-                            <input type="submit" value="Send" class="btn btn-primary contact_submit"/>
-                        </form>
+
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2598.924264417638!2d23.519989!3d49.353582!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc506d9182b3b1fd!2z0JTRgNC-0LPQvtCx0LjRhtGM0LrQuNC5INGE0LDRhdC-0LLQuNC5INC60L7Qu9C10LTQtiDQvdCw0YTRgtC4INGWINCz0LDQt9GD!5e0!3m2!1suk!2sua!4v1661361421090!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         <br>
                     </div>
-                    <div class="success_message_block success_message_block_none" >
-                        <h3 ><?php if ( $success_message) echo  $success_message;?></h3>
-                    </div>
-                    <img src="./dist/img/loader.gif" alt="loader"  id="loader" />
                 </div>
                 <div class="col-xs-12 col-lg-4 d-flex d-lg-block contact-form__info">
                     <div class="contact-form__col">
-                        <h4><?php if ( $contact_info_block['title'] ) echo $contact_info_block['title'];?></h4>
-
-                        <?php if ( $contact_info_block['email'] ) : ?>
-                            <a href="mailto:<?php echo esc_attr( $contact_info_block['email'] ); ?>"><?php echo $contact_info_block['email']; ?></a>
-                        <?php endif; ?>
-
-                        <?php if ( $contact_info_block['phone'] ) : ?>
-                            <br><a href="tel:<?php echo esc_attr( preg_replace("/[^0-9]/", "", $contact_info_block['phone']) ); ?>">
-                                <?php echo $contact_info_block['phone']; ?>
+                        <p>
+                            <b>E-mail: </b> <a href="mailto:<?php echo get_field('email', 'option'); ?>"><?php echo get_field('email', 'option'); ?></a>
+                        </p>
+                        <p> <b>Тел. приймальної комісії: </b>
+                            <a href="tel:<?php echo  get_field( 'commision_phone', 'option'); ?>">
+                                <?php echo  get_field( 'commision_phone', 'option'); ?>
                             </a>
-                        <?php endif; ?>
+                        </p>
+                        <p> <b> Тел./факс: </b>
+                            <a href="tel:<?php echo  get_field( 'phone', 'option'); ?>">
+                                <?php echo  get_field( 'phone', 'option'); ?>
+                            </a>
+                        </p>
+                        <p> <b>Skype: </b> <?php echo  get_field( 'skype', 'option'); ?></p>
+                        <p> <b>Viber, Telegram, WhatsApp: </b> <?php echo  get_field( 'phone', 'option'); ?></p>
                     </div>
 
                     <br><br>
 
                     <div class="contact-form__col">
-                        <h4><?php if ( $visit_us_block['title'] ) echo $visit_us_block['title'];?></h4>
-
-                        <p><?php if ( $visit_us_block['address1'] ) echo $visit_us_block['address1'];?></p>
-                        <p><?php if ( $visit_us_block['address2'] ) echo $visit_us_block['address2'];?></p>
+                        <p><b>Адреса: </b></p>
+                        <p><?php echo get_field('address1', 'option');?></p>
+                        <p><?php echo get_field('address2', 'option');?></p>
                     </div>
                 </div>
             </div>
