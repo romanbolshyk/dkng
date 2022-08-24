@@ -47,16 +47,15 @@ class Ogoloshennya {
     }
 
 
-
     /**
      * Function getting campaigns
      *
      * @param null $campaign_type
      * @return int[]|\WP_Post[]
      */
-    public function get_announces( $campaign_type = NULL, $page = 1 ) {
+    public function get_announces( $campaign_type = NULL, $page = 1, $count ) {
 
-        $count = $this->count;
+        $count = !empty( $count ) ? $count : $this->count;
 
         $user = wp_get_current_user();
         $query = array (
@@ -150,18 +149,17 @@ class Ogoloshennya {
 
         parse_str ( $_POST['data'], $params );
 
-        $announce_type        = ( !empty( $params['$params'] ) ) ? true  : false;
-
+        $announce_type   = ( !empty( $params['$params'] ) ) ? true  : false;
         $user            = wp_get_current_user();
 
         $announces = $this->get_announces( $announce_type , $paged );
 
-
+        /*
         $args = $this->set_args_params( $get_cat, $post_type, $count_per_page, $paged, $mytaxonomy, $excluded_articles, $posts_in, $campaign_type );
 
         $my_posts  = new \WP_Query( $args );
         $totalpost = $my_posts->found_posts ;
-
+        */
         $result = $this->set_html_layout( $my_posts, $mytaxonomy, $cpt_type, $paged, $count_per_page, $totalpost );
         wp_send_json( $result, 200);
 

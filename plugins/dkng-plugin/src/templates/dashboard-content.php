@@ -34,11 +34,13 @@ $get_downloads  = get_user_meta( $user->ID, $current_time, true );
 $get_downloads  = ( !empty( $get_downloads ) ) ? $get_downloads : array();
 $downloads      = count( $get_downloads );
 
+/*
 $filter_group   = get_field( 'main_filter', 'option' );
 $topic_text     = $filter_group['topic'];
 $download_text  = $filter_group['downloads'];
 $type_text      = $filter_group['type'];
 $new_vs_text    = $filter_group['new'];
+*/
 
 $cloned_articles  = get_user_meta( $user->ID, 'user_cloned_articles', true );
 $cloned_articles  = !empty( $cloned_articles ) ? $cloned_articles : array();

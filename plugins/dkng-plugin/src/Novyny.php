@@ -24,8 +24,8 @@ class Novyny {
 
         add_action( 'restrict_manage_posts',                      [ $this,   'categories_filters'], 10, 2 );
 
-        add_action( 'wp_ajax_load_announces_by_ajax',             [ $this,  'load_announces_by_ajax' ] );
-        add_action( 'wp_ajax_nopriv_load_announces_by_ajax',      [ $this,  'load_announces_by_ajax' ] );
+//        add_action( 'wp_ajax_load_announces_by_ajax',             [ $this,  'load_announces_by_ajax' ] );
+//        add_action( 'wp_ajax_nopriv_load_announces_by_ajax',      [ $this,  'load_announces_by_ajax' ] );
 
 
     }
@@ -36,14 +36,10 @@ class Novyny {
      */
     public function enqueue_scripts_styles() {
 
-        /*
-        if ( is_page_template( 'templates/dashboard-campaigns.php' ) || ( is_singular( 'campaigns') )
-            || ( strstr( $_SERVER['REQUEST_URI'], 'admin-campaigns/?page=' ) )
-        ) {
-            wp_enqueue_script( 'campaign-scripts', SVN_PLUGIN_URL . '/assets/campaigns.js', array( 'jquery' ), date('ds'), true );
-//            wp_enqueue_style( 'template',   plugins_url( '../assets/scss/blocks/template.css', __FILE__ ), 'all', date('m.d.H') );
+        if ( is_page_template( 'templates/novyny_template.php' ) || ( is_singular( 'news') ) ) {
+            wp_enqueue_style( 'template',   plugins_url( '../assets/template.css', __FILE__ ), 'all',  date('m.d.H') );
         }
-        */
+
     }
 
 
@@ -99,8 +95,8 @@ class Novyny {
      */
     public function categories_filters( $post_type, $which ) {
 
-        if ( 'announces' === $post_type ) {
-            $taxonomy = 'announces-category';
+        if ( 'news' === $post_type ) {
+            $taxonomy = 'news-category';
             $tax = get_taxonomy( $taxonomy );
             $cat = filter_input( INPUT_GET, $taxonomy );
 
@@ -119,26 +115,7 @@ class Novyny {
                 'value_field'     => 'slug',
             ] );
         }
-        if ( 'speciality_detail' === $post_type ) {
-            $taxonomy = 'speciality_detail-category';
-            $tax = get_taxonomy( $taxonomy );
-            $cat = filter_input( INPUT_GET, $taxonomy );
 
-            echo '<label class="screen-reader-text" for="campaigns-category">Filter by ' .
-                esc_html( $tax->labels->singular_name ) . '</label>';
-
-            wp_dropdown_categories( [
-                'show_option_all' => $tax->labels->all_items,
-                'hide_empty'      => 0,
-                'hierarchical'    => $tax->hierarchical,
-                'show_count'      => 1,
-                'orderby'         => 'name',
-                'selected'        => $cat,
-                'taxonomy'        => $taxonomy,
-                'name'            => $taxonomy,
-                'value_field'     => 'slug',
-            ] );
-        }
     }
 
 

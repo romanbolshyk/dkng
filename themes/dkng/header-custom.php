@@ -1,30 +1,10 @@
 <?php
-$current_url  = $_SERVER['REQUEST_URI'];
 $template_dir = get_template_directory_uri();
-$user         = wp_get_current_user();
-$name         = $user->user_firstname . ' ' . $user->user_lastname;
-$displayname  = $user->display_name;
-
-$udata        = get_userdata( $user->ID );
-if ( !empty( $udata ) ) {
-    $registered   = $udata->user_registered;
-}
-
-$upload_dir = wp_upload_dir();
-
-$file_name  = get_user_meta( $user->ID, 'avatar', true );
-$fileurl      = $upload_dir['basedir'] . '/' . $file_name;
-$filepath     = $upload_dir['baseurl'] . '/' . $file_name;
-$fileurl    = ( file_exists( $fileurl ) ) ? $filepath : "./dist/img/info-img.png";
-
-global $post;
-$looged_in  = ( is_user_logged_in() ) ? 'yes' : 'no';
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title><?php wp_title(''); ?></title>
+    <title><?php echo get_the_title( )?></title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -60,86 +40,42 @@ $looged_in  = ( is_user_logged_in() ) ? 'yes' : 'no';
                     ) ); ?>
             </div>
         </div>
-        <?php
-
-            $class  = ( is_front_page() ) ? "home" : "inner-page";
-            $image  = ( is_front_page() ) ? "header.png" : "";
-            $mobile = '';
-
-        ?>
-
-        <!-- <div class="header_blocl <?php echo $class;?> without_banner"> -->
-            <!-- Header -->
-            <!-- <header class="header <?php echo $mobile;?>" id="header" data-logged="<?php echo $looged_in;?>" data-base="<?php echo site_url(); ?>">
-                <div>
-                    <div class="header_top">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="header_top_content d-flex flex-row align-items-center justify-content-start">
-                                        <div class="logo">
-                                            <a href="<?php echo get_site_url();?>">
-                                                <img src="./dist/img/<?php echo $logo_image;?>" alt="logo" class="logo-desktop"/>
-                                                <img src="./dist/img/<?php echo $logo_mobile;?>" alt="logo-mobile" class="logo-mobile"/>
-                                            </a>
-                                        </div>
-                                        <div class="header_top_extra d-flex flex-row align-items-center justify-content-start ml-auto">
-                                            <div class="header_top_nav">
-                                                <ul class="d-flex flex-row align-items-center justify-content-start">
-                                                    <?php wp_nav_menu( array(
-                                                        'theme_location' => 'primary',
-                                                        'walker'         => new My_Walker_Nav_Menu(),
-                                                        'items_wrap'     => '<ul class="d-flex flex-row align-items-center justify-content-start"><li class="a_%2$s_block"></li>%3$s</ul>'
-                                                    ) ); ?>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header> -->
-        <!-- </div> -->
-
-
-
 
 <div class="c-header">
-    <div class="c-header__bg">
+    <div class="c-header__bg" style="background: url(<?php echo get_field('header_background', 'option')?>) 100% 100%;  background-size: contain;">
         <div class="c-header__top container">           
             <div class="c-header__top--left">
                 <div class="c-header__logo">
-                    <img src="https://www.dkng.net.ua/templates/nafta/images/logo2020.png" alt="logo">
+                    <a href="<?php echo home_url();?>">
+                        <img src="<?php echo get_field('logo_image', 'option') ;?>" alt="logo">
+                    </a>
                 </div>
 
                 <div class="c-header__name">
-                    <h2 class="c-header__title">ДРОГОБИЦЬКИЙ ФАХОВИЙ КОЛЕДЖ НАФТИ І ГАЗУ</h2>
-                    <h2 class="c-header__subtitle">DROGOBYCH APPLIED COLLEGE OF OIL AND GAS</h2>
+                    <h2 class="c-header__title"><?php echo strtoupper( get_field('logo_text', 'option') );?></h2>
+                    <h2 class="c-header__subtitle"><?php echo strtoupper( get_field('logo_text_english', 'option') );?></h2>
                 </div>
             </div>       
         
             <div class="c-header__info">
                 <div class="c-header__info--item">
                     <span>e-mail:</span>
-                    <span>dkng@ukr.net</span>
+                    <span><?php echo get_field('email', 'option') ;?></span>
                 </div>
 
                 <div class="c-header__info--item">
                     <span>skype:</span>
-                    <span>dkng_drohobych</span>
+                    <span><?php echo get_field('skype', 'option') ;?></span>
                 </div>
 
                 <div class="c-header__info--item">
                     <span>тел.:</span>
-                    <span>+38 0324438969</span>
+                    <span><?php echo get_field('phone', 'option') ;?></span>
                 </div>
 
                 <div class="c-header__info--item">
                     <span>приймальна комісія:</span>
-                    <span>+38 0681245325</span>
+                    <span><?php echo get_field('commision_phone', 'option') ;?></span>
                 </div>
 
                 <div class="c-header__social">

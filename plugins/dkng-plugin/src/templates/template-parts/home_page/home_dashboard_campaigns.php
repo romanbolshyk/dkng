@@ -4,9 +4,9 @@
         <h2 class="sv-title"><?php echo __( "Останні Новини", "dkng" );?>:</h2>
 
         <div class="columns-grid">
-            <?php if ( !empty( $news ) ) {
+            <?php if ( !empty( $novyny ) ) {
                 $i = 0;
-                foreach ( $news as $new ) {
+                foreach ( $novyny as $new ) {
                     $i++;
                     $title      = get_the_title( $new );
                     $link       = get_permalink( $new );
@@ -34,7 +34,7 @@
     </div>
 
     <div class="campaigns-report__link">
-        <a href="<?php echo get_site_url() . '/news';?>">
+        <a href="<?php echo get_site_url() . '/novyny';?>">
             <?php echo __( "Всі новини", "dkng" );?>
             <img src="./dist/img/arrow-right.png" alt="arrow right">
         </a>

@@ -35,8 +35,7 @@ $exit_popup_cancel_txt = !empty( $exit_popup_cancel_txt ) ? $exit_popup_cancel_t
 $logo                  = get_field('logo_image', 'options');
 ?>
 
-<div class="footer">
-
+<div class="footer" style="background: url(<?php echo get_field('header_background', 'option')?>) 100% 100%;  background-size: contain;">
     <div class="default-padding">
         <div class="container">
             <div class="row">
@@ -91,20 +90,6 @@ $logo                  = get_field('logo_image', 'options');
     </div>
 </div>
 
-<div id="youtubem" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header d-flex justify-content-end align-items-center">
-                <button type="button" class="btn btn-x" data-dismiss="modal">x</button>
-            </div>
-            <div class="modal-body">
-                <div class="videoWrapper">
-                    <div class="player"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <?php wp_footer();?>
 </body>
 </html>

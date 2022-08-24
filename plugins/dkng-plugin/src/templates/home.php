@@ -14,7 +14,7 @@ $cemiykoldzh_block   = get_field( 'cemiykoldzh_block');
 $object              = new \Dkng\Wp\Ogoloshennya();
 $object1             = new \Dkng\Wp\Novyny();
 $announces           = $object->get_announces();
-$news                = $object1->get_news( 6 );
+$novyny              = $object1->get_news( 6 );
 
 $video_block         = get_field( 'video_block');
 $philosophy_block    = get_field( 'philosophy_block');
@@ -23,7 +23,7 @@ $video_module_title  = get_field( 'video_module_title', 'option' );
 $video_module_link   = get_field( 'video_module_link',  'option' );
 
 $args = array(
-    'post_type' => array( 'post', 'page', 'announces', 'news' ),
+    'post_type' => array( 'post', 'page', 'announces', 'novyny' ),
     'fields'    => 'ids',
     'orderby'   => 'date',
     'order'     => 'DESC',
@@ -62,29 +62,29 @@ $the_last_updated_posts = new WP_Query( $args );
                         </div>
                     </div>
 
-                    <div class="white-element mb-100 page-template-podcast">
+                    <div class="white-element mb-100 page-template-announces">
                         <div class="row">
-                            <div class="podcast_block-list">
+                            <div class="announces_block-list">
                                 <div class="container">
                                     <h3>Список оголошень.</h3>
                                     <?php foreach ( $announces as $announce ) {
                                         $excerpt = get_the_excerpt( $announce );
                                         ?>
-                                        <div class="podcast_block-item" data-num="1">
-                                            <div class="podcast_block-item-image">
-                                                <img src="./dist/img/ogoloshennya.jpeg" alt="podcast image" style="height: 100%;">
+                                        <div class="announces_block-item" data-num="1">
+                                            <div class="announces_block-item-image">
+                                                <img src="./dist/img/ogoloshennya.jpeg" alt="announces image" style="height: 100%;">
                                             </div>
-                                            <div class="podcast_block-item-text">
-                                                <div class="podcast_block-item-top-text">
+                                            <div class="announces_block-item-text">
+                                                <div class="announces_block-item-top-text">
                                                     <?php echo get_the_date( 'Y-m-d', $announce );?>
                                                 </div>
-                                                <h4 class="podcast_block-item-t">
+                                                <h4 class="announces_block-item-t">
                                                     <a href="<?php echo get_permalink( $announce )?>">
                                                         <?php echo get_the_title( $announce );?>
                                                     </a>
                                                 </h4>
 
-                                                <div class="podcast_block-item-desc">
+                                                <div class="announces_block-item-desc">
                                                     <p><?php echo $excerpt;?></p>
                                                 </div>
 
@@ -99,7 +99,7 @@ $the_last_updated_posts = new WP_Query( $args );
 
                 </div>
 
-                <div class="col-12 col-lg-5">
+                <div class="col-12 col-lg-5  page-template-announces">
                     <div class="white-element right-holder-video">
                         <div class="row video_module_block" id="video_module player3">
                             <div class="col-12">
@@ -137,30 +137,37 @@ $the_last_updated_posts = new WP_Query( $args );
                         </div>
                     </div>
 
-                    <div class="white-element cemiy_koledzh_block">
+                    <div class="white-element home_cemiy_koledzh_block announces_block-list" >
                         <div class="row1">
                             <h3><?php echo $cemiykoldzh_block['title'];?></h3>
                             <?php $id_vidguk = $cemiykoldzh_block['vidguk'];
 
+                            $excerpt = get_the_excerpt( $id_vidguk );
                             $original_thumbnail = get_the_post_thumbnail_url( $id_vidguk );
                             $grupa = get_field( 'grupa', $id_vidguk );
                             ?>
-                            <div class="newsflash">
-                                <h4 class="newsflash-title">
-                                    <a href="<?php echo get_permalink( $id_vidguk );?>">
-                                       <?php echo get_the_title( $id_vidguk ) ?>
+                            <div class="announces_block-item" data-num="1">
+                                <div class="announces_block-item-image">
+                                    <a href="<?php echo get_permalink( $id_vidguk )?>">
+                                        <img src="<?php echo $original_thumbnail;?>" alt="logo of people" style="height: 100%;">
                                     </a>
-                                </h4>
-                                <br/>
-                                <p>
-                                    <img src="<?php echo $original_thumbnail;?>" border="0" width="71" height="69" style="float: left; margin-left: 4px; margin-right: 4px;">
-                                    <?php echo $grupa;?>
-                                </p>
-                                <p style="text-align: justify;">
-                                     <?php echo get_the_excerpt( $id_vidguk );?>
-                                </p>
-                            </div>
+                                </div>
+                                <div class="announces_block-item-text">
+                                    <div class="announces_block-item-top-text">
+                                        <?php echo $grupa;?>
+                                    </div>
+                                    <h4 class="announces_block-item-t">
+                                        <a href="<?php echo get_permalink( $id_vidguk )?>">
+                                            <?php echo get_the_title( $id_vidguk );?>
+                                        </a>
+                                    </h4>
 
+                                    <div class="announces_block-item-desc">
+                                        <p><?php echo $excerpt;?></p>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
 

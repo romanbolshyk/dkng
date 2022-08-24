@@ -57,7 +57,7 @@ $user_timezone    = get_field( 'user_timezone', 'user_'.$user->ID );
 $default_timezone = get_option('timezone_string');
 $user_timezone    = !empty( $user_timezone ) ? $user_timezone : $default_timezone;
 
-$valid_timezone   = isValidTimezoneId( $user_timezone );
+$valid_timezone   = false;
 $user_timezone    = !empty( $valid_timezone ) ? $user_timezone : $default_timezone;
 $date_format      = new DateTime( "now", new DateTimeZone( $user_timezone ) );
 $date_format      = $date_format->format('Y-m-d H:i:s');

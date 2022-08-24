@@ -1,4 +1,4 @@
-body.page-postcard .header .header_top_nav ul li a, body.page-podcast .header .header_top_nav ul li a {
+body.page-postcard .header .header_top_nav ul li a, body.page-announces .header .header_top_nav ul li a {
   color: #fff;
 }
 
@@ -17,6 +17,16 @@ img.aligncenter {
     top: 0;
   }
 }
+img.alignleft {
+  float: left;
+  margin: 0.5em 1em 0.5em 0;
+}
+
+img.alignright {
+  float: right;
+  margin: 0.5em 0 0.5em 1em;
+}
+
 .c-header__bg {
   background: url(http://www.dkng.net.ua/images/fon1.jpg) 100% 100%;
   background-size: contain;
