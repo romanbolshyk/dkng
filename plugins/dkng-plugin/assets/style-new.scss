@@ -27,6 +27,45 @@ img.alignright {
     margin: 0.5em 0 0.5em 1em;
 }
 
+.video_module_block {
+  width: 100%;
+  margin: 0;
+
+  img {
+    width: 100%;
+  }
+}
+
+.main-content {
+  ul {
+    margin-bottom: 16px;
+
+    li {
+      font-family: 'Roboto';
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 30px;
+      padding-left: 20px;
+
+      & + li {
+        margin-top: 10px;
+      }
+
+      &:before {
+        content: "\25EE";
+        font-size: 10px;
+        position: absolute;
+        left: 5px;
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+
+p:empty {
+  height: 16px;
+}
+
 
 // Header
 .c-header {
@@ -182,11 +221,9 @@ img.alignright {
       }
     }
 
-    
-
     input {
       width: 100%;
-      height: 46px;
+      height: 35px;
       border-radius: 6px;
       border: solid 1px rgb(223, 233, 242);
       background-color: rgb(249, 249, 249);
@@ -311,6 +348,7 @@ img.alignright {
 
           a {
             font-weight: 400;
+            font-size: 15px;
 
             @media (max-width: 991px) {
               padding-left: 24px;
@@ -391,5 +429,89 @@ img.alignright {
   }
 }
 
+
+// Footer
+.c-footer {
+  padding: 20px 0;
+
+  &__top {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  &__left {
+    display: flex;
+
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
+  }
+
+  &__logo {
+    height: 100px;
+
+    a, img {
+      display: block;
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  &__info {
+    margin-left: 50px;
+
+    &--item {
+      color: #fff;
+      font-size: 16px;
+      display: block;
+    }
+  }
+
+  &__gallery {
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+    margin-left: auto;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 20px;
+      justify-content: center;
+    }
+
+    &--item {
+      margin: 5px;
+      // flex: 1 1 calc(50% - 10px);
+      display: block;
+      width: calc(50% - 10px);
+      height: 60px;
+
+      @media (max-width: 768px) {
+        width: 120px;
+        margin-left: 0;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  &__copyright {
+    span {
+      color: #fff;
+      font-size: 16px;
+    }
+  }
+
+}
 
 

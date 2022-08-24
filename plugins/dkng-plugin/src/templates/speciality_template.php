@@ -12,7 +12,7 @@ $categories = $obj->get_terms_by_custom_post_type( 'speciality_detail', 'special
 <div class="super_container specialities_block">
     <div class="container content ">
 
-        <div class="white-element mb-100 page-template-announces">
+        <div class="white-element page-template-announces">
             <div class="row">
                 <div class="announces_block-list">
                     <div class="container">
