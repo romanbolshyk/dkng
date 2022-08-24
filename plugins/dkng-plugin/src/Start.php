@@ -45,6 +45,7 @@ class Start {
         $ogoloshennya      = new Ogoloshennya();
         $novyny            = new Novyny();
         $specialities      = new Specialities();
+        $galereya          = new Galereya();
 
 
         add_theme_support( 'post-thumbnails' );
@@ -52,6 +53,7 @@ class Start {
         add_action( 'init',            [ $templates,         'init_actions' ] );
         add_action( 'init',            [ $functions,         'init_actions' ] );
         add_action( 'init',            [ $campaigns,         'init_actions' ] );
+        add_action( 'init',            [ $galereya,          'init_actions' ] );
         add_action( 'init',            [ $courses_actions,   'init_actions' ] );
         add_action( 'init',            [ $articles_actions,  'init_actions' ] );
         add_action( 'init',            [ $ogoloshennya,      'init_actions' ] );

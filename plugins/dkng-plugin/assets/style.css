@@ -2625,6 +2625,7 @@ table.sv-filter-table thead .sv-filter-table__th, div.sv-contact-list-form__remo
 }
 .custom_pagination {
 	text-align: center;
+	width: 100%;
 	display: block;
 }
 

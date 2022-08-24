@@ -41,15 +41,15 @@ $max_num  = $obj->get_all_programs( 3 );
                         <?php } ?>
 
                         <div class="custom_pagination">
-                        <?php
+                            <?php
                             $var = is_page() ? 'page' : 'paged';
                             $big = 999999999;
 
                             echo paginate_links( array(
                                 'base'     => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-                                'paged' => get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1,
-                                'current'      => max( 1, get_query_var( 'paged' ) ),
-                                'format'       => '?paged=%#%',
+                                'paged'    => get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1,
+                                'current'  => max( 1, get_query_var( 'paged' ) ),
+                                'format'   => '?paged=%#%',
                                 'total'    => $max_num
                             ) );
                             ?>

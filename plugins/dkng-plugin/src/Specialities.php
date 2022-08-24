@@ -90,10 +90,9 @@ class Specialities {
 
         $programs  = new \WP_Query( $query );
         $programs  = count( $programs->posts );
-        $programs  = (int)( $programs / $count );
+        $programs  = ceil( $programs / $count );
 
-
-        return $programs+1;
+        return $programs;
 
     }
 

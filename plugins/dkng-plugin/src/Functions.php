@@ -14,6 +14,7 @@ class Functions {
         self::register_articles();
         self::register_news();
         self::register_announces();
+        self::register_galereya();
         self::register_specialities();
         self::register_specialities_programs();
         self::register_courses();
@@ -662,6 +663,171 @@ class Functions {
 
         register_post_type( 'announces', $post_type_args );
     }
+
+
+    /**
+     * Register CPT Announces
+     *
+     */
+    public static function register_galereya() {
+
+        $galereya_url_slug           = 'galereya';
+        $galereya_category_url_slug  = 'galereya-category';
+        $galereya_category1_url_slug = 'foto-category';
+
+        $taxonomy_labels = array(
+            'name'                       => 'Тип Галереї',
+            'singular_name'              => 'Тип Галереї',
+            'menu_name'                  => 'Типи Галереї',
+            'all_items'                  => 'Всі Тип Галереї',
+            'parent_item'                => 'Parent Category',
+            'parent_item_colon'          => 'Parent Category:',
+            'new_item_name'              => 'New Category Name',
+            'add_new_item'               => 'Додати новий тип Галереї',
+            'edit_item'                  => 'Edit Category',
+            'update_item'                => 'Update Category',
+            'separate_items_with_commas' => 'Separate categories with commas',
+            'search_items'               => 'Search categories',
+            'add_or_remove_items'        => 'Add or remove categories',
+            'choose_from_most_used'      => 'Choose from the most used categories',
+        );
+
+        $taxonomy_rewrite = array(
+            'slug'         => $galereya_category_url_slug,
+            'with_front'   => true,
+            'hierarchical' => true,
+        );
+
+        $taxonomy_args = array(
+            'labels'            => $taxonomy_labels,
+            'hierarchical'      => true,
+            'public'            => true,
+            'show_ui'           => true,
+            'show_admin_column' => true,
+            'show_in_nav_menus' => true,
+            'query_var'         => true,
+            'show_tagcloud'     => true,
+            'rewrite'           => $taxonomy_rewrite,
+        );
+        register_taxonomy( $galereya_category_url_slug, array( 'galereya' ), $taxonomy_args );
+
+        $taxonomy_labels = array(
+            'name'                       => 'Категорія Фото',
+            'singular_name'              => 'Категорія Фото',
+            'menu_name'                  => 'Категорії Фото',
+            'all_items'                  => 'Всі Категорії Фото',
+            'parent_item'                => 'Parent Category',
+            'parent_item_colon'          => 'Parent Category:',
+            'new_item_name'              => 'New Category Name',
+            'add_new_item'               => 'Додати новий тип Галереї',
+            'edit_item'                  => 'Edit Category',
+            'update_item'                => 'Update Category',
+            'separate_items_with_commas' => 'Separate categories with commas',
+            'search_items'               => 'Search categories',
+            'add_or_remove_items'        => 'Add or remove categories',
+            'choose_from_most_used'      => 'Choose from the most used categories',
+        );
+
+        $taxonomy_rewrite = array(
+            'slug'         => $galereya_category_url_slug,
+            'with_front'   => true,
+            'hierarchical' => true,
+        );
+
+        $taxonomy_args = array(
+            'labels'            => $taxonomy_labels,
+            'hierarchical'      => true,
+            'public'            => true,
+            'show_ui'           => true,
+            'show_admin_column' => true,
+            'show_in_nav_menus' => true,
+            'query_var'         => true,
+            'show_tagcloud'     => true,
+            'rewrite'           => $taxonomy_rewrite,
+        );
+
+        register_taxonomy( $galereya_category1_url_slug, array( 'galereya' ), $taxonomy_args );
+
+        $taxonomy_labels = array(
+            'name'                       => 'Tag',
+            'singular_name'              => 'Tag',
+            'menu_name'                  => 'Tags',
+            'all_items'                  => 'All Tags',
+            'parent_item'                => 'Parent Tag',
+            'parent_item_colon'          => 'Parent Tag:',
+            'new_item_name'              => 'New Tag Name',
+            'add_new_item'               => 'Add New Tag',
+            'edit_item'                  => 'Edit Tag',
+            'update_item'                => 'Update Tag',
+            'separate_items_with_commas' => 'Separate categories with commas',
+            'search_items'               => 'Search categories',
+            'add_or_remove_items'        => 'Add or remove categories',
+            'choose_from_most_used'      => 'Choose from the most used categories',
+        );
+
+        $taxonomy_rewrite = array(
+            'slug'         => 'galereya-tag',
+            'with_front'   => true,
+            'hierarchical' => true,
+        );
+
+        $taxonomy_args = array(
+            'labels'            => $taxonomy_labels,
+            'hierarchical'      => true,
+            'public'            => true,
+            'show_ui'           => true,
+            'show_admin_column' => true,
+            'show_in_nav_menus' => true,
+            'query_var'         => true,
+            'show_tagcloud'     => true,
+            'rewrite'           => $taxonomy_rewrite,
+        );
+        register_taxonomy( 'galereya-tag', array( 'galereya' ), $taxonomy_args );
+
+        $post_type_labels = array(
+            'name'               => 'Галерея',
+            'singular_name'      => 'Галерея',
+            'menu_name'          => 'Галерея',
+            'parent_item_colon'  => 'Parent Галерея:',
+            'all_items'          => 'Вся Галерея',
+            'view_item'          => 'Дивитись Галерея',
+            'add_new_item'       => 'Додати Галерея',
+            'add_new'            => 'Додати Галерею',
+            'edit_item'          => 'Edit Галерея',
+            'update_item'        => 'Update Галерея',
+            'search_items'       => 'Search Галерея',
+            'not_found'          => 'No Галерея found',
+            'not_found_in_trash' => 'No Галерея found in Trash',
+        );
+
+        $post_type_rewrite = array(
+            'slug'       => 'galereya-item',
+            'with_front' => true,
+            'pages'      => true,
+            'feeds'      => true,
+        );
+
+        $post_type_args = array(
+            'label'              => 'Оголошення',
+            'description'        => 'Announces information pages',
+            'labels'             => $post_type_labels,
+            'supports'           => array( 'title',  'excerpt', 'thumbnail',  'revisions', 'author'),
+            'taxonomies'         => array( 'post' ),
+            'hierarchical'       => false,
+            'public'             => true,
+            'show_ui'            => true,
+            'show_in_menu'       => true,
+            'menu_icon'          => 'dashicons-list-view',
+            'menu_position'      =>  31,
+            'has_archive'        => true,
+            'publicly_queryable' => true,
+            'rewrite'            => array( 'slug' => $galereya_url_slug ),
+            'capability_type'    => 'post',
+        );
+
+        register_post_type( 'galereya', $post_type_args );
+    }
+
 
     /**
      * Register CPT Announces
