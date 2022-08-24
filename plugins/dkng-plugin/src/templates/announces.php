@@ -35,7 +35,7 @@ $announces_type_txt = !empty( $announces_type ) ? "Не Актуальні" : "�
 	<div class="announces_block-list">
 
         <div class="container">
-            <h2><?php echo "Список оголошень: $announces_type_txt"; ?>.</h2>
+            <h2><?php echo "Список оголошень: $announces_type_txt"; ?></h2>
 
             <?php foreach ( $announces as $announce ) {
                 $excerpt = get_the_excerpt( $announce );

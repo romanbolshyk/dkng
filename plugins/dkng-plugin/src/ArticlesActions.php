@@ -67,15 +67,6 @@ class ArticlesActions {
      */
     public function enqueue_scripts_styles() {
 
-        if (
-                is_page_template( 'templates/dashboard-content.php' )
-                || ( is_singular( 'articles') )
-                || ( is_singular( 'edited_articles') )
-        ) {
-            $date_now = date('H.s');
-            wp_enqueue_script( 'articles-scripts', SVN_PLUGIN_URL . '/assets/articles.js', array( 'jquery' ), $date_now, true );
-//            wp_enqueue_style( 'template',   plugins_url( '../assets/scss/blocks/template.css', __FILE__ ), 'all', date('m.d.H') );
-        }
     }
 
     /**
