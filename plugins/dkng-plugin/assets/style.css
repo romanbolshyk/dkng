@@ -2604,3 +2604,19 @@ table.sv-filter-table thead .sv-filter-table__th, div.sv-contact-list-form__remo
 	line-height: 22px;
 	position: relative;
 }
+
+.specialities_details_block .announces_block-item {
+	width: 100%;
+	padding: 42px 60px !important;
+	max-width: 100% !important;
+}
+.specialities_details_block .announces_block-item .announces_block-item-text {
+	width: 100%;
+}
+.custom_pagination .page-numbers {
+	padding: 7px;
+}
+.custom_pagination {
+	text-align: center;
+	display: block;
+}

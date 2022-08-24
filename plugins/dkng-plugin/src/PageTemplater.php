@@ -74,6 +74,7 @@ class PageTemplater {
             'templates/vidomi_vypusknyky_template.php' => 'Відомі Випускники Шаблон',
             'templates/novyny_template.php'         => 'Новини Шаблон',
             'templates/speciality_template.php'     => 'Спеціальності Шаблон',
+            'templates/speciality_details_template.php' => 'Спеціальності Деталі Шаблон',
             'templates/dashboard-home.php'          => 'Dashboard Home',
             'templates/dashboard-training.php'      => 'Dashboard Training',
             'templates/dashboard-content.php'       => 'Dashboard Content',
