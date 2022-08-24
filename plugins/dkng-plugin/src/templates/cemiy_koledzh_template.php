@@ -11,7 +11,7 @@ $count          = $vidguky->found_posts;
 <div class="super_container">
     <div class="container content ">
 
-        <div class="white-element mb-100 page-template-announces">
+        <div class="white-element page-template-announces">
                 <div class="row">
                     <div class="announces_block-list">
                         <div class="container">

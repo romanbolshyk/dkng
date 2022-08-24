@@ -2025,9 +2025,9 @@ body.page-history-of-invoices {
 		order: -1;
 		margin-right: auto;
 	}
-	div.main-content {
+	/* div.main-content {
 		padding:  180px 0 0;
-	}
+	} */
 	.single-campaign .buttons-line .sv-button {
 		margin: 0 auto 15px!important;
 	}

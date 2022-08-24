@@ -55,14 +55,14 @@ $the_last_updated_posts = new WP_Query( $args );
 
             <div class="row">
                 <div class="col-12 col-lg-7">
-                    <div class="white-element mb-100">
+                    <div class="white-element">
                         <div class="row">
                             <h3><?php echo $video_block2['title'];?></h3>
                             <p><?php  echo apply_filters('the_content', $video_block2['video_text'] );?></p>
                         </div>
                     </div>
 
-                    <div class="white-element mb-100 page-template-announces">
+                    <div class="white-element page-template-announces">
                         <div class="row">
                             <div class="announces_block-list">
                                 <div class="container">
@@ -171,7 +171,7 @@ $the_last_updated_posts = new WP_Query( $args );
                         </div>
                     </div>
 
-                    <div class="white-element mb-100 vidguk_block">
+                    <div class="white-element vidguk_block">
                         <div class="row1">
                             <h3>
                                 <a href="<?php echo $vidguk_block['link_title'];?>" target="_blank">

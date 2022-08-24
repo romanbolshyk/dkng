@@ -35,7 +35,7 @@ $exit_popup_cancel_txt = !empty( $exit_popup_cancel_txt ) ? $exit_popup_cancel_t
 $logo                  = get_field('logo_image', 'options');
 ?>
 
-<div class="footer" style="background: url(<?php echo get_field('header_background', 'option')?>) 100% 100%;  background-size: contain;">
+<!-- <div class="footer" style="background: url(<?php echo get_field('header_background', 'option')?>) 100% 100%;  background-size: contain;">
     <div class="default-padding">
         <div class="container">
             <div class="row">
@@ -78,6 +78,7 @@ $logo                  = get_field('logo_image', 'options');
                     </ul>
                 </div>
             </div>
+
             <div class="row">
                 <div class="separator"></div>
                 <div class="col-lg-4 col-xs-12 col-md-12">
@@ -88,7 +89,73 @@ $logo                  = get_field('logo_image', 'options');
         </div>
 
     </div>
+</div> -->
+
+
+
+
+
+<div class="c-footer" style="background: url(<?php echo get_field('header_background', 'option')?>) 100% 100%;  background-size: contain;">
+    <div class="container">
+        <div class="c-footer__top">
+            <div class="c-footer__left">
+                <div class="c-footer__logo">
+                    <a href="<?php echo get_site_url();?>">
+                        <img src="<?php echo $logo;?>" alt="footer logo" />
+                    </a>
+                </div>
+
+                <div class="c-footer__info">
+                    <span class="c-footer__info--item">
+                        82100, Україна, Львівська обл.
+                    </span>
+                    <span class="c-footer__info--item">
+                        м. Дрогобич, вул. Грушевського, 57
+                    </span>
+                    <span class="c-footer__info--item">
+                        тел.: +38 0324438969,
+                    </span>
+                    <span class="c-footer__info--item">
+                        приймальна комісія: +38 0681245325
+                    </span>
+                    <span class="c-footer__info--item">
+                        e-mail: dkng@ukr.net
+                    </span>
+                    <span class="c-footer__info--item">
+                        skype: dkng_drohobych
+                    </span>
+                </div>
+            </div>
+
+
+            <div class="c-footer__right">
+                <div class="c-footer__gallery">
+                    <a href="#" class="c-footer__gallery--item">
+                        <img src="https://www.dkng.net.ua/images/banners/MON.png" alt="">
+                    </a>
+                    <a href="#" class="c-footer__gallery--item">
+                        <img src="https://www.dkng.net.ua/images/banners/baner2.jpg" alt="">
+                    </a>
+                    <a href="#" class="c-footer__gallery--item">
+                        <img src="https://www.dkng.net.ua/images/banners/baner3.jpg" alt="">
+                    </a>
+                    <a href="#" class="c-footer__gallery--item">
+                        <img src="https://www.dkng.net.ua/images/banners/krasnj.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row- c-footer__copyright">
+            <div class="separator"></div>
+
+            <span><?php echo esc_html__( "2022 Дрогобицький фаховий коледж нафти і газу / Drogobych Applied College of Oil and Gas", "dkng" );?></span>
+        </div>
+    </div>   
 </div>
+
+
+
 
 <?php wp_footer();?>
 </body>
