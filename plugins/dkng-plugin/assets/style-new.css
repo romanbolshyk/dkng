@@ -315,8 +315,8 @@ img.alignright {
 .c-header__menu .menu-custom-header-menu-container li a {
   display: block;
   color: #fff;
-  padding: 12px;
-  font-weight: 600;
+  padding: 10px;
+  font-weight: 500;
 }
 .c-header__menu .menu-custom-header-menu-container li:hover {
   background-color: rgb(44, 158, 158);
