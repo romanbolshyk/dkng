@@ -2620,3 +2620,11 @@ table.sv-filter-table thead .sv-filter-table__th, div.sv-contact-list-form__remo
 	text-align: center;
 	display: block;
 }
+
+.zno_templates .box {
+	min-height: 170px;
+}
+.zno_templates {
+	margin-top: 40px;
+	text-align: center;
+}

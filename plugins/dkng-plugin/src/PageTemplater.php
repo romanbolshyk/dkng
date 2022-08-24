@@ -75,6 +75,7 @@ class PageTemplater {
             'templates/novyny_template.php'         => 'Новини Шаблон',
             'templates/speciality_template.php'     => 'Спеціальності Шаблон',
             'templates/speciality_details_template.php' => 'Спеціальності Деталі Шаблон',
+            'templates/zno_template.php'            => 'Зно Шаблон',
             'templates/dashboard-home.php'          => 'Dashboard Home',
             'templates/dashboard-training.php'      => 'Dashboard Training',
             'templates/dashboard-content.php'       => 'Dashboard Content',
