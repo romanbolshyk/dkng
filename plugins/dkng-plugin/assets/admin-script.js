@@ -33,20 +33,4 @@
         }
     }
 
-
-    $(document).ready(function () {
-
-        if($.fn.datePicker instanceof Object) {
-            $('.js-datePicker').datePicker();
-            $('.js-sending-date-edit').datePicker();
-        }
-    });
-
-    $(window).on('resize orientationchange', function () {
-        tableRowsHeight();
-        setTimeout(campaignsFieldsEqualHeight, 0);
-    });
-
-    $(window).on('load', tableRowsHeight);
-
 })(jQuery);

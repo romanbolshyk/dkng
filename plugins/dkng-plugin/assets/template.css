@@ -308,12 +308,16 @@ div .exit_popup_block .exit-popup {
     margin-right: auto;
   }
 }
+
 .template .template-items .item .item-image {
   height: 200px;
   background-color: #f7f8f9;
   width: 100%;
   border-radius: 8px 8px 0 0;
   overflow: hidden;
+}
+.gallery_video_block.template .template-items .item .item-image  {
+  height: 250px;
 }
 .template .template-items .item .item-image::before {
   position: absolute;
@@ -341,9 +345,11 @@ div .exit_popup_block .exit-popup {
 }
 .template .template-items .item .item-image iframe {
   width: 100%;
-  height: 400px;
+  height: 100%;
   margin-top: 0;
-  transform: scale(1.12) translateY(-70px);
+  z-index: 10;
+  position: relative;
+  border-radius: 0 !important;
 }
 .template .template-items .item #page_count, .template .template-items .item #page_num {
   display: none;

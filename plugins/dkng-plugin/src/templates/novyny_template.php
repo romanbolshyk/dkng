@@ -14,7 +14,7 @@ $i = 0;
                 <?php echo __( "Архів Новин", "dkng" ); ?>
             </h3>
             <p class="sv-filter__description">
-                <?php echo __( "Можете фільтрувати їх тут.", "dkng" ); ?>
+                <?php echo __( "Форма фільтрації буде тут.", "dkng" ); ?>
             </p>
         </div>
 
@@ -32,14 +32,6 @@ $i = 0;
                         <option value="0">
                             <?php echo __( "All", "dkng" ); ?>
                         </option>
-                        <?php
-                        foreach ( $tpl_topics as $topic ) {
-                            $sel = $topic->term_taxonomy_id == $filters[ 'topic' ] ? 'selected' : '';
-                            ?>
-                            <option value="<?php echo $topic->term_taxonomy_id; ?>" <?php echo $sel; ?>>
-                                <?php echo $topic->name; ?>
-                            </option>
-                        <?php } ?>
                     </select>
                 </span>
             </div>
@@ -53,14 +45,6 @@ $i = 0;
                         <option value="0">
                             <?php echo __( "All", "dkng" ); ?>
                         </option>
-                        <?php
-                        foreach ( $asset_types as $tp_k => $tp_lbl ) {
-                            $sel = $tp_k == $filters[ 'tpasst' ] ? 'selected' : '';
-                            ?>
-                            <option value="<?php echo $tp_k; ?>" <?php echo $sel; ?>>
-                                <?php echo $tp_lbl; ?>
-                            </option>
-                        <?php } ?>
                     </select>
                 </span>
             </div>

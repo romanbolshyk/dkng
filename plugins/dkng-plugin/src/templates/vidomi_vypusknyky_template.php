@@ -43,7 +43,7 @@ $kerivnyky = get_field( 'bosses', get_the_ID() );
 
                 <?php foreach ( $kerivnyky as $boss ) {  ?>
                     <div class="col-12 col-md-6 col-xl-3  item">
-                        <div class="white-element grey-bg-sect strategies-holder status-new d-flex flex-column justify-content-start align-items-center"
+                        <div class="white-element  strategies-holder status-new d-flex flex-column justify-content-start align-items-center"
                         >
                             <img src="<?php echo $boss['photo'];?>" alt="icon-hands" class="photo" >
                             <div class="point-holder d-flex flex-row justify-content-center align-items-center">

@@ -34,7 +34,6 @@ class CoursesActions {
             || ( is_singular( 'courses') )
         ) {
             wp_enqueue_script( 'courses-scripts', SVN_PLUGIN_URL . '/assets/courses.js', array( 'jquery' ), 1, true );
-//            wp_enqueue_style( 'template',   plugins_url( '../assets/scss/blocks/template.css', __FILE__ ), 'all', date('m.d.H') );
         }
     }
 
