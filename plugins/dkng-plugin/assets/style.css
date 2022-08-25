@@ -2629,6 +2629,9 @@ table.sv-filter-table thead .sv-filter-table__th, div.sv-contact-list-form__remo
 	display: block;
 	margin: 20px 0;
 }
+.custom_pagination .current {
+	font-weight: bolder;
+}
 
 .zno_templates .box {
 	min-height: 170px;
