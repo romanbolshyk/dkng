@@ -1352,8 +1352,8 @@ class Functions {
         else if ( $post->post_type == 'courses' ) {
             $single_template = dirname( __FILE__ ) . '/templates/single-courses.php';
         }
-        else if ( $post->post_type == 'edited_articles' ) {
-            $single_template = dirname( __FILE__ ) . '/templates/single-edited_articles.php';
+        else if ( $post->post_type == 'galereya' ) {
+            $single_template = dirname( __FILE__ ) . '/templates/single-galereya.php';
         }
         else if ( ( $post->post_type == 'campaigns' ) || ( $post->post_type == 'cloned_campaigns' )  ) {
             $single_template = dirname( __FILE__ ) . '/templates/single-campaigns.php';
