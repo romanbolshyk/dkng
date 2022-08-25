@@ -1,14 +1,15 @@
 <?php
 get_header('custom');
 
-$photos = get_field( 'photos', get_the_ID() );
 
 $galereya_obj = new \Dkng\Wp\Galereya();
 
-$cat      = !empty( $_GET['cat'] ) ? $_GET['cat'] : '';
+$cat      = get_field( 'category', get_the_ID() );
+$cat      = $cat[0]->slug;
+
 $paged    = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
-$photos1  = $galereya_obj->get_galereya ( 'photo',     $cat, $paged, 1 );
-$max_num  = $galereya_obj->get_all_galereya ( 'photo', $cat, 1 );
+$photos1  = $galereya_obj->get_galereya ( 'photo',     $cat,  $paged, 2 );
+$max_num  = $galereya_obj->get_all_galereya ( 'photo', $cat, 2 );
 $i        = 1;
 ?>
 
@@ -17,7 +18,7 @@ $i        = 1;
 			<div class="announces_block-banner"
 				 style="background-image: url(<?php if ( $banner['background'] ) echo $banner['background']; ?>)">
 				<div class="announces_block-banner-center">
-					<h2 style="text-align: center"><?php  echo "Фото"; ?></h2>
+					<h2><?php  echo "Фото"; ?></h2>
                 </div>
 			</div>
 
@@ -28,13 +29,12 @@ $i        = 1;
                         <div class="template-items ">
                             <?php foreach ( $photos1 as $photo ) {
                                 $in_photos = get_field( 'photos', $photo );
-                                $i++;
-                                ?>
+                                $i++; ?>
 
-                                <div class="item" style="margin-top: 30px;" >
+                                <div class="item"  >
 
-                                    <div class="item-content" style="padding: 10px;">
-                                        <h3 class="item-title">
+                                    <div class="item-content" >
+                                        <h3 class="item-title" >
                                             <b><?php echo get_the_title( $photo );?></b>
                                         </h3>
                                     </div>

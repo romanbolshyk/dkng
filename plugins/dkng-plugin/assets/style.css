@@ -2723,3 +2723,12 @@ table.sv-filter-table thead .sv-filter-table__th, div.sv-contact-list-form__remo
 	margin: 0 auto;
 	background: #000;
 }
+.gallery_photo_block h2, .gallery_photo_block .item h3.item-title {
+	text-align: center;
+}
+.gallery_photo_block .item {
+	margin-top: 30px;
+}
+.gallery_photo_block .item .item-content {
+	padding: 10px;
+}

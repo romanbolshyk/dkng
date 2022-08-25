@@ -87,8 +87,8 @@ class PageTemplater {
             'templates/announces.php'               => 'Оголошення Шаблон',
             'templates/blog.php'                    => 'Blog',
             'templates/contact.php'                 => 'Contact',
-            'templates/gallery-video-template.php'  => 'Gallery Video',
-            'templates/gallery-photo-template.php'  => 'Gallery Photo',
+            'templates/gallery-video-template.php'  => 'Галерея Відео Шаблон',
+            'templates/gallery-photo-template.php'  => 'Галерея Фото Шаблон',
         );
 
     }
