@@ -41,7 +41,7 @@ class Templates {
      */
     public static function enqueve_srcs() {
 
-        if ( is_page_template( 'templates/dashboard-template.php' ) || ( !empty( $_GET['s'] ) ) ) {
+        if ( is_page_template( 'templates/dashboard-template.php' ) ) {
             wp_enqueue_script( 'page-tpl-scripts', SVN_PLUGIN_URL . '/assets/templates-scripts.js', array( 'jquery' ), self::CONTROLLER_V, true );
             wp_enqueue_style( 'template',   plugins_url( '../assets/template.css', __FILE__ ), 'all', date('m.d.H') );
         }

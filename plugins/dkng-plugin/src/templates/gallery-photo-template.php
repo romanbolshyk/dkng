@@ -5,20 +5,20 @@ get_header('custom');
 $galereya_obj = new \Dkng\Wp\Galereya();
 
 $cat      = get_field( 'category', get_the_ID() );
-$cat      = $cat[0]->slug;
+$cat_slug = $cat[0]->slug;
+$cat_name = $cat[0]->name;
 
 $paged    = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
-$photos1  = $galereya_obj->get_galereya ( 'photo',     $cat,  $paged, 2 );
-$max_num  = $galereya_obj->get_all_galereya ( 'photo', $cat, 2 );
+$photos1  = $galereya_obj->get_galereya ( 'photo',     $cat_slug,  $paged, 2 );
+$max_num  = $galereya_obj->get_all_galereya ( 'photo', $cat_slug, 2 );
 $i        = 1;
 ?>
 
 	<div class="inner_container announces_block-banner-wrap gallery_photo_block">
 		<div class="container">
-			<div class="announces_block-banner"
-				 style="background-image: url(<?php if ( $banner['background'] ) echo $banner['background']; ?>)">
+			<div class="announces_block-banner" >
 				<div class="announces_block-banner-center">
-					<h2><?php  echo "Фото"; ?></h2>
+					<h2><?php  echo "Ахрів фото: $cat_name"; ?></h2>
                 </div>
 			</div>
 

@@ -130,6 +130,9 @@ class Start {
                 }
             }
 
+            if (  !empty( $_GET['s'] ) ) {
+                wp_enqueue_style( 'template-css',   plugins_url( '../assets/template.css', __FILE__ ), 'all', date('m.d.H') );
+            }
 
             wp_register_script( 'swiper', 'https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js', array('jquery'), $date_now, true );
             wp_enqueue_script( 'swiper' );

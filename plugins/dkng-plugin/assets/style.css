@@ -1445,11 +1445,11 @@ table.sv-email-campaign__table tbody tr.canceled .js-cancel-email {
 	transition: 0.5s;
 	text-align: center;
 }
-.search {
+input.search {
 	width: 228px;
 	margin-right: 21px;
 }
-.search .innericon {
+input.search .innericon {
 	background: lightgrey !important;
 	border-left: 1px solid #fff !important;
 }
