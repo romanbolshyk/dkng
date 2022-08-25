@@ -1656,9 +1656,10 @@ input.search .innericon {
 
 
 .inner_container  {
-	margin-top: 40px;
+	/* margin-top: 40px; */
 	position: relative;
-	padding-top: 30px;
+	padding-top: 60px;
+	padding-bottom: 60px;
 }
 
 

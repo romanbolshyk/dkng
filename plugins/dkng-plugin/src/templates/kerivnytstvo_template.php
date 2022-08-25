@@ -9,7 +9,7 @@ $kerivnyky = get_field( 'bosses', get_the_ID() );
 
         <div class="white-element page-template-announces">
                 <div class="row">
-                    <div class="announces_block-list">
+                    <div class="announces_block-list inner_container">
                         <div class="container">
                             <h2>Список Керівників:</h2>
                             <?php foreach ( $kerivnyky as $boss ) {  ?>

@@ -28,56 +28,58 @@ $announces_type_txt = !empty( $announces_type ) ? "Не Актуальні" : "�
                 </div>
 			</div>
 		</div>
-	</div>
 
+        <?php if ( !empty( $announces ) ) { ?>
+            <div class="announces_block-list">
 
-<?php if ( !empty( $announces ) ) { ?>
-	<div class="announces_block-list">
+                <div class="container">
+                    <h2><?php echo "Список оголошень: $announces_type_txt"; ?></h2>
 
-        <div class="container">
-            <h2><?php echo "Список оголошень: $announces_type_txt"; ?></h2>
+                    <?php foreach ( $announces as $announce ) {
+                        $excerpt = get_the_excerpt( $announce );
+                        ?>
+                        <div class="announces_block-item" data-num="1">
+                        <div class="announces_block-item-image">
+                            <img src="./dist/img/ogoloshennya.jpeg" alt="announces image" style="height: 100%">
+                        </div>
+                        <div class="announces_block-item-text">
+                            <div class="announces_block-item-top-text">
+                                <?php echo get_the_date( 'Y-m-d', $announce );?>
+                            </div>
+                            <h4 class="announces_block-item-title">
+                                <?php if ( empty( $announces_type ) ) { ?>
+                                    <a href="<?php echo get_permalink( $announce )?>">
+                                        <?php echo get_the_title( $announce );?>
+                                    </a>
+                                <?php } else { ?>
+                                    <?php echo get_the_title( $announce );?>
+                                <?php } ?>
+                            </h4>
 
-            <?php foreach ( $announces as $announce ) {
-                $excerpt = get_the_excerpt( $announce );
-                ?>
-                <div class="announces_block-item" data-num="1">
-                <div class="announces_block-item-image">
-                    <img src="./dist/img/ogoloshennya.jpeg" alt="announces image" style="height: 100%">
-                </div>
-                <div class="announces_block-item-text">
-                    <div class="announces_block-item-top-text">
-                        <?php echo get_the_date( 'Y-m-d', $announce );?>
+                            <div class="announces_block-item-desc">
+                                <p><?php echo $excerpt;?></p>
+                            </div>
+
+                        </div>
                     </div>
-                    <h4 class="announces_block-item-title">
-                        <?php if ( empty( $announces_type ) ) { ?>
-                            <a href="<?php echo get_permalink( $announce )?>">
-                                <?php echo get_the_title( $announce );?>
-                            </a>
-                        <?php } else { ?>
-                            <?php echo get_the_title( $announce );?>
-                        <?php } ?>
-                    </h4>
-
-                    <div class="announces_block-item-desc">
-                        <p><?php echo $excerpt;?></p>
-                    </div>
-
+                    <?php } ?>
                 </div>
+
+
+                <?php /* $type = ( !empty( $announces_type ) ) ? 0 : 1; ?>
+                <?php if ( count( $announces ) > $count  ) { ?>
+                    <a href="#" class="announces_loadmore announced_loadmore" data-type="<?php echo $type;?>" data-page="1">
+                        Загрузити більше оголошень
+                        <img src="./dist/img/loader.gif" alt="loader_more"  id="loader_more" />
+                    </a>
+                <?php } */ ?>
+
             </div>
-            <?php } ?>
-        </div>
-
-
-        <?php /* $type = ( !empty( $announces_type ) ) ? 0 : 1; ?>
-        <?php if ( count( $announces ) > $count  ) { ?>
-            <a href="#" class="announces_loadmore announced_loadmore" data-type="<?php echo $type;?>" data-page="1">
-                Загрузити більше оголошень
-                <img src="./dist/img/loader.gif" alt="loader_more"  id="loader_more" />
-            </a>
-        <?php } */ ?>
-
+        <?php  } ?>
 	</div>
-<?php  } ?>
+
+
+
 
 
 <?php

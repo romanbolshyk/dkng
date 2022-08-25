@@ -36,7 +36,8 @@ img.alignright {
   }
 }
 
-.main-content {
+.main-content,
+.inner_container  {
   ul {
     margin-bottom: 16px;
 
@@ -57,6 +58,17 @@ img.alignright {
         position: absolute;
         left: 5px;
         transform: rotate(90deg);
+      }
+    }
+  }
+}
+
+.inner_container  {
+  ul {
+
+    li {
+      &:before {
+        left: 15px;
       }
     }
   }
@@ -445,7 +457,7 @@ p:empty {
 // Footer
 .c-footer {
   padding: 20px 0;
-  margin-top: 20px;
+  // margin-top: 20px;
 
   &__top {
     margin-bottom: 20px;
@@ -528,3 +540,24 @@ p:empty {
 }
 
 
+// vypysknyky_rows
+.vypysknyky_rows {
+  padding: 60px 0;
+
+  .card-item {
+    margin: 0 10px 10px;
+    flex: 1 1 calc(33.33% - 20px);
+
+    @media (max-width: 991px) {
+      flex: 1 1 calc(50% - 20px);
+    }
+
+    @media (max-width: 768px) {
+      flex: 1 1 100%;
+    }
+  }
+}
+
+.w-100 {
+  width: 100%;
+}

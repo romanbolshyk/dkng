@@ -14,7 +14,7 @@ global $post;
 
         <div class="white-element page-template-announces">
             <div class="row">
-                <div class="announces_block-list">
+                <div class="announces_block-list inner_container w-100">
                     <div class="container">
                         <h2>Перелік спеціальностей та освітніх програм:</h2>
 

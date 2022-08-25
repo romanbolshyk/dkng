@@ -7,7 +7,7 @@ $kerivnyky = get_field( 'bosses', get_the_ID() );
 <div class="super_container vypusknyky_block">
     <div class="container content ">
 
-        <div class="white-element page-template-announces">
+        <!-- <div class="white-element page-template-announces">
             <div class="row">
                 <div class="announces_block-list">
                     <div class="container">
@@ -36,13 +36,12 @@ $kerivnyky = get_field( 'bosses', get_the_ID() );
 
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="white-element mb-100 vypysknyky_rows">
             <div class="row">
-
                 <?php foreach ( $kerivnyky as $boss ) {  ?>
-                    <div class="col-12 col-md-6 col-xl-3  item">
+                    <div class="card-item item">
                         <div class="white-element  strategies-holder status-new d-flex flex-column justify-content-start align-items-center"
                         >
                             <img src="<?php echo $boss['photo'];?>" alt="icon-hands" class="photo" >
@@ -63,7 +62,6 @@ $kerivnyky = get_field( 'bosses', get_the_ID() );
                         </div>
                     </div>
                 <?php } ?>
-
             </div>
         </div>
     </div>

@@ -7,7 +7,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .inner_container.profile{
-    padding-top:80px;
+    padding-top:60px;
 }
 h2{
     font-family: 'Work Sans';
@@ -603,11 +603,12 @@ body.page-podcast .inner-page .header .header_top_nav ul li.current_page_item  a
 @media (max-width: 991px) {
     .contact-form .contact-form__info {
         padding-left: 15px;
+        margin-top: 20px;
     }
 
-    .contact-form__col:last-child {
+    /* .contact-form__col:last-child {
         margin-left: 30px;
-    }
+    } */
 }
 
 .contact-form__col p {

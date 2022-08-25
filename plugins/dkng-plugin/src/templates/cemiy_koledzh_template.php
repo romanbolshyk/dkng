@@ -13,7 +13,7 @@ $count          = $vidguky->found_posts;
 
         <div class="white-element page-template-announces">
                 <div class="row">
-                    <div class="announces_block-list">
+                    <div class="announces_block-list inner_container w-100">
                         <div class="container">
                             <h2>Список Відгуків:</h2>
                             <?php foreach ( $vidguky->posts as $vidguk ) {
