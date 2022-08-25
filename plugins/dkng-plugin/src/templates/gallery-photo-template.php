@@ -6,11 +6,10 @@ $photos = get_field( 'photos', get_the_ID() );
 $galereya_obj = new \Dkng\Wp\Galereya();
 
 $cat      = !empty( $_GET['cat'] ) ? $_GET['cat'] : '';
-var_dump($cat);
 $paged    = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
-$photos1  = $galereya_obj->get_galereya ( 'photo',     $cat, $paged, 1 );
-$max_num  = $galereya_obj->get_all_galereya ( 'photo', $cat, 1 );
-
+$photos1  = $galereya_obj->get_galereya ( 'photo',     $cat, $paged, 2 );
+$max_num  = $galereya_obj->get_all_galereya ( 'photo', $cat, 2 );
+$i        = 1;
 ?>
 
 	<div class="inner_container announces_block-banner-wrap">
@@ -27,20 +26,61 @@ $max_num  = $galereya_obj->get_all_galereya ( 'photo', $cat, 1 );
 
                     <?php if ( !empty( $photos1 ) ) { ?>
                         <div class="template-items ">
-                            <?php foreach ( $photos1 as $video ) { ?>
+                            <?php foreach ( $photos1 as $photo ) {
+                                $in_photos = get_field( 'photos', $photo ); ?>
 
-                                <div class="item">
-
-                                    <div class="item-image ">
-                                       <?php echo get_the_post_thumbnail_url( $video);?>
-                                    </div>
+                                <div class="item" style="margin-top: 30px;" >
 
                                     <div class="item-content" style="padding: 10px;">
                                         <h3 class="item-title">
-                                            <b><?php echo get_the_title( $video );?></b>
+                                            <b><?php echo get_the_title( $photo );?></b>
                                         </h3>
                                     </div>
+                                    <div class="slider">
+                                        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+                                            <div class="swiper-wrapper">
+                                                <?php foreach ( $in_photos as $in_photo ) { ?>
+                                                    <div class="swiper-slide">
+                                                        <img src="<?php echo $in_photo['foto'];?>" />
+                                                    </div>
+                                                <?php } ?>
+                                            </div>
+                                            <div class="swiper-button-next"></div>
+                                            <div class="swiper-button-prev"></div>
+                                        </div>
+                                        <div thumbsSlider="" class="swiper mySwiper">
+                                            <div class="swiper-wrapper">
+                                                <?php foreach ( $in_photos as $in_photo ) { ?>
+                                                    <div class="swiper-slide">
+                                                        <img src="<?php echo $in_photo['foto'];?>" />
+                                                    </div>
+                                                <?php } ?>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+
+                                <hr/>
+
+                                <!-- Initialize Swiper -->
+                                <script>
+                                    var swiper = new Swiper(".mySwiper", {
+                                        spaceBetween: 10,
+                                        slidesPerView: 4,
+                                        freeMode: true,
+                                        watchSlidesProgress: true,
+                                    });
+                                    var swiper2 = new Swiper(".mySwiper2", {
+                                        spaceBetween: 10,
+                                        navigation: {
+                                            nextEl: ".swiper-button-next",
+                                            prevEl: ".swiper-button-prev",
+                                        },
+                                        thumbs: {
+                                            swiper: swiper,
+                                        },
+                                    });
+                                </script>
 
                             <?php } ?>
 

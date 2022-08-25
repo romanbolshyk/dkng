@@ -84,14 +84,6 @@ class Start {
      */
     public function custom_settings() {
         if ( function_exists( 'acf_add_options_page' ) ) {
-//            acf_add_options_page( array(
-//                'page_title' => 'Pricing Block',
-//                'menu_title' => 'Pricing Block',
-//                'menu_slug'  => 'pricing-block',
-//                'capability' => 'edit_posts',
-//                'redirect'   => false
-//            ));
-
             acf_add_options_page( array(
                 'page_title' => 'Додаткові Налаштування сайту',
                 'menu_title' => 'Додаткові Налаштування сайту',
@@ -137,6 +129,11 @@ class Start {
                     wp_enqueue_script( 'pie-chart' );
                 }
             }
+
+
+            wp_register_script( 'swiper', 'https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js', array('jquery'), $date_now, true );
+            wp_enqueue_script( 'swiper' );
+
 
             wp_register_script( 'script',         plugins_url( '../assets/script.js', __FILE__ ), array('jquery'), $date_now, true );
             wp_register_script( 'script-new',     plugins_url( '../assets/script-new.js', __FILE__ ), array('jquery'), $date_now, true );

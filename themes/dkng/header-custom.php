@@ -18,7 +18,10 @@ $template_dir = get_template_directory_uri();
         })(jQuery);
     </script>
 
-    <script type="text/javascript" src="http://dkng.loc/wp-content/plugins/master-slider/public/assets/js/masterslider.min.js?ver=3.8.1" id="masterslider-core-js"></script>
+    <link  rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
 </head>
 
 <body  <?php body_class();?>>
