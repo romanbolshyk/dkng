@@ -24,7 +24,6 @@ $i        = 1;
 
             <div class="row">
                 <div class="col-12">
-
                     <?php if ( !empty( $photos1 ) ) { ?>
                         <div class="template-items ">
                             <?php foreach ( $photos1 as $photo ) {
@@ -110,46 +109,6 @@ $i        = 1;
             </div>
 		</div>
 	</div>
-
-
-<?php if ( !empty( $announces ) ) { ?>
-	<div class="announces_block-list">
-
-        <div class="container">
-            <h2><?php echo "Список оголошень."; ?></h2>
-
-            <?php foreach ( $announces as $announce ) {
-                $excerpt = get_the_excerpt( $announce );
-                ?>
-                <div class="announces_block-item" data-num="1">
-                <div class="announces_block-item-image">
-                    <img src="https://ssl-static.libsyn.com/p/assets/f/1/7/0/f170eb47e4d8545e/White_Logo2x.jpg " alt="announces image">
-                </div>
-                <div class="announces_block-item-text">
-                    <div class="announces_block-item-top-text">
-                        <?php echo get_the_date( 'Y-m-d', $announce );?>
-                    </div>
-                    <h4 class="announces_block-item-title">
-                        <?php if ( !empty( $announces_type ) ) { ?>
-                            <a href="<?php echo get_permalink( $announce )?>">
-                                <?php echo get_the_title( $announce );?>
-                            </a>
-                        <?php }  else { ?>
-                            <?php echo get_the_title( $announce );?>
-                        <?php } ?>
-                    </h4>
-
-                    <div class="announces_block-item-desc">
-                        <p><?php echo $excerpt;?></p>
-                    </div>
-
-                </div>
-            </div>
-            <?php } ?>
-
-        </div>
-	</div>
-<?php  } ?>
 
 
 <?php

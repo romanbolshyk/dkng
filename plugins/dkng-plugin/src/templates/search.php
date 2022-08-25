@@ -5,21 +5,12 @@ Template Name: Search Page
 
 $search_query = !empty( get_search_query() ) ? get_search_query() : $_GET['s'];
 $search_query = !empty( get_search_query() ) ? $search_query : '';
+global $wp_query;
 
-if ( !empty( $search_query ) ) {
-    $search_limit = 100;
-    if ( $search_limit ) {
-        $wp_query->posts_per_page = 100;
-    }
+$found_posts = $wp_query->found_posts;
 
-    $max_num_pages = ( $search_limit ) ? ceil( $wp_query->found_posts / $search_limit ) : $wp_query->max_num_pages;
-    $pagination = paginate_links([ 'total' => $max_num_pages ]);
-    $pagination = false;
-    $i     = 0;
-    $count = 6;
-}
-
-$tpl = new Dkng\Wp\Templates();
+$pagination = paginate_links([ 'total' => $wp_query->max_num_pages ]);
+$i          = 0;
 
 get_header('custom');
 ?>
@@ -27,7 +18,7 @@ get_header('custom');
     <div class="container search_page">
 
         <h1 class="hm-search-title">
-            <?php printf( '%s "%s"', __( 'Результати пошуку для ', 'hudson' ), $search_query ); ?>
+            <?php printf( '%s "%s"', __( 'Результати пошуку для ', 'dkng' ), $search_query ); ?>
         </h1>
 
         <?php if ( have_posts() && !empty( $search_query ) ) { ?>
@@ -36,19 +27,15 @@ get_header('custom');
                     the_post();
                     $i++;
                     $post_type_labels = get_post_type( get_the_ID() );
-
-                    $pt = get_post_type_object( $post_type_labels );
-
-                    $name =  $pt->labels->singular_name;
-
-                    $style = ( $i > $count ) ? "hidden" : "";
+                    $pt   = get_post_type_object( $post_type_labels );
+                    $name = $pt->labels->singular_name;
                     ?>
-                    <div class="search-item <?php echo $style;?>" style="margin: 20px 10px;">
+                    <div class="search-item" style="margin: 20px 10px;">
                         <h4 class="post_type"><?php echo $name; ?></h4>
 
                         <?php the_title('<h4><a href='. get_permalink() .'>', '</a></h4>'); ?>
                         <div class="desc">
-                            <?php the_excerpt(); ?>
+                            <?php  the_excerpt(); ?>
                         </div>
                         <div class="item-btn-wrap">
                             <a href="<?php echo get_permalink();?>" class="btn btn-view">
@@ -58,24 +45,24 @@ get_header('custom');
                     </div>
                 <?php endwhile; ?>
 
-                <div class="template-modal">
-                    <div class="template-modal-close-wrap">
-                        <span class="template-modal-close"></span>
+
+                <?php if ( $pagination ) : ?>
+                    <div class="custom_pagination">
+                        <?php
+                        $var = is_page() ? 'page' : 'paged';
+                        $big = 999999999;
+
+                        echo paginate_links( array(
+                            'base'     => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                            'paged'    => get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1,
+                            'current'  => max( 1, get_query_var( 'paged' ) ),
+                            'format'   => '?paged=%#%',
+                            'total'    => $wp_query->max_num_pages
+                        ) );
+                        ?>
                     </div>
-                    <div class="template-modal-container">
+                <?php  endif;  ?>
 
-                    </div>
-                </div>
-            </div>
-
-            <?php if ( $pagination ) : ?>
-                <div class="hm-pagination">
-                    <?php echo $pagination; ?>
-                </div>
-            <?php  endif;  ?>
-
-            <div class="">
-                <a id="search_load_more_button"><?php echo __( "Загрузити ще", "dkng" );?></a>
             </div>
 
         <?php } else { ?>
