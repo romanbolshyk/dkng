@@ -17,7 +17,7 @@ $i        = 1;
 			<div class="announces_block-banner"
 				 style="background-image: url(<?php if ( $banner['background'] ) echo $banner['background']; ?>)">
 				<div class="announces_block-banner-center">
-					<h2><?php  echo "Фото"; ?></h2>
+					<h2 style="text-align: center"><?php  echo "Фото"; ?></h2>
                 </div>
 			</div>
 
