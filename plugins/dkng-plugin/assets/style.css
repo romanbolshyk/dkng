@@ -1348,10 +1348,13 @@ table.sv-email-campaign__table tbody tr.canceled .js-cancel-email {
 }
 .search_page .hm-search-wrap .search-item {
 	width: calc(31%);
-	background-color: #fbfbfb;
-	margin-right: 20px;
-	margin-bottom: 20px;
-	padding: 38px 35px 43px;
+
+	float: left;
+	padding: 20px 20px 20px;
+	position: relative;
+	z-index: 5;
+	box-shadow: 0 4px 12px rgb(0 0 0 / 6%);
+	border-radius: 12px;
 }
 .search_page .hm-search-wrap .search-item .item-image {
 	height: 200px;
@@ -1656,7 +1659,6 @@ input.search .innericon {
 
 
 .inner_container  {
-	/* margin-top: 40px; */
 	position: relative;
 	padding-top: 60px;
 	padding-bottom: 60px;

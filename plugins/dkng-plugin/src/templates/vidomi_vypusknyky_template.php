@@ -45,14 +45,6 @@ $kerivnyky = get_field( 'bosses', get_the_ID() );
                         <div class="white-element  strategies-holder status-new d-flex flex-column justify-content-start align-items-center"
                         >
                             <img src="<?php echo $boss['photo'];?>" alt="icon-hands" class="photo" >
-                            <div class="point-holder d-flex flex-row justify-content-center align-items-center">
-                                <div class="point-dot"></div>
-                                <div class="point-dot"></div>
-                                <div class="point-dot"></div>
-                                <div class="point-dot"></div>
-                                <div class="point-dot"></div>
-                                <div class="point-dot"></div>
-                            </div>
                             <p>
                                 <b><?php echo $boss['pib'];?></b>
                             </p>
