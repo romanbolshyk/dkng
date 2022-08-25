@@ -2,7 +2,6 @@
 
 get_header('custom');
 
-//$videos       = get_field( 'videos', get_the_ID() );
 $galereya_obj = new \Dkng\Wp\Galereya();
 
 $paged    = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
@@ -21,29 +20,6 @@ $max_num  = $galereya_obj->get_all_galereya ( 'video', false, 6 );
 
     <div class="row">
         <div class="col-12">
-
-            <?php /* if ( !empty( $videos ) ) { ?>
-                <div class="template-items ">
-                    <?php foreach ( $videos as $video ) { ?>
-
-                        <div class="item">
-
-                            <div class="item-image ">
-                                <iframe width="100%" height="100%" src="<?php echo $video['video_link'];?>" title="YouTube video player" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-
-                            <div class="item-content" style=" padding: 10px;">
-                                <h3 class="item-title">
-                                    <b><?php echo $video['label']; ?></b>
-                                </h3>
-                            </div>
-                        </div>
-
-                    <?php } ?>
-                </div>
-            <?php }  */?>
-
 
             <?php if ( !empty( $videos ) ) { ?>
                 <div class="template-items ">

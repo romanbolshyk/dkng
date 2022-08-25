@@ -3,6 +3,14 @@ get_header('custom');
 
 $photos = get_field( 'photos', get_the_ID() );
 
+$galereya_obj = new \Dkng\Wp\Galereya();
+
+$cat      = !empty( $_GET['cat'] ) ? $_GET['cat'] : '';
+var_dump($cat);
+$paged    = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+$photos1  = $galereya_obj->get_galereya ( 'photo',     $cat, $paged, 1 );
+$max_num  = $galereya_obj->get_all_galereya ( 'photo', $cat, 1 );
+
 ?>
 
 	<div class="inner_container announces_block-banner-wrap">
@@ -13,79 +21,49 @@ $photos = get_field( 'photos', get_the_ID() );
 					<h2><?php  echo "Фото"; ?></h2>
                 </div>
 			</div>
+
+            <div class="row">
+                <div class="col-12">
+
+                    <?php if ( !empty( $photos1 ) ) { ?>
+                        <div class="template-items ">
+                            <?php foreach ( $photos1 as $video ) { ?>
+
+                                <div class="item">
+
+                                    <div class="item-image ">
+                                       <?php echo get_the_post_thumbnail_url( $video);?>
+                                    </div>
+
+                                    <div class="item-content" style="padding: 10px;">
+                                        <h3 class="item-title">
+                                            <b><?php echo get_the_title( $video );?></b>
+                                        </h3>
+                                    </div>
+                                </div>
+
+                            <?php } ?>
+
+                            <div class="custom_pagination">
+                                <?php
+                                $var = is_page() ? 'page' : 'paged';
+                                $big = 999999999;
+
+                                echo paginate_links( array(
+                                    'base'     => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                                    'paged'    => get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1,
+                                    'current'  => max( 1, get_query_var( 'paged' ) ),
+                                    'format'   => '?paged=%#%',
+                                    'total'    => $max_num
+                                ) );
+                                ?>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
 		</div>
 	</div>
-
-
-    <div id="P_MS63069b7ce1132" class="master-slider-parent msl ms-parent-id-14" style="max-width: 800px; position: relative;">
-
-
-        <!-- MasterSlider Main -->
-        <div id="MS63069b7ce1132" class="master-slider ms-skin-default ms-wk" style="visibility: visible; opacity: 1; margin: 0px;"><div class="ms-container"><div class="ms-inner-controls-cont" style="max-width: 800px;"><div class="ms-view ms-basic-view ms-grab-cursor" style="width: 800px; height: 480px;"><div class="ms-slide-container" style="transform: translateX(-1600px) translateZ(0px);"><div class="ms-slide" data-delay="3" data-fill-mode="fill" style="width: 800px; height: 480px; left: 0px;">
-
-
-
-
-
-                                <div class="ms-slide-bgcont" style="height: 100%; opacity: 1;"><img src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1629.jpeg" alt="" title="" style="width: 800px; height: 530.469px; margin-top: -25px; margin-left: 0px;"></div></div><div class="ms-slide" data-delay="3" data-fill-mode="fill" style="width: 800px; height: 480px; left: 800px;">
-
-
-
-
-
-                                <div class="ms-slide-bgcont" style="height: 100%; opacity: 1;"><img src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1655.jpeg" alt="" title="" style="width: 800px; height: 530.469px; margin-top: -25px; margin-left: 0px;"></div></div><div class="ms-slide ms-sl-selected" data-delay="3" data-fill-mode="fill" style="width: 800px; height: 480px; left: 1600px;">
-
-
-
-
-
-                                <div class="ms-slide-bgcont" style="height: 100%; opacity: 1;"><img src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1658.jpeg" alt="" title="" style="width: 800px; height: 530.469px; margin-top: -25px; margin-left: 0px;"></div></div><div class="ms-slide" data-delay="3" data-fill-mode="fill" style="width: 800px; height: 480px; left: 2400px;">
-
-
-
-
-
-                                <div class="ms-slide-bgcont" style="height: 100%; opacity: 1;"><img src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1660.jpeg" alt="" title="" style="width: 800px; height: 530.469px; margin-top: -25px; margin-left: 0px;"></div></div><div class="ms-slide" data-delay="3" data-fill-mode="fill" style="width: 800px; height: 480px; left: 3200px;">
-
-
-
-
-
-                                <div class="ms-slide-bgcont" style="height: 100%; opacity: 1;"><img src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1663.jpeg" alt="" title="" style="width: 800px; height: 530.469px; margin-top: -25px; margin-left: 0px;"></div></div><div class="ms-slide" data-delay="3" data-fill-mode="fill" style="width: 800px; height: 480px; left: 4000px;">
-
-
-
-
-
-                                <div class="ms-slide-bgcont" style="height: 100%; opacity: 1;"><img src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1664.jpeg" alt="" title="" style="width: 800px; height: 530.469px; margin-top: -25px; margin-left: 0px;"></div></div><div class="ms-slide" data-delay="3" data-fill-mode="fill" style="width: 800px; height: 480px; left: 4800px;">
-
-
-
-
-
-                                <div class="ms-slide-bgcont" style="height: 100%; opacity: 1;"><img src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1665.jpeg" alt="" title="" style="width: 800px; height: 530.469px; margin-top: -25px; margin-left: 0px;"></div></div><div class="ms-slide" data-delay="3" data-fill-mode="fill" style="width: 800px; height: 480px; left: 5600px;">
-
-
-
-
-
-                                <div class="ms-slide-bgcont" style="height: 100%; opacity: 1;"><img src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1672.jpeg" alt="" title="" style="width: 800px; height: 530.469px; margin-top: -25px; margin-left: 0px;"></div></div></div></div><div class="ms-nav-next"></div><div class="ms-nav-prev"></div><div class="ms-bullets ms-dir-h ms-align-bottom" style="bottom: 10px; width: 160px;"><div class="ms-bullets-count"><div class="ms-bullet" style="margin: 5px;"></div><div class="ms-bullet" style="margin: 5px;"></div><div class="ms-bullet ms-bullet-selected" style="margin: 5px;"></div><div class="ms-bullet" style="margin: 5px;"></div><div class="ms-bullet" style="margin: 5px;"></div><div class="ms-bullet" style="margin: 5px;"></div><div class="ms-bullet" style="margin: 5px;"></div><div class="ms-bullet" style="margin: 5px;"></div></div></div></div></div>
-
-
-
-            <div class="ms-thumb-list ms-dir-h ms-align-bottom" style="margin-top: 5px; position: relative; height: 80px;"><div class="ms-thumbs-cont" style="width: 1160px; transform: translateX(-290px) translateZ(0px);"><div class="ms-thumb-frame" style="width: 140px; height: 80px; margin-right: 5px;"><img class="ms-thumb" src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1629-140x80.jpeg" alt="" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-thumb" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-tab-context"><div class="&quot;ms-tab-context&quot;"></div></div>
-                        </div><div class="ms-thumb-ol"></div></div><div class="ms-thumb-frame" style="width: 140px; height: 80px; margin-right: 5px;"><img class="ms-thumb" src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1655-140x80.jpeg" alt="" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-thumb" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-tab-context"><div class="&quot;ms-tab-context&quot;"></div></div>
-                        </div><div class="ms-thumb-ol"></div></div><div class="ms-thumb-frame ms-thumb-frame-selected" style="width: 140px; height: 80px; margin-right: 5px;"><img class="ms-thumb" src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1658-140x80.jpeg" alt="" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-thumb" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-tab-context"><div class="&quot;ms-tab-context&quot;"></div></div>
-                        </div><div class="ms-thumb-ol"></div></div><div class="ms-thumb-frame" style="width: 140px; height: 80px; margin-right: 5px;"><img class="ms-thumb" src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1660-140x80.jpeg" alt="" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-thumb" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-tab-context"><div class="&quot;ms-tab-context&quot;"></div></div>
-                        </div><div class="ms-thumb-ol"></div></div><div class="ms-thumb-frame" style="width: 140px; height: 80px; margin-right: 5px;"><img class="ms-thumb" src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1663-140x80.jpeg" alt="" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-thumb" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-tab-context"><div class="&quot;ms-tab-context&quot;"></div></div>
-                        </div><div class="ms-thumb-ol"></div></div><div class="ms-thumb-frame" style="width: 140px; height: 80px; margin-right: 5px;"><img class="ms-thumb" src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1664-140x80.jpeg" alt="" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-thumb" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-tab-context"><div class="&quot;ms-tab-context&quot;"></div></div>
-                        </div><div class="ms-thumb-ol"></div></div><div class="ms-thumb-frame" style="width: 140px; height: 80px; margin-right: 5px;"><img class="ms-thumb" src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1665-140x80.jpeg" alt="" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-thumb" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-tab-context"><div class="&quot;ms-tab-context&quot;"></div></div>
-                        </div><div class="ms-thumb-ol"></div></div><div class="ms-thumb-frame" style="width: 140px; height: 80px; margin-right: 5px;"><img class="ms-thumb" src="http://dkng.loc/wp-content/uploads/2022/08/DSC_1672-140x80.jpeg" alt="" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-thumb" style="height: 80px; width: 140px; margin-top: 0px; margin-left: 0px;"><div class="ms-tab-context"><div class="&quot;ms-tab-context&quot;"></div></div>
-                        </div><div class="ms-thumb-ol"></div></div></div></div></div>
-        <!-- END MasterSlider Main -->
-
-
-    </div>
 
 
 <?php if ( !empty( $announces ) ) { ?>

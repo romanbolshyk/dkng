@@ -52,16 +52,31 @@ class Galereya {
             'paged'          => $page
         );
 
-        $add_array = array(
-            'tax_query' => array(
-                array(
-                    'taxonomy' => 'galereya-category',
-                    'field'    => 'slug',
-                    'terms'    => array( $type ),
-                    'operator' => 'IN',
+        if ( empty( $foto_cat ) ) {
+            $add_array = array(
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'galereya-category',
+                        'field'    => 'slug',
+                        'terms'    => array( $type ),
+                        'operator' => 'IN',
+                    ),
                 ),
-            ),
-        );
+            );
+        }
+        else {
+            $add_array = array(
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'foto-category',
+                        'field'    => 'slug',
+                        'terms'    => array( $foto_cat ),
+                        'operator' => 'IN',
+                    ),
+                ),
+            );
+        }
+
         $query = array_merge( $query, $add_array );
 
 
@@ -87,16 +102,30 @@ class Galereya {
             'posts_per_page' => -1,
         );
 
-        $add_array = array(
-            'tax_query' => array(
-                array(
-                    'taxonomy' => 'galereya-category',
-                    'field'    => 'slug',
-                    'terms'    => array( $type ),
-                    'operator' => 'IN',
+        if ( empty( $foto_cat ) ) {
+            $add_array = array(
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'galereya-category',
+                        'field'    => 'slug',
+                        'terms'    => array( $type ),
+                        'operator' => 'IN',
+                    ),
                 ),
-            ),
-        );
+            );
+        }
+        else {
+            $add_array = array(
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'foto-category',
+                        'field'    => 'slug',
+                        'terms'    => array( $foto_cat ),
+                        'operator' => 'IN',
+                    ),
+                ),
+            );
+        }
 
         $query = array_merge( $query, $add_array );
 
