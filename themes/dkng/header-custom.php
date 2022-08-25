@@ -118,18 +118,17 @@ $template_dir = get_template_directory_uri();
             </nav>
 
             <div class="c-header__search">
-                <?php echo do_shortcode('[wpdreams_ajaxsearchpro id=1]'); ?>
                 <div class="c-header__search--btn js-search-open">
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </div>
-<!---->
-<!--                <form class="c-header__search--form js-search-form">-->
-<!--                    <input type="text" placeholder="Search">-->
-<!--                    -->
-<!--                    <div class="c-header__search--btn js-search-close">-->
-<!--                        <i class="fa fa-times" aria-hidden="true"></i>-->
-<!--                    </div>-->
-<!--                </form>-->
+
+                <div class="c-header__search--form js-search-form">
+                    <?php echo do_shortcode('[wpdreams_ajaxsearchpro id=1]'); ?>
+
+                    <div class="c-header__search--btn js-search-close">
+                       <i class="fa fa-times" aria-hidden="true"></i>
+                   </div>
+                </div>
             </div>  
         </div>
     </div>
