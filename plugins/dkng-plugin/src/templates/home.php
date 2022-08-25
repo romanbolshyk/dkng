@@ -142,9 +142,9 @@ $the_last_updated_posts = new WP_Query( $args );
                             <h3><?php echo $cemiykoldzh_block['title'];?></h3>
                             <?php $id_vidguk = $cemiykoldzh_block['vidguk'];
 
-                            $excerpt = get_the_excerpt( $id_vidguk );
+                            $excerpt            = get_the_excerpt( $id_vidguk );
                             $original_thumbnail = get_the_post_thumbnail_url( $id_vidguk );
-                            $grupa = get_field( 'grupa', $id_vidguk );
+                            $grupa              = get_field( 'grupa', $id_vidguk );
                             ?>
                             <div class="announces_block-item" data-num="1">
                                 <div class="announces_block-item-image">
@@ -245,7 +245,6 @@ $the_last_updated_posts = new WP_Query( $args );
         </div>
     </div>
 <?php } ?>
-
 
 <?php
 get_footer('custom');

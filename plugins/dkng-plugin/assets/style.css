@@ -2732,3 +2732,6 @@ table.sv-filter-table thead .sv-filter-table__th, div.sv-contact-list-form__remo
 .gallery_photo_block .item .item-content {
 	padding: 10px;
 }
+.materialna_baza_block h3 {
+	margin-bottom: 20px;
+}
