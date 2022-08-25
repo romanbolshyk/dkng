@@ -61,6 +61,20 @@ p:empty {
   height: 16px;
 }
 
+.news-block-list {
+  margin-top: 80px;
+}
+@media (max-width: 1199px) {
+  .news-block-list {
+    margin-top: 60px;
+  }
+}
+@media (max-width: 575px) {
+  .news-block-list {
+    margin-top: 50px;
+  }
+}
+
 .c-header__bg {
   background: url(http://www.dkng.net.ua/images/fon1.jpg) 100% 100%;
   background-size: contain;

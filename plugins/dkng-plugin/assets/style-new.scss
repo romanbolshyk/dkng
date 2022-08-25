@@ -66,6 +66,18 @@ p:empty {
   height: 16px;
 }
 
+.news-block-list {
+  margin-top: 80px;
+
+  @media (max-width: 1199px) {
+    margin-top: 60px;
+  }
+
+  @media (max-width: 575px) {
+    margin-top: 50px;
+  }
+}
+
 
 // Header
 .c-header {
