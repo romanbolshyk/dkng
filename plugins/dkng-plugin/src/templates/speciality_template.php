@@ -28,7 +28,7 @@ $post_id = ( get_queried_object_id() );
                         <h2>Перелік спеціальностей та освітніх програм:</h2>
 
                         <?php foreach ( $categories as $category ) { ?>
-                            <?php  $programs = $obj->get_programs( $category ); ?>
+                            <?php  $programs = $obj->get_programs( $category, -1 ); ?>
 
                             <div class="block" style="margin-top: 30px;">
                                 <h3 class="sv-title"><b><?php echo $category->name;?></b></h3>
