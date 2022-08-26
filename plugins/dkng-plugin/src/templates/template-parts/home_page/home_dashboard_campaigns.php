@@ -19,7 +19,7 @@
                             <span class="ribbon-target" >Топ Новина!</span>
                         </a>
                         <div class="campaign__info">
-                            <span class="campaign__number"><?php echo __( "Новина", "dkng" );?> №<?php echo $index;?></span>
+                            <span class="campaign__number"><?php echo __( "Новина", "dkng" );?> №<?php echo $i;?></span>
                             <h3 class="campaign__title"><a href="<?php echo $link;?>"><?php echo $title;?></a></h3>
                             <p class="campaign__excerpt"  style="display: initial;">
                                 <?php echo $excerpt;?>

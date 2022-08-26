@@ -617,4 +617,5 @@ if ( ! function_exists( 'the_bread' ) ) {
 
     };
 
-};
+}
+

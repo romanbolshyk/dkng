@@ -1644,11 +1644,10 @@ input.search .innericon {
 	font-family: "Roboto", sans-serif;
 }
 
-
 .inner_container, .super_container  {
 	position: relative;
-	padding-top: 60px;
-	padding-bottom: 60px;
+	padding-top: 40px;
+	padding-bottom: 40px;
 }
 
 
@@ -2755,4 +2754,11 @@ table.sv-filter-table thead .sv-filter-table__th, div.sv-contact-list-form__remo
 	box-shadow: none !important;
 	padding-left: 0 !important;
 	padding-bottom: 0 !important;
+}
+.current-menu-item a{
+	font-weight: bold !important;
+	color: red !important;
+}
+.aligncenter {
+	text-align: center;
 }

@@ -12,28 +12,47 @@ $announces_type_txt = !empty( $announces_type ) ? "Не Актуальні" : "�
 
 	<div class="inner_container announces_block-banner-wrap">
 		<div class="container">
-			<div class="announces_block-banner" style="background-image: url(<?php if ( $banner['background'] ) echo $banner['background']; ?>)">
+
+            <!-- Bread Crumbs -->
+            <div class="row">
+                <?php
+                $ingredients = array(
+                    'offset' => -4,
+                    'length' => 4,
+                    'root' => array(
+                        'slug' => 'home',
+                        'url' => get_home_url(),
+                    ),
+                );
+                the_bread( $ingredients );
+                ?>
+            </div>
+            <!-- Bread Crumbs -->
+
+            <div class="row">
+			    <div class="announces_block-banner" >
 				<div class="announces_block-banner-center">
-					<h1><?php  echo "Оголошення"; ?></h1>
+					<h2 class="aligncenter"><?php  echo "Оголошення"; ?></h2>
                     <h4>
-                        <a href="<?php echo get_permalink( get_the_ID() );?>">
-                            <?php  echo "Актуальні оголошення."; ?>
+                        <a href="<?php echo get_permalink( get_the_ID() );?>" style="padding: 10px;">
+                            <?php  echo "Актуальні оголошення"; ?>
+                        </a>
+
+                        <a href="<?php echo get_permalink( get_the_ID() ) . "?old";?>" style="padding: 10px;">
+                            <?php  echo "Історія оголошень( Не актуальні )"; ?>
                         </a>
                     </h4>
-                    <h4>
-                        <a href="<?php echo get_permalink( get_the_ID() ) . "?old";?>">
-                            <?php  echo "Історія оголошень( Не актуальні )."; ?>
-                        </a>
-                    </h4>
+
                 </div>
 			</div>
+            </div>
 		</div>
 
         <?php if ( !empty( $announces ) ) { ?>
-            <div class="announces_block-list">
+            <div class="container announces_block-list" style="margin-top: 30px;">
 
-                <div class="container">
-                    <h2><?php echo "Список оголошень: $announces_type_txt"; ?></h2>
+                <div class="block">
+                    <h3 class="aligncenter"><?php echo "Список оголошень: $announces_type_txt"; ?></h3>
 
                     <?php foreach ( $announces as $announce ) {
                         $excerpt = get_the_excerpt( $announce );

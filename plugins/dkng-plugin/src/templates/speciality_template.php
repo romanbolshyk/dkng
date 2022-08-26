@@ -15,19 +15,7 @@ var_dump( '$post_id', $post_id );
 <div class="super_container specialities_block">
     <div class="container content ">
 
-        <div class="row">
-            <?php
-            $ingredients = array(
-                'offset' => -3,
-                'length' => 3,
-                'root' => array(
-                    'slug' => 'home',
-                    'url' => get_home_url(),
-                ),
-            );
-            the_bread( $ingredients );
-            ?>
-        </div>
+
 
         <div class="white-element page-template-announces">
             <div class="row">
