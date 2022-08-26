@@ -2,15 +2,32 @@
 
 get_header('custom');
 
-$obj = new \Dkng\Wp\Specialities();
-$categories = $obj->get_terms_by_custom_post_type( 'speciality_detail', 'speciality_detail-category');
+$obj        = new \Dkng\Wp\Specialities();
+$categories = get_terms([
+    'taxonomy'   => 'speciality_detail-category',
+    'hide_empty' => false,
+]);
 
-wp_reset_postdata();
-global $post;
+$post_id = ( get_queried_object_id() );
 
+var_dump( '$post_id', $post_id );
 ?>
 <div class="super_container specialities_block">
     <div class="container content ">
+
+        <div class="row">
+            <?php
+            $ingredients = array(
+                'offset' => -3,
+                'length' => 3,
+                'root' => array(
+                    'slug' => 'home',
+                    'url' => get_home_url(),
+                ),
+            );
+            the_bread( $ingredients );
+            ?>
+        </div>
 
         <div class="white-element page-template-announces">
             <div class="row">
@@ -52,13 +69,13 @@ global $post;
                                 </table>
                                 </div>
                             </div>
-
+                            <hr/>
                         <?php  } ?>
 
-                        <hr/>
+
                         <p style="margin-top: 20px;">
-                            <a href="<?php echo get_permalink( get_field( 'page_link', $post->ID ) );?>">
-                                <?php echo get_field( 'page_text', $post->ID );?>
+                            <a href="<?php echo get_permalink( get_field( 'spec_page_link', $post_id ) );?>">
+                                <?php echo get_field( 'spec_page_text',  $post_id );?>
                             </a>
                         </p>
                     </div>

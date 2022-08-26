@@ -98,29 +98,6 @@ class Specialities {
 
 
     /**
-     * Function getting categories by post type and taxonomy
-     *
-     * @param $post_type
-     * @param $taxonomy
-     *
-     * @return \WP_Error|\WP_Term[]
-     */
-    public function get_terms_by_custom_post_type( $post_type, $taxonomy ){
-        $args = array( 'post_type' => $post_type);
-        $loop = new \WP_Query( $args );
-        $postids = array();
-
-        while ( $loop->have_posts() ) : $loop->the_post();
-            array_push($postids, get_the_ID());
-        endwhile;
-
-        $categories = wp_get_object_terms( $postids,  $taxonomy );
-
-        return $categories;
-    }
-
-
-    /**
      * Function of adding filters for campaigns categories
      *
      * @param $post_type
