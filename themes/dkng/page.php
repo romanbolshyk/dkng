@@ -11,19 +11,12 @@ global $post;
 
     <div class="inner_container ">
         <div class="container">
-            <div class="row">
-                <?php
-                $ingredients = array(
-                    'offset' => -3,
-                    'length' => 3,
-                    'root' => array(
-                        'slug' => 'home',
-                        'url' => get_home_url(),
-                    ),
-                );
-                the_bread( $ingredients );
-                ?>
+
+            <!-- Bread Crumbs -->
+            <div class="row bread_menu">
+                <?php custom_breadcrumbs( );  ?>
             </div>
+            <!-- Bread Crumbs -->
 
             <div class="row">
 

@@ -2376,7 +2376,7 @@ div.sv-email-popup__copy p
 }
 h3.sv-filter__title, body .body-items .item p.type-title.title-icon, body .right-content .table-responsive.video
 .table tbody td a.btn-line, span.campaign__number , .sv-tale .sv-tale__title, div.sv-campaign-description p strong,
-div.template .template-items .item .item-title, div.template .template-items .item .item-topic,
+div.template .template-items .item .item-title,
 table.sv-filter-table tbody tr td .sv-filter-table__td, div.footer-popup .left.block p, li.sv-price__items span,
  .topics-nav a.nav-link, ul.social-nav li, body .inner_container.profile h4,
 div .sv-contact-popup__title,  div.up-next, div.up-next span,
@@ -2733,22 +2733,7 @@ table.sv-filter-table thead .sv-filter-table__th, div.sv-contact-list-form__remo
 	font-weight: bold;
 }
 
-.bread_menu li,
-.bread li {
-	display:inline-block;
-	padding: 4px;
-}
 
-.bread_menu li.crumb:not(:last-child):after {
-	content: ' -> ';
-}
-
-.bread_menu li.crumb:last-child a,
-.bread li.crumb:last-child a {
-	text-decoration: none;
-	pointer-events: none;
-	color: inherit;
-}
 .home_cemiy_koledzh_block  .announces_block-item {
 	border: 0;
 	box-shadow: none !important;
@@ -2762,3 +2747,30 @@ table.sv-filter-table thead .sv-filter-table__th, div.sv-contact-list-form__remo
 .aligncenter {
 	text-align: center;
 }
+
+
+#tsh_breadcrumbs .separator{
+	font-size:20px;
+	color:#ccc;
+	font-weight:100;
+}
+#tsh_breadcrumbs{
+	overflow:hidden;
+	text-align: center;
+	list-style:none;
+	margin:11px 0;
+}
+#tsh_breadcrumbs li{
+	font-weight: bold;
+	display:inline-block;
+	text-decoration: none;
+	padding: 4px;
+}
+#tsh_breadcrumbs li:before{
+	display: none;
+}
+#tsh_breadcrumbs li:not(:last-child):after{
+	content: ">>";
+	margin-left: 10px;
+}
+

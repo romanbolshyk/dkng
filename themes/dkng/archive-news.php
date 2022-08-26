@@ -7,7 +7,7 @@ $novyny     = $object1->get_news( -1 );
 
 $i = 0;
 ?>
-<div class="inner_container novyny_template">
+<div class="inner_container">
     <div class="container template">
 
         <!-- Bread Crumbs -->
@@ -70,9 +70,7 @@ $i = 0;
                             <div class="item">
 
                                 <div class="item-image ">
-                                    <a href="<?php echo get_permalink( $novyna );?>" >
-                                        <img src="<?php echo get_the_post_thumbnail_url( $novyna ); ?>" alt="image">
-                                    </a>
+                                    <img src="<?php echo get_the_post_thumbnail_url( $novyna ); ?>" alt="image">
                                 </div>
 
                                 <div class="item-content">
@@ -85,7 +83,7 @@ $i = 0;
                                     </h4>
 
                                     <p class="item-topic">
-                                       <?php echo get_the_excerpt( $novyna );?>
+                                        <?php echo get_the_excerpt( $novyna );?>
                                     </p>
 
                                     <div class="item-btn-wrap">

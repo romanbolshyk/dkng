@@ -5,17 +5,21 @@ get_header('custom');
 $obj        = new \Dkng\Wp\Specialities();
 $categories = get_terms([
     'taxonomy'   => 'speciality_detail-category',
+    'orderby'    => 'id',
     'hide_empty' => false,
 ]);
 
 $post_id = ( get_queried_object_id() );
 
-var_dump( '$post_id', $post_id );
 ?>
 <div class="super_container specialities_block">
     <div class="container content ">
 
-
+        <!-- Bread Crumbs -->
+        <div class="row bread_menu">
+            <?php custom_breadcrumbs( );  ?>
+        </div>
+        <!-- Bread Crumbs -->
 
         <div class="white-element page-template-announces">
             <div class="row">

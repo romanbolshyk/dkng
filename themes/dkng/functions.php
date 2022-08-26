@@ -122,18 +122,6 @@ class My_Walker_Nav_Menu extends Walker_Nav_Menu {
 
         $class = ( strtolower($item->title) == 'schedule a demo') ? 'btn btn-primary login ' : '';
 
-        if ( strtolower($item->title) == 'about us' ) {
-            $block_class = 'a_about_block';
-        }
-        else if ( strtolower($item->title) == 'contact us' ) {
-            $block_class = 'a_contact_block';
-        }
-        else if ( strpos( $item->url ,'platform') !== false ) {
-            $block_class = 'a_the_platform_block';
-        }
-        else {
-            $block_class = 'a_'.strtolower($item->title).'_block ';
-        }
 
         $item_output = $args->before;
         $item_output .= '<a'. $attributes .' class="' . $block_class . ' ' . $class . '">';
@@ -270,15 +258,6 @@ class My_Walker_Mobile_Header_Menu extends Walker_Nav_Menu {
 
         $class = ( strtolower($item->title) == 'login') ? ' login ' : '';
 
-        if ( strtolower($item->title) == 'about us' ) {
-            $block_class = 'a_about_block';
-        }
-        else if ( strtolower($item->title) == 'contact us' ) {
-            $block_class = 'a_contact_block';
-        }
-        else {
-            $block_class = 'a_'.strtolower($item->title).'_block ';
-        }
 
         $item_output = $args->before;
         $item_output .= '<a'. $attributes .' class="' . $block_class . ' ' . $class . '">';
@@ -350,272 +329,188 @@ add_action( 'login_head', 'sv_add_favicon' );
 add_action( 'admin_head', 'sv_add_favicon' );
 
 
-if ( ! function_exists( 'get_the_crumbs' ) ) {
 
-    /**
-     * Retrieve the crumbs.
-     *
-     * @since 1.0.0
-     *
-     * @return Array Crumbs array.
-     */
-    function get_the_crumbs() {
+/**
+ * WordPress Breadcrumbs
+ */
+function custom_breadcrumbs() {
 
-        /**
-         * $_SERVER["REQUEST_URI"] seems to be unreliable.
-         *
-         * Article "Is $_SERVER['REQUEST_SCHEME'] reliable?".
-         * @see https://stackoverflow.com/a/18008178/3645650
-         *
-         * $server_scheme is a native variable of Apache web server since its version 2.4.
-         * Naturally, if a variable is not set by the server, PHP will not include it in its global array $_SERVER.
-         *
-         * An alternative to $_SERVER['REQUEST_SCHEME'] is $_SERVER['HTTPS'] which set to a non-empty value if the script was queried through the HTTPS protocol.
-         *
-         * Article "How to find out if you're using HTTPS without $_SERVER['HTTPS']".
-         * @see https://stackoverflow.com/q/1175096/3645650
-         */
+    $separator              = '/';
+    $breadcrumbs_id         = 'tsh_breadcrumbs';
+    $breadcrumbs_class      = 'tsh_breadcrumbs';
+    $home_title             = "Головна";
 
-        if ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] == 'on' ) {
+    // Add here you custom post taxonomies
+    $tsh_custom_taxonomy    = 'product_cat';
 
-            $server_scheme = 'https';
+    global $post,$wp_query;
 
-        } elseif ( ! empty( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https' || ! empty( $_SERVER['HTTP_X_FORWARDED_SSL'] ) && $_SERVER['HTTP_X_FORWARDED_SSL'] == 'on' ) {
+    // Hide from front page
+    if ( !is_front_page() ) {
 
-            $server_scheme = 'https';
+        echo '<ul id="' . $breadcrumbs_id . '" class="' . $breadcrumbs_class . '">';
 
-        } else {
+        // Home
+        echo '<li class="item-home"><a class="bread-link bread-home" href="' . get_home_url() . '" title="' . $home_title . '">' . $home_title . '</a></li>';
 
-            $server_scheme = 'http';
+        if ( is_archive() && !is_tax() && !is_category() && !is_tag() ) {
 
-        };
+            echo '<li class="item-current item-archive"><strong class="bread-current bread-archive">' . post_type_archive_title('', false) . '</strong></li>';
 
-        /**
-         * $_SERVER["REQUEST_URI"] seems to be reliable.
-         * $_SERVER['REQUEST_URI'] will not be empty in WordPress, because it is filled in wp_fix_server_vars() (file wp-includes/load.php).
-         *
-         * Article "Is it safe to use $_SERVER['REQUEST_URI']?".
-         * @see https://wordpress.stackexchange.com/a/110541/190376
-         */
-        $server_uri = $_SERVER['REQUEST_URI'];
+        } else if ( is_archive() && is_tax() && !is_category() && !is_tag() ) {
 
-        /**
-         * $_SERVER["HTTP_HOST"] seems to be reliable.
-         *
-         * Article "How reliable is HTTP_HOST?".
-         * @see https://stackoverflow.com/a/4096246/3645650
-         */
-        $server_host = $_SERVER["HTTP_HOST"];
+            // For Custom post type
+            $post_type = get_post_type();
 
-        if ( str_contains( $server_uri, '?' ) ) {
+            // Custom post type name and link
+            if($post_type != 'post') {
 
-            $server_uri = substr( $server_uri, 0, strpos( $server_uri, '?' ) );
+                $post_type_object = get_post_type_object($post_type);
+                $post_type_archive = get_post_type_archive_link($post_type);
 
-        };
+                echo '<li class="item-cat item-custom-post-type-' . $post_type . '"><a class="bread-cat bread-custom-post-type-' . $post_type . '" href="' . $post_type_archive . '" title="' . $post_type_object->labels->name . '">' . $post_type_object->labels->name . '</a></li>';
 
-        if ( str_ends_with( $server_uri, '/' ) ) {
+            }
 
-            $server_uri = explode( '/', substr( $server_uri, 1, -1 ) );
+            $custom_tax_name = get_queried_object()->name;
+            echo '<li class="item-current item-archive"><strong class="bread-current bread-archive">' . $custom_tax_name . '</strong></li>';
 
-        } else {
+        } else if ( is_single() ) {
 
-            $server_uri = explode( '/', substr( $server_uri, 1 ) );
+            $post_type = get_post_type();
+            $href = '';
 
-        };
+            if($post_type != 'post') {
 
-        $crumbs = array();
+                $post_type_object = get_post_type_object($post_type);
+                $post_type_archive = get_post_type_archive_link($post_type);
 
-        foreach ( $server_uri as $crumb ) {
+                if ( $post_type == 'news' ) {
+                    $href = get_site_url() . '/novyny';
+                } if ( $post_type == 'announces' ) {
+                    $href = get_site_url() . '/ogoloshennya';
+                }
 
-            $slug = esc_html( urldecode( $crumb ) );
+                echo '<li class="item-cat item-custom-post-type-' . $post_type . '">
+                    <a class="bread-cat bread-custom-post-type-' . $post_type . '" href="' . $href . '" title="' . $post_type_object->labels->name . '">
+                    ' . $post_type_object->labels->name .
+                    '</a></li>';
 
-            $url = esc_url( $server_scheme . '://' . $server_host . '/' . substr( implode( '/', $server_uri ), 0, strpos( implode( '/', $server_uri ), $crumb ) ) . $crumb. '/' );
+            }
 
-            array_push( $crumbs,
-                array(
-                    'slug' => $slug,
-                    'url' => $url,
-                )
-            );
+            // Get post category
+            $category = get_the_category();
 
-        };
+            if(!empty($category)) {
 
-        $banned_slugs = array();
+                // Last category post is in
+                $last_category = $category[count($category) - 1];
 
-        $post_types = get_post_types(
-            array(
-                'public' => true,
-            ),
-            'objects'
-        );
+                // Parent any categories and create array
+                $get_cat_parents = rtrim(get_category_parents($last_category->term_id, true, ','),',');
+                $cat_parents = explode(',',$get_cat_parents);
 
-        foreach ( $post_types as $post_type ) {
+                // Loop through parent categories and store in variable $cat_display
+                $cat_display = '';
+                foreach($cat_parents as $parents) {
+                    $cat_display .= '<li class="item-cat">'.$parents.'</li>';
+                }
 
-            array_push( $banned_slugs, $post_type->name );
+            }
 
-            if ( isset( $post_type->rewrite['slug'] ) ) {
+            $taxonomy_exists = taxonomy_exists($tsh_custom_taxonomy);
+            if(empty($last_category) && !empty($tsh_custom_taxonomy) && $taxonomy_exists) {
 
-                array_push( $banned_slugs, $post_type->rewrite['slug'] );
+                $taxonomy_terms = get_the_terms( $post->ID, $tsh_custom_taxonomy );
+                $cat_id         = $taxonomy_terms[0]->term_id;
+                $cat_nicename   = $taxonomy_terms[0]->slug;
+                $cat_link       = get_term_link($taxonomy_terms[0]->term_id, $tsh_custom_taxonomy);
+                $cat_name       = $taxonomy_terms[0]->name;
 
-            };
+            }
 
-        };
+            // If the post is in a category
+            if(!empty($last_category)) {
+                echo $cat_display;
+                echo '<li class="item-current item-' . $post->ID . '"><strong class="bread-current bread-' . $post->ID . '" title="' . get_the_title() . '">' . get_the_title() . '</strong></li>';
 
-        $taxonomies = get_taxonomies(
-            array(
-                'public' => true,
-            ),
-            'objects'
-        );
+                // Post is in a custom taxonomy
+            } else if(!empty($cat_id)) {
 
-        foreach ( $taxonomies as $taxonomy ) {
+                echo '<li class="item-cat item-cat-' . $cat_id . ' item-cat-' . $cat_nicename . '"><a class="bread-cat bread-cat-' . $cat_id . ' bread-cat-' . $cat_nicename . '" href="' . $cat_link . '" title="' . $cat_name . '">' . $cat_name . '</a></li>';
+                echo '<li class="item-current item-' . $post->ID . '"><strong class="bread-current bread-' . $post->ID . '" title="' . get_the_title() . '">' . get_the_title() . '</strong></li>';
 
-            array_push( $banned_slugs, $taxonomy->name );
+            } else {
 
-            if ( isset( $taxonomy->rewrite['slug'] ) ) {
+                echo '<li class="item-current item-' . $post->ID . '"><strong class="bread-current bread-' . $post->ID . '" title="' . get_the_title() . '">' . get_the_title() . '</strong></li>';
 
-                array_push( $banned_slugs, $taxonomy->rewrite['slug'] );
+            }
 
-            };
+        } else if ( is_category() ) {
 
-        };
+            // Category page
+            echo '<li class="item-current item-cat"><strong class="bread-current bread-cat">' . single_cat_title('', false) . '</strong></li>';
 
-        $banned_crumbs = array();
+        } else if ( is_page() ) {
 
-        foreach ( $banned_slugs as $banned_slug ) {
+            // Standard page
+            if( $post->post_parent ){
 
-            $slug = esc_html( $banned_slug );
+                // Get parents
+                $anc = get_post_ancestors( $post->ID );
 
-            $url = esc_url( $server_scheme . '://' . $server_host . '/' . substr( implode( '/', $server_uri ), 0, strpos( implode( '/', $server_uri ), $banned_slug ) ) . $banned_slug. '/' );
+                // Get parents order
+                $anc = array_reverse($anc);
 
-            array_push( $banned_crumbs,
-                array(
-                    'slug' => $slug,
-                    'url' => $url,
-                )
-            );
+                // Parent pages
+                if ( !isset( $parents ) ) $parents = null;
+                foreach ( $anc as $ancestor ) {
+                    $parents .= '<li class="item-parent item-parent-' . $ancestor . '"><a class="bread-parent bread-parent-' . $ancestor . '" href="' . get_permalink($ancestor) . '" title="' . get_the_title($ancestor) . '">' . get_the_title($ancestor) . '</a></li>';
+                }
 
-        };
+                // Render parent pages
+                echo $parents;
 
-        $crumbs = array_filter( $crumbs, function( $crumb ) use ( $banned_slugs ) {
+                // Active page
+                echo '<li class="item-current item-' . $post->ID . '"><strong title="' . get_the_title() . '"> ' . get_the_title() . '</strong></li>';
 
-            if ( ! in_array( $crumb['slug'], $banned_slugs ) && ! in_array( $crumb['url'], $banned_slugs ) ) {
+            } else {
 
-                return ! in_array( $crumb['slug'], $banned_slugs );
+                // Just display active page if not parents pages
+                echo '<li class="item-current item-' . $post->ID . '"><strong class="bread-current bread-' . $post->ID . '"> ' . get_the_title() . '</strong></li>';
 
-            };
+            }
 
-        } );
+        } else if ( is_tag() ) { // Tag page
 
-        return $crumbs;
+            // Tag information
+            $term_id        = get_query_var('tag_id');
+            $taxonomy       = 'post_tag';
+            $args           = 'include=' . $term_id;
+            $terms          = get_terms( $taxonomy, $args );
+            $get_term_id    = $terms[0]->term_id;
+            $get_term_slug  = $terms[0]->slug;
+            $get_term_name  = $terms[0]->name;
 
-    };
+            // Return tag name
+            echo '<li class="item-current item-tag-' . $get_term_id . ' item-tag-' . $get_term_slug . '"><strong class="bread-current bread-tag-' . $get_term_id . ' bread-tag-' . $get_term_slug . '">' . $get_term_name . '</strong></li>';
 
-};
+        } else if ( get_query_var('paged') ) {
 
-if ( ! function_exists( 'the_bread' ) ) {
+            // Paginated archives
+            echo '<li class="item-current item-current-' . get_query_var('paged') . '"><strong class="bread-current bread-current-' . get_query_var('paged') . '" title="Page ' . get_query_var('paged') . '">'.__('Page') . ' ' . get_query_var('paged') . '</strong></li>';
 
-    /**
-     * Display the bread, a formatted crumbs list.
-     *
-     * @since 1.0.0
-     *
-     * @param   Array   $ingredients                    The bread arguments.
-     * @param   Array   $ingredients['root']            Root crumb. Default to null.
-     * @param   String  $ingredients['root']['slug']    Root crumb slug.
-     * @param   String  $ingredients['root']['url']     Root crumb url.
-     * @param   String  $ingredients['separator']       The crumb's separator. The separator is not escaped.
-     * @param   Integer $ingredients['offset']          Crumbs offset. Accept positive/negative Integer. Default to "0". Refer to array_slice, https://www.php.net/manual/en/function.array-slice.php.
-     * @param   Integer $ingredients['length']          Crumbs length. Accept positive/negative Integer. Default to "null". Refer to array_slice, https://www.php.net/manual/en/function.array-slice.php.
-     *
-     * @return  Array   The formatted crumbs list.
-     */
-    function the_bread( $ingredients = array() ) {
+        } else if ( is_search() ) {
 
-        if ( empty( $ingredients['root'] ) ) {
+            // Search results page
+            echo '<li class="item-current item-current-' . get_search_query() . '"><strong class="bread-current bread-current-' . get_search_query() . '" title="Search results for: ' . get_search_query() . '">Search results for: ' . get_search_query() . '</strong></li>';
 
-            $root = null;
+        } elseif ( is_404() ) {
 
-        } else {
+            // 404 page
+            echo '<li>' . 'Error 404' . '</li>';
+        }
 
-            $root = $ingredients['root'];
-
-        };
-
-        if ( empty( $ingredients['offset'] ) ) {
-
-            $offset = 0;
-
-        } else {
-
-            $offset = $ingredients['offset'];
-
-        };
-
-        if ( empty( $ingredients['length'] ) ) {
-
-            $length = null;
-
-        } else {
-
-            $length = $ingredients['length'];
-
-        };
-
-        $crumbs = get_the_crumbs();
-
-        if ( ! empty( $root ) ) {
-
-            array_unshift( $crumbs, $ingredients['root'] );
-
-        };
-
-        $crumbs = array_slice( $crumbs, $offset, $length );
-
-        if ( ! empty( $crumbs ) ) {
-
-            echo '<ol class=" bread_menu" itemscope itemtype="https://schema.org/BreadcrumbList">';
-
-            $i = 0;
-
-            foreach ( $crumbs as $crumb ) {
-
-                $i++;
-
-                if ( url_to_postid( $crumb['url'] ) ) {
-
-                    $title = get_the_title( url_to_postid( $crumb['url'] ) );
-
-                } elseif ( get_page_by_path( $crumb['slug'] ) ) {
-
-                    $title = get_the_title( get_page_by_path( $crumb['slug'] ) );
-
-                } else {
-
-                    $title = ucfirst( str_replace( '-', ' ', $crumb['slug'] ) );
-
-                };
-
-                echo '<li class="crumb" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="' . $crumb['url'] . '">
-                        <span itemprop="name">' . $title . '</span>
-                    </a>
-                    <meta itemprop="position" content="' . $i . '">
-                </li>';
-
-                if ( $i !== sizeof( $crumbs ) && ! empty( $ingredients['separator'] ) ) {
-
-                    echo $ingredients['separator'];
-
-                };
-
-            };
-
-            echo '</ol>';
-
-        };
-
-    };
-
+        echo '</ul>';
+    }
 }
-

@@ -14,18 +14,8 @@ $announces_type_txt = !empty( $announces_type ) ? "Не Актуальні" : "�
 		<div class="container">
 
             <!-- Bread Crumbs -->
-            <div class="row">
-                <?php
-                $ingredients = array(
-                    'offset' => -4,
-                    'length' => 4,
-                    'root' => array(
-                        'slug' => 'home',
-                        'url' => get_home_url(),
-                    ),
-                );
-                the_bread( $ingredients );
-                ?>
+            <div class="row bread_menu">
+                <?php custom_breadcrumbs( );  ?>
             </div>
             <!-- Bread Crumbs -->
 
