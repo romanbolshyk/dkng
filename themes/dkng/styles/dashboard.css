@@ -3,7 +3,7 @@
 */
 
 .dashboard-page .header_top {
-    color: 000!important;
+    color: #000!important;
 }
 .header_top_extra {
     width: 100%;
@@ -345,7 +345,7 @@
 .right-content .white-element .grey-box a {
     font-size: 10px;
 }
-*/
+ */
 
 @media (max-width: 991px) {
     .right-content .white-element .grey-box a {
@@ -738,152 +738,7 @@
     font-size: 20px;
     color: #000;
 }
-.dashboard-page .account-info {
-    width: 382px;
-    height: 100%;
-    position: fixed;
-    overflow: scroll;
-    z-index: 9999;
-    top: 0;
-    right: -400px;
-    padding: 15px 20px 15px;
-    background-color: #fff;
-    color: #000;
-    border-left: 2px solid #ebebeb;
-    transition: right 0.2s ease-in-out 0s;
-    -webkit-transition: right 0.2s ease-in-out 0s;
-}
-.dashboard-page .account-info .user-info-close {
-    color: inherit;
-}
-.dashboard-page .account-info.active {
-    right: 0;
-}
-.dashboard-page .account-info h4 {
-    font-size: 16px;
-    font-weight: 300;
-}
-.dashboard-page .account-info h2 {
-    font-size: 21px;
-    font-weight: bold;
-}
-.dashboard-page .account-info .bottom-border {
-    border-bottom: 1px solid #f1f1f1;
-}
-.dashboard-page .account-info .bottom-border .user-info {
-    font-size: 15px;
-    color: #000;
-}
-.dashboard-page .account-info .person-holder.bottom-border {
-    padding: 30px 0 15px;
-}
-.dashboard-page .account-info .person-holder.bottom-border h3 {
-    font-size: 21px;
-    font-weight: bold;
-    /*color: #000;*/
-}
-.dashboard-page .account-info .person-holder.bottom-border p {
-    font-size: 12px;
-}
-.dashboard-page .account-info p {
-    font-size: 12px;
-    font-weight: 400;
-    color: #000;
-    margin: 0;
-}
-.dashboard-page .account-info .joined-holder.bottom-border {
-    padding: 10px 0 15px;
-    /*font-size: 14px;*/
-}
-.dashboard-page .account-info .joined-holder.bottom-border p {
-    /*color: #000;*/
-    margin-bottom: 10px;
-    font-size: 14px;
-}
-.dashboard-page .account-info .joined-holder.bottom-border p span {
-    color: #00c7c7;
-    text-decoration: underline;
-}
-.dashboard-page .account-info .settings .settings-accordion .card  {
-    border: none;
-}
-.dashboard-page .account-info .settings .settings-accordion .card .card-header {
-    border: none;
-    border-bottom: 1px solid #f1f1f1;
-    background-color: transparent;
-    padding-left: 0;
-}
-.dashboard-page .account-info .settings .settings-accordion .btn-link {
-    font-size: 12px;
-    color: #000;
-    padding: 0;
-}
-.dashboard-page .account-info .settings .settings-accordion .btn-link i {
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 2;
-    color: #00c7c7;
-    font-size: 20px;
-}
-.dashboard-page .account-info .settings .settings-accordion .btn-link[aria-expanded="true"] i {
-    transform: rotate(90deg);
-}
-.dashboard-page .account-info .settings .settings-accordion .card .card-body {
-    padding-left: 0;
-    padding-right: 0;
-}
-.dashboard-page .account-info .settings .settings-accordion .card .card-body p.big {
-    font-size: 16px;
-}
-.dashboard-page .account-info .settings .settings-accordion .card .card-body p {
-    font-size: 12px;
-    /*color: #000;*/
-}
-.dashboard-page .account-info .settings .settings-accordion .card .card-body a {
-    color: #000;
-}
-.dashboard-page .account-info .settings .settings-accordion .card .card-body a:hover {
-    text-decoration: underline;
-    color: #00c7c7;
-}
-.dashboard-page .account-info .settings .settings-accordion .card .card-body form .form-control {
-    border: 1px solid #dfe9f2;
-    border-radius: 15px;
-    background-color: transparent;
-    color: #000;
-    font-size: 11px;
-    margin-top: 20px;
-}
-.dashboard-page .account-info .settings .settings-accordion .card .card-body a.social-link,
-.dashboard-page .account-info  a.social-link {
-    width: 38px;
-    height: 38px;
-    border-radius: 4px;
-    background-color: #00c7c7;
-    border: 1px solid transparent;
-    padding: 7px;
-    color: #fff;
-    text-align: center;
-    margin-right: 13px;
-    pointer-events: none;
-}
-.dashboard-page .account-info .settings .settings-accordion .card .card-body a.social-link.empty_link, .dashboard-page .account-info  a.social-link.empty_link {
-    background-color: lightgrey;
-}
-.dashboard-page .account-info .fa.fa-angle-right, .dashboard-page .account-info .btn.btn-link {
-    cursor: pointer;
-}
-.dashboard-page .account-info .settings .settings-accordion .card .card-body a.social-link:hover,
-.dashboard-page .account-info  a.social-link:hover {
-    border: 1px solid #00c7c7;
-    background-color: transparent;
-    color: #00c7c7;
-}
-.dashboard-page .account-info .settings .settings-accordion .card .card-body a.small {
-    color: #00c7c7;
-    font-size: 9px;
-}
+
 .right-content .investor-holder {
     padding: 36px 0 0 0;
 }
@@ -1726,10 +1581,7 @@
     .right-content .small-white {
         margin: 5px 0;
     }
-    .dashboard-page .account-info {
-        width: 100%;
-        right: calc((100% + 10px) * -1);
-    }
+
     .right-content h2 {
         font-size: 24px;
         line-height: 36px;

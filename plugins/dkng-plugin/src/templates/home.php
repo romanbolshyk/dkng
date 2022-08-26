@@ -117,7 +117,10 @@ $the_last_updated_posts = new WP_Query( $args );
                     <div class="white-element materialna_baza_block">
                         <div class="row1">
                             <h3><?php echo $materialna_baza_block['title'];?></h3>
-                            <?php echo $materialna_baza_block['video_text'];?>
+
+                            <a href="<?php echo $materialna_baza_block['video_text'];?>">
+                                <img class="size-medium wp-image-9905 aligncenter" src="<?php echo $materialna_baza_block['video_image'];?>" alt="" width="300" height="202" />
+                            </a>
                         </div>
                     </div>
                     <div class="white-element used_links">

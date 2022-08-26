@@ -50,14 +50,6 @@ jQuery(document).ready(function($){
 
 jQuery(document).ready(function ($) {
 
-    $(".user-info, img.logo_main").click(function (e) {
-        e.preventDefault();
-        $(".account-info").addClass('active');
-    });
-    $(".user-info-close").click(function (e) {
-        e.preventDefault();
-        $(".account-info").removeClass('active');
-    });
     $(".close-collapse").click(function (e) {
         e.preventDefault();
         $("#startCollapse").click();

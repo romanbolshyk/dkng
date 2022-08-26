@@ -1275,20 +1275,7 @@ button.js-sending-body-edit{
 	opacity: 1;
 	transition-delay: 0.2s;
 }
-#account-info .timezone_string_label, #account-info select#timezone_string {
-	display: block;
-	margin-top: 20px;
-	font-size: 10px;
-	font-family: 'Work Sans';
-}
-#account-info select#timezone_string {
-	background-color: transparent;
-	color: #12234c;
-	font-size: 11px;
-	width: 100%;
-	padding: 5px;
-	border-radius: 11px;
-}
+
 .video-player .single_course_list iframe {
 	display: none;
 }
@@ -2762,4 +2749,10 @@ table.sv-filter-table thead .sv-filter-table__th, div.sv-contact-list-form__remo
 	text-decoration: none;
 	pointer-events: none;
 	color: inherit;
+}
+.home_cemiy_koledzh_block  .announces_block-item {
+	border: 0;
+	box-shadow: none !important;
+	padding-left: 0 !important;
+	padding-bottom: 0 !important;
 }
