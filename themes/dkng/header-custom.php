@@ -26,7 +26,7 @@ $template_dir = get_template_directory_uri();
 
 <body  <?php body_class();?>>
 
-    <div class="super_container">
+    <div class="header_container">
         <div class="preloader">
             <div class="preloader__row">
                 <div class="preloader__item"></div>
