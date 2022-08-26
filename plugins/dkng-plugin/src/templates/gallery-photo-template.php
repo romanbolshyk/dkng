@@ -16,9 +16,24 @@ $i        = 1;
 
 	<div class="inner_container announces_block-banner-wrap gallery_photo_block">
 		<div class="container">
-			<div class="announces_block-banner" >
+            <div class="row">
+                <?php
+                $ingredients = array(
+                    'offset' => -3,
+                    'length' => 3,
+                    'root' => array(
+                        'slug' => 'home',
+                        'url' => get_home_url(),
+                    ),
+                );
+                the_bread( $ingredients );
+                ?>
+            </div>
+
+
+            <div class="announces_block-banner" >
 				<div class="announces_block-banner-center">
-					<h2><?php  echo "Ахрів фото: $cat_name"; ?></h2>
+					<h2><?php  echo "Архів фото: $cat_name"; ?></h2>
                 </div>
 			</div>
 

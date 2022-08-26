@@ -12,6 +12,21 @@ global $post;
     <div class="inner_container ">
         <div class="container">
             <div class="row">
+                <?php
+                $ingredients = array(
+                    'offset' => -3,
+                    'length' => 3,
+                    'root' => array(
+                        'slug' => 'home',
+                        'url' => get_home_url(),
+                    ),
+                );
+                the_bread( $ingredients );
+                ?>
+            </div>
+
+            <div class="row">
+
                 <div class="col">
                     <div class="inner_content">
                         <div class="row">

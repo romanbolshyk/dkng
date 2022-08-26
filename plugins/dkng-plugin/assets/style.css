@@ -2738,3 +2738,28 @@ table.sv-filter-table thead .sv-filter-table__th, div.sv-contact-list-form__remo
 .materialna_baza_block h3 {
 	margin-bottom: 20px;
 }
+
+/* */
+.bread_menu {
+	padding:0;
+	margin: 0 10px 10px 10px;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.bread_menu li,
+.bread li {
+	display:inline-block;
+	padding: 4px;
+}
+
+.bread_menu li.crumb:not(:last-child):after {
+	content: ' -> ';
+}
+
+.bread_menu li.crumb:last-child a,
+.bread li.crumb:last-child a {
+	text-decoration: none;
+	pointer-events: none;
+	color: inherit;
+}
