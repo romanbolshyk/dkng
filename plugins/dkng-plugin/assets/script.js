@@ -104,26 +104,6 @@ jQuery(document).ready(function ($) {
     }
 
 
-
-    /**
-     * Function scrolling bottom popup
-     *
-     */
-    function scrollFunction() {
-        let cookie_popup_closed = readCookie( 'b_popup_closes' );
-        if ( ( $(".footer .footer_popup_block").length > 0 ) && ( cookie_popup_closed != 1 ) ) {
-            $(".footer .footer_popup_block").fadeIn("slow");
-        }
-    }
-
-    /**
-     * Bottom popup event scroll
-     */
-    function scroll_function() {
-        window.onscroll = scrollFunction;
-    }
-
-
     /*
      * Tooltip function
      *
@@ -303,7 +283,6 @@ jQuery(document).ready(function ($) {
     scrollToIdSection();
     textarea_trim_values();
     header_function();
-    scroll_function();
     documentTooltip();
     addImgBg('.js-img-bg');
     moveFooterToTheBottom();
