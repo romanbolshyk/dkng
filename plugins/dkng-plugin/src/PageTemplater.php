@@ -84,7 +84,7 @@ class PageTemplater {
             'templates/contact-list.php'            => 'Contact List',
             'templates/home.php'                    => 'Шаблон Домашньої Сторінки',
             'templates/about-us.php'                => 'About us',
-            'templates/announces.php'               => 'Оголошення Шаблон',
+            'templates/ogoloshennya_template.php'   => 'Оголошення Шаблон',
             'templates/blog.php'                    => 'Blog',
             'templates/contact.php'                 => 'Contact',
             'templates/gallery-video-template.php'  => 'Галерея Відео Шаблон',

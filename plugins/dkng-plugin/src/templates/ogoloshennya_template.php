@@ -3,14 +3,18 @@ get_header('custom');
 
 $object    = new \Dkng\Wp\Ogoloshennya();
 $count     = $object->count;
-$count     = $object->count;
+$paged     = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+
 $announces_type = ( isset( $_GET['old'] ) ) ? true : false;
-$announces = $object->get_announces( $announces_type, 1, -1 );
+$announces = $object->get_ogoloshennya( $announces_type, $paged, 3 );
+
+$max_num    = ceil( $announces->found_posts / $count );
+$announces  = $announces->posts;
 
 $announces_type_txt = !empty( $announces_type ) ? "Не Актуальні" : "Актуальні";
 ?>
 
-	<div class="inner_container announces_block-banner-wrap">
+	<div class="inner_container  page-template-announces announces_block-banner-wrap">
 		<div class="container">
 
             <!-- Bread Crumbs -->
@@ -74,22 +78,24 @@ $announces_type_txt = !empty( $announces_type ) ? "Не Актуальні" : "�
                     <?php } ?>
                 </div>
 
+                <div class="custom_pagination">
+                    <?php
+                    $var = is_page() ? 'page' : 'paged';
+                    $big = 999999999;
 
-                <?php /* $type = ( !empty( $announces_type ) ) ? 0 : 1; ?>
-                <?php if ( count( $announces ) > $count  ) { ?>
-                    <a href="#" class="announces_loadmore announced_loadmore" data-type="<?php echo $type;?>" data-page="1">
-                        Загрузити більше оголошень
-                        <img src="./dist/img/loader.gif" alt="loader_more"  id="loader_more" />
-                    </a>
-                <?php } */ ?>
+                    echo paginate_links( array(
+                        'base'     => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                        'paged'    => get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1,
+                        'current'  => max( 1, get_query_var( 'paged' ) ),
+                        'format'   => '?paged=%#%',
+                        'total'    => $max_num
+                    ) );
+                    ?>
+                </div>
 
             </div>
         <?php  } ?>
 	</div>
-
-
-
-
 
 <?php
 get_footer('custom');

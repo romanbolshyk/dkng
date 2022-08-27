@@ -59,13 +59,11 @@ class Start {
         add_action( 'init',            [ $user_account,      'init_actions' ] );
         add_action( 'init',            [ $specialities,      'init_actions' ] );
         add_action( 'init',            [ $user_lists,        'user_list_settings' ] );
-//        add_action( 'rest_api_init',   [ $api,               'register_api' ] );
 
-        add_action( 'init',            [ $novyny,  'init_actions' ] );
+        add_action( 'init',            [ $novyny,            'init_actions' ] );
 
         add_action( 'init',            [ $this,              'change_permalinks' ] );
         add_action( 'init',            [ $this,              'custom_settings' ] );
-        add_action( 'init',            [ $this,              'clear_rocket_cache' ] );
 
     }
 
@@ -110,21 +108,20 @@ class Start {
             wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', false, null, false );
             wp_enqueue_script( 'jquery' );
 
-            wp_register_script( 'moment-js',      plugins_url( '../assets/js/moment.min.js', __FILE__ ), array('jquery') );
-            wp_register_script( 'moment-timezone-js', plugins_url( '../assets/js/moment-timezone.js', __FILE__ ), array('jquery') );
-            wp_register_script( 'sv-calendar-js', plugins_url( '../assets/js/sv-calendar.js', __FILE__ ), array('jquery', 'moment-js') );
-            wp_register_script( 'admin-script',   plugins_url( '../assets/admin-script.js', __FILE__ ), array('jquery'), $date_now, true );
-            wp_register_script( 'pie-chart',      plugins_url( '../assets/js/jquery.easypiechart.js', __FILE__ ), array('jquery') );
+//            wp_register_script( 'moment-js',      plugins_url( '../assets/js/moment.min.js', __FILE__ ), array('jquery') );
+//            wp_register_script( 'moment-timezone-js', plugins_url( '../assets/js/moment-timezone.js', __FILE__ ), array('jquery') );
+//            wp_register_script( 'sv-calendar-js', plugins_url( '../assets/js/sv-calendar.js', __FILE__ ), array('jquery', 'moment-js') );
+//            wp_register_script( 'admin-script',   plugins_url( '../assets/admin-script.js', __FILE__ ), array('jquery'), $date_now, true );
+//            wp_register_script( 'pie-chart',      plugins_url( '../assets/js/jquery.easypiechart.js', __FILE__ ), array('jquery') );
 
-            //TODO apply these scripts only for campaign pages
             if (function_exists('is_user_logged_in')) {
 
                 if (is_user_logged_in()) {
-                    wp_enqueue_script( 'moment-js' );
-                    wp_enqueue_script( 'moment-timezone-js' );
-                    wp_enqueue_script( 'sv-calendar-js' );
-                    wp_enqueue_script( 'admin-script' );
-                    wp_enqueue_script( 'pie-chart' );
+//                    wp_enqueue_script( 'moment-js' );
+//                    wp_enqueue_script( 'moment-timezone-js' );
+//                    wp_enqueue_script( 'sv-calendar-js' );
+//                    wp_enqueue_script( 'admin-script' );
+//                    wp_enqueue_script( 'pie-chart' );
                 }
             }
 
@@ -132,24 +129,21 @@ class Start {
                 wp_enqueue_style( 'template-css',   plugins_url( '../assets/template.css', __FILE__ ), 'all', date('m.d.H') );
             }
 
-            wp_register_script( 'swiper', 'https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js', array('jquery'), $date_now, true );
-            wp_enqueue_script( 'swiper' );
 
-
-            wp_register_script( 'script',         plugins_url( '../assets/script.js', __FILE__ ), array('jquery'), $date_now, true );
-            wp_register_script( 'script-new',     plugins_url( '../assets/script-new.js', __FILE__ ), array('jquery'), $date_now, true );
+            wp_register_script( 'script',      plugins_url( '../assets/script.js', __FILE__ ), array('jquery'), $date_now, true );
+            wp_register_script( 'script-new',  plugins_url( '../assets/script-new.js', __FILE__ ), array('jquery'), $date_now, true );
             wp_enqueue_script( 'script' );
             wp_enqueue_script( 'script-new' );
 
             wp_register_script('sorter',    plugins_url( '../assets/table-sorter.min.js', __FILE__ ), array('jquery') );
             wp_enqueue_script( 'sorter' );
 
-            wp_enqueue_style( 'announces',    plugins_url( '../assets/announces.css', __FILE__ ), 'all', $date_now );
+            wp_enqueue_style( 'announces',  plugins_url( '../assets/announces.css', __FILE__ ), 'all', $date_now );
 
             wp_enqueue_style( 'fonts',  get_template_directory_uri() . '/dist/fonts/fonts.css' );
-            wp_enqueue_style( 'dkng',      plugins_url( '../assets/dkng.css', __FILE__ ), 'all', $date_now );
+            wp_enqueue_style( 'dkng',       plugins_url( '../assets/dkng.css', __FILE__ ), 'all', $date_now );
             wp_enqueue_style( 'style',      plugins_url( '../assets/style.css', __FILE__ ), 'all', $date_now );
-            wp_enqueue_style( 'style-new',      plugins_url( '../assets/style-new.css', __FILE__ ), 'all', $date_now );
+            wp_enqueue_style( 'style-new',  plugins_url( '../assets/style-new.css', __FILE__ ), 'all', $date_now );
 
             wp_localize_script( 'script', 'get',
                 array (

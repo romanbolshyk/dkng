@@ -20,13 +20,9 @@ class Novyny {
     public function init_actions() {
 
         // enqueve js/CSS resources
-        add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts_styles' ] );
+        add_action( 'wp_enqueue_scripts',     [ $this, 'enqueue_scripts_styles' ] );
 
-        add_action( 'restrict_manage_posts',                      [ $this,   'categories_filters'], 10, 2 );
-
-//        add_action( 'wp_ajax_load_announces_by_ajax',             [ $this,  'load_announces_by_ajax' ] );
-//        add_action( 'wp_ajax_nopriv_load_announces_by_ajax',      [ $this,  'load_announces_by_ajax' ] );
-
+        add_action( 'restrict_manage_posts',  [ $this,   'categories_filters'], 10, 2 );
 
     }
 
@@ -81,8 +77,7 @@ class Novyny {
         $query = array_merge( $query, $add_array );
         */
 
-        $announces  = new \WP_Query( $query );
-        $announces  = $announces->posts;
+        $announces   = new \WP_Query( $query );
 
         return $announces;
 
@@ -120,34 +115,6 @@ class Novyny {
         }
 
     }
-
-
-
-    /**
-     * Callback function for loading posts
-     *
-     */
-    public function load_posts_by_ajax_callback() {
-
-        parse_str ( $_POST['data'], $params );
-
-        $announce_type        = ( !empty( $params['$params'] ) ) ? true  : false;
-
-        $user            = wp_get_current_user();
-
-        $announces = $this->get_announces( $announce_type , $paged );
-
-
-        $args = $this->set_args_params( $get_cat, $post_type, $count_per_page, $paged, $mytaxonomy, $excluded_articles, $posts_in, $campaign_type );
-
-        $my_posts  = new \WP_Query( $args );
-        $totalpost = $my_posts->found_posts ;
-
-        $result = $this->set_html_layout( $my_posts, $mytaxonomy, $cpt_type, $paged, $count_per_page, $totalpost );
-        wp_send_json( $result, 200);
-
-    }
-
 
 
 }

@@ -2,12 +2,18 @@
 
 get_header('custom');
 
+$paged      = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 $object1    = new \Dkng\Wp\Novyny();
-$novyny     = $object1->get_news( -1 );
+$count      = 9;
+$novyny     = $object1->get_news( $count, $paged );
+
+$found_posts = $novyny->found_posts;
+$max_num     = ceil( $found_posts / $count );
+$novyny      = $novyny->posts;
 
 $i = 0;
 ?>
-<div class="inner_container novyny_template">
+<div class="inner_container novyny_template ">
     <div class="container template">
 
         <!-- Bread Crumbs -->
@@ -98,6 +104,22 @@ $i = 0;
 
                         <?php } ?>
                     </div>
+
+                    <div class="custom_pagination">
+                        <?php
+                        $var = is_page() ? 'page' : 'paged';
+                        $big = 999999999;
+
+                        echo paginate_links( array(
+                            'base'     => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                            'paged'    => get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1,
+                            'current'  => max( 1, get_query_var( 'paged' ) ),
+                            'format'   => '?paged=%#%',
+                            'total'    => $max_num
+                        ) );
+                        ?>
+                    </div>
+
                 <?php } ?>
 
             </div>

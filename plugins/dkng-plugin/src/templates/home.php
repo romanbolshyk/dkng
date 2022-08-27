@@ -13,8 +13,10 @@ $cemiykoldzh_block   = get_field( 'cemiykoldzh_block');
 
 $object              = new \Dkng\Wp\Ogoloshennya();
 $object1             = new \Dkng\Wp\Novyny();
-$announces           = $object->get_announces( false, false, 3);
+$announces           = $object->get_ogoloshennya( false, false, 3);
+$announces           = $announces->posts;
 $novyny              = $object1->get_news( 6 );
+$novyny              = $novyny->posts;
 
 $video_block         = get_field( 'video_block');
 $philosophy_block    = get_field( 'philosophy_block');
