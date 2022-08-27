@@ -35,30 +35,39 @@ $post_id = ( get_queried_object_id() );
 
                                 <div class="sv-container">
                                     <table class="sv-table">
-                                    <thead>
-                                        <tr>
-                                            <th style="border-right: 5px solid #fff !important;">Шифр та назва спеціальності</th>
-                                            <th>Назва освітньо-професійної програми</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                            foreach ( $programs as $program ) {
-                                            $speciality = get_field( 'speciality', $program );
-                                        ?>
+                                        <thead>
                                             <tr>
-                                                <td style="border-right: 5px solid #fff !important;">
-                                                    <?php echo get_the_title( $speciality );?>
-                                                </td>
-                                                <td >
-                                                    <a href="<?php echo get_permalink( $program );?>">
-                                                        <?php echo get_the_title( $program );?>
-                                                    </a>
-                                                </td>
+                                                <th style="border-right: 5px solid #fff !important;">Шифр та назва спеціальності</th>
+                                                <th>Назва освітньо-професійної програми</th>
                                             </tr>
-                                        <?php } ?>
-                                    </tbody>
-                                </table>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            $programs_array = [];
+                                            foreach ( $programs as $program ) {
+                                                $speciality = get_field('speciality', $program);
+                                                $programs_array[$speciality][] = $program;
+                                            }
+
+                                            foreach ( $programs_array as $k => $v ) { ?>
+                                                <tr>
+                                                    <td style="border-right: 5px solid #fff !important;">
+                                                        <?php echo get_the_title( $k );?>
+                                                    </td>
+                                                    <td>
+                                                        <?php foreach ( $v as $v1 ) { ?>
+                                                            <p >
+                                                                <a href="<?php echo get_permalink( $v1 );?>">
+                                                                    <?php echo get_the_title( $v1 );?>
+                                                                </a>
+                                                            </p>
+                                                        <?php } ?>
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
+
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <hr/>
