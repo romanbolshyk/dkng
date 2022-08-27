@@ -71,7 +71,7 @@ class Start {
         if ( function_exists( 'acf_add_options_page' ) ) {
             acf_add_options_page( array(
                 'page_title' => 'Додаткові Налаштування сайту',
-                'menu_title' => 'Додаткові Налаштування сайту',
+                'menu_title' => 'DKNG -  Налаштування сайту',
                 'menu_slug'  => 'theme_settings',
                 'capability' => 'edit_posts',
                 'redirect'   => false
