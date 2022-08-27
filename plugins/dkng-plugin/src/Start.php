@@ -34,13 +34,7 @@ class Start {
     private function registerHooks() {
 
         $functions         = new Functions();
-        $api               = new ApiActions();
         $custom_actions    = new CustomActions();
-        $user_account      = new UserAccount();
-        $courses_actions   = new CoursesActions();
-        $articles_actions  = new ArticlesActions();
-        $campaigns         = new Campaigns();
-        $user_lists        = new UsersLists();
         $ogoloshennya      = new Ogoloshennya();
         $novyny            = new Novyny();
         $specialities      = new Specialities();
@@ -50,15 +44,10 @@ class Start {
         add_theme_support( 'post-thumbnails' );
 
         add_action( 'init',            [ $functions,         'init_actions' ] );
-        add_action( 'init',            [ $campaigns,         'init_actions' ] );
         add_action( 'init',            [ $galereya,          'init_actions' ] );
-        add_action( 'init',            [ $courses_actions,   'init_actions' ] );
-        add_action( 'init',            [ $articles_actions,  'init_actions' ] );
         add_action( 'init',            [ $ogoloshennya,      'init_actions' ] );
         add_action( 'init',            [ $custom_actions,    'init_actions' ] );
-        add_action( 'init',            [ $user_account,      'init_actions' ] );
         add_action( 'init',            [ $specialities,      'init_actions' ] );
-        add_action( 'init',            [ $user_lists,        'user_list_settings' ] );
 
         add_action( 'init',            [ $novyny,            'init_actions' ] );
 
@@ -67,7 +56,7 @@ class Start {
 
     }
 
-    /**9
+    /**
      * Run plugin part
      */
     public function run() {
@@ -89,6 +78,8 @@ class Start {
             ));
         }
     }
+
+
     /**
      * Functions register and enqueue styles and scripts
      *
@@ -108,25 +99,17 @@ class Start {
             wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', false, null, false );
             wp_enqueue_script( 'jquery' );
 
-//            wp_register_script( 'moment-js',      plugins_url( '../assets/js/moment.min.js', __FILE__ ), array('jquery') );
-//            wp_register_script( 'moment-timezone-js', plugins_url( '../assets/js/moment-timezone.js', __FILE__ ), array('jquery') );
-//            wp_register_script( 'sv-calendar-js', plugins_url( '../assets/js/sv-calendar.js', __FILE__ ), array('jquery', 'moment-js') );
-//            wp_register_script( 'admin-script',   plugins_url( '../assets/admin-script.js', __FILE__ ), array('jquery'), $date_now, true );
-//            wp_register_script( 'pie-chart',      plugins_url( '../assets/js/jquery.easypiechart.js', __FILE__ ), array('jquery') );
+            wp_register_script( 'admin-script',   plugins_url( '../assets/admin-script.js', __FILE__ ), array('jquery'), $date_now, true );
 
-            if (function_exists('is_user_logged_in')) {
+            if ( function_exists('is_user_logged_in' ) ) {
 
                 if (is_user_logged_in()) {
-//                    wp_enqueue_script( 'moment-js' );
-//                    wp_enqueue_script( 'moment-timezone-js' );
-//                    wp_enqueue_script( 'sv-calendar-js' );
-//                    wp_enqueue_script( 'admin-script' );
-//                    wp_enqueue_script( 'pie-chart' );
+                    wp_enqueue_script( 'admin-script' );
                 }
             }
 
             if (  !empty( $_GET['s'] ) ) {
-                wp_enqueue_style( 'template-css',   plugins_url( '../assets/template.css', __FILE__ ), 'all', date('m.d.H') );
+                wp_enqueue_style( 'template-css', plugins_url( '../assets/template.css', __FILE__ ), 'all', date('m.d.H') );
             }
 
 
@@ -134,9 +117,6 @@ class Start {
             wp_register_script( 'script-new',  plugins_url( '../assets/script-new.js', __FILE__ ), array('jquery'), $date_now, true );
             wp_enqueue_script( 'script' );
             wp_enqueue_script( 'script-new' );
-
-            wp_register_script('sorter',    plugins_url( '../assets/table-sorter.min.js', __FILE__ ), array('jquery') );
-            wp_enqueue_script( 'sorter' );
 
             wp_enqueue_style( 'announces',  plugins_url( '../assets/announces.css', __FILE__ ), 'all', $date_now );
 
