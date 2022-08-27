@@ -50,10 +50,12 @@ $announces_type_txt = !empty( $announces_type ) ? "Не Актуальні" : "�
 
                     <?php foreach ( $announces as $announce ) {
                         $excerpt = get_the_excerpt( $announce );
+                        $img = get_the_post_thumbnail_url( $announce );
+                        $img = !empty( $img ) ? $img  : './dist/img/ogoloshennya.jpeg';
                         ?>
                         <div class="announces_block-item" data-num="1">
                         <div class="announces_block-item-image">
-                            <img src="./dist/img/ogoloshennya.jpeg" alt="announces image" style="height: 100%">
+                            <img src="<?php echo $img;?>" alt="announces image" style="height: 100%">
                         </div>
                         <div class="announces_block-item-text">
                             <div class="announces_block-item-top-text">

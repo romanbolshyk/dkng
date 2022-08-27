@@ -14,7 +14,7 @@
                     <div class="col-12 col-lg-3">
                         <a href="<?php echo get_permalink( $article );?>" class="read-article" data-post-id="<?php echo $article; ?>" >
                             <div class="post-image"
-                                 style="background-image: url(<?php echo $img;?>);">
+                                 style="background-image: url(<?php echo $img;?>); background-repeat: no-repeat;background-size: contain;">
                             </div>
                         </a>
                     </div>
