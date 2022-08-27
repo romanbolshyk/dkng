@@ -6,9 +6,7 @@ $obj      = new \Dkng\Wp\Specialities();
 $paged    = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
 $programs = $obj->get_programs( false, 3, $paged );
-
-$max_num  = ceil( $programs->found_posts / 3 );
-$programs = $programs->posts;
+$max_num  = $obj->get_all_programs( 3 );
 
 ?>
 <div class="super_container specialities_details_block">

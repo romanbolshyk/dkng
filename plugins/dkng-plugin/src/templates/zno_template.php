@@ -9,6 +9,13 @@ $i = 0;
     <div class="container content ">
 
         <div class="white-element mb-100 page-template-announces">
+
+            <!-- Bread Crumbs -->
+            <div class="row bread_menu">
+                <?php custom_breadcrumbs( );  ?>
+            </div>
+            <!-- Bread Crumbs -->
+
             <div class="row">
                 <div class="announces_block-list zno_templates" >
                     <div class="container">

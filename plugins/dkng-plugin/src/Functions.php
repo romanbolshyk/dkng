@@ -17,13 +17,9 @@ class Functions {
         self::register_galereya();
         self::register_specialities();
         self::register_specialities_programs();
-        self::register_courses();
         self::register_cemiykoldzh_vidgгky();
 
         add_filter('template_include',  [ $this, 'template_chooser' ], 99 );
-
-        add_filter( 'manage_recomendations_posts_columns',          [ $this, 'recomendations_table'] );
-        add_action( 'manage_recomendations_posts_custom_column',    [ $this, 'recomendations_table_values' ], 10, 2 );
 
         add_action( 'wp_logout',       [ $this,  'log_out' ] );
         add_filter( 'upload_mimes',    [ $this,  'available_file_types'] , 50, 1 );
@@ -1204,132 +1200,6 @@ class Functions {
         register_post_type( 'edited_articles', $post_type_args );
     }
 
-    /**
-     * Function creating CPT Courses
-     *
-     */
-    public function register_courses() {
-
-        $courses_url_slug          = 'courses';
-        $courses_category_url_slug = 'courses-category';
-
-        $taxonomy_labels = array(
-            'name'                       => 'Category',
-            'singular_name'              => 'Category',
-            'menu_name'                  => 'Categories',
-            'all_items'                  => 'All Categories',
-            'parent_item'                => 'Parent Category',
-            'parent_item_colon'          => 'Parent Category:',
-            'new_item_name'              => 'New Category Name',
-            'add_new_item'               => 'Add New Category',
-            'edit_item'                  => 'Edit Category',
-            'update_item'                => 'Update Category',
-            'separate_items_with_commas' => 'Separate categories with commas',
-            'search_items'               => 'Search categories',
-            'add_or_remove_items'        => 'Add or remove categories',
-            'choose_from_most_used'      => 'Choose from the most used categories',
-        );
-
-        $taxonomy_rewrite = array(
-            'slug'         => $courses_category_url_slug,
-            'with_front'   => true,
-            'hierarchical' => true,
-        );
-
-        $taxonomy_args = array(
-            'labels'            => $taxonomy_labels,
-            'hierarchical'      => true,
-            'public'            => true,
-            'show_ui'           => true,
-            'show_admin_column' => true,
-            'show_in_nav_menus' => true,
-            'query_var'         => true,
-            'show_tagcloud'     => true,
-            'rewrite'           => $taxonomy_rewrite,
-        );
-        register_taxonomy( 'courses-category', array( 'courses' ), $taxonomy_args );
-
-        $taxonomy_labels = array(
-            'name'                       => 'Tag',
-            'singular_name'              => 'Tag',
-            'menu_name'                  => 'Tags',
-            'all_items'                  => 'All Tags',
-            'parent_item'                => 'Parent Tag',
-            'parent_item_colon'          => 'Parent Tag:',
-            'new_item_name'              => 'New Tag Name',
-            'add_new_item'               => 'Add New Tag',
-            'edit_item'                  => 'Edit Tag',
-            'update_item'                => 'Update Tag',
-            'separate_items_with_commas' => 'Separate categories with commas',
-            'search_items'               => 'Search categories',
-            'add_or_remove_items'        => 'Add or remove categories',
-            'choose_from_most_used'      => 'Choose from the most used categories',
-        );
-
-        $taxonomy_rewrite = array(
-            'slug'         => 'courses-tag',
-            'with_front'   => true,
-            'hierarchical' => true,
-        );
-
-        $taxonomy_args = array(
-            'labels'            => $taxonomy_labels,
-            'hierarchical'      => true,
-            'public'            => true,
-            'show_ui'           => true,
-            'show_admin_column' => true,
-            'show_in_nav_menus' => true,
-            'query_var'         => true,
-            'show_tagcloud'     => true,
-            'rewrite'           => $taxonomy_rewrite,
-        );
-        register_taxonomy( 'courses-tag', array( 'courses' ), $taxonomy_args );
-
-        $post_type_labels = array(
-            'name'               => 'Courses',
-            'singular_name'      => 'Courses',
-            'menu_name'          => 'Courses',
-            'parent_item_colon'  => 'Parent Courses:',
-            'all_items'          => 'All Courses',
-            'view_item'          => 'View Course',
-            'add_new_item'       => 'Add New review',
-            'add_new'            => 'Add New',
-            'edit_item'          => 'Edit Course',
-            'update_item'        => 'Update Course',
-            'search_items'       => 'Search Course',
-            'not_found'          => 'No courses found',
-            'not_found_in_trash' => 'No courses found in Trash',
-        );
-
-        $post_type_rewrite = array(
-            'slug'       => 'courses-item',
-            'with_front' => true,
-            'pages'      => true,
-            'feeds'      => true,
-        );
-
-        $post_type_args = array(
-            'label'              => 'Courses',
-            'description'        => 'Courses information pages',
-            'labels'             => $post_type_labels,
-            'supports'           => array( 'title', 'editor', 'excerpt', 'thumbnail', 'comments', 'revisions'),
-            'taxonomies'         => array( 'post' ),
-            'hierarchical'       => false,
-            'public'             => true,
-            'show_ui'            => true,
-            'show_in_menu'       => true,
-            'menu_icon'          => 'dashicons-portfolio',
-            'menu_position'      =>  31,
-            'has_archive'        => true,
-            'publicly_queryable' => true,
-            'rewrite'            => array( 'slug' => $courses_url_slug ),
-            'capability_type'    => 'post',
-        );
-
-        register_post_type( 'courses', $post_type_args );
-
-    }
-
 
     /**
      * Replace page templates for single posts from plugin
@@ -1450,37 +1320,6 @@ class Functions {
     public function log_out() {
         wp_redirect( get_site_url() );
         exit();
-    }
-
-
-    /**
-     * Add new columns for cpt recomendations in admin panel
-     *
-     * @param $column
-     * @return mixed
-     */
-    public function recomendations_table( $column ) {
-
-        $column['phase']   = 'Phase of recomendation';
-
-        return $column;
-    }
-
-
-    /**
-     * Function setting values in admin panel for articles cpt
-     *
-     * @param $column
-     */
-    public function recomendations_table_values ( $column ) {
-
-        global $post;
-
-        $type_article = get_field( 'thing_to_do_phase', $post->ID );
-
-        if ( $column  == 'phase' ) {
-            echo ucfirst( $type_article );
-        }
     }
 
 

@@ -67,7 +67,6 @@ class Specialities {
         $query = array_merge( $query, $add_array );
 
         $programs  = new \WP_Query( $query );
-        $programs  = $programs->posts;
 
         return $programs;
 
