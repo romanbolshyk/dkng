@@ -298,18 +298,6 @@ jQuery(document).ready(function ($) {
     }
 
 
-    $(window).on('resize  scroll orientationchange', function () {
-        cookieHeader();
-    });
-
-    $(document).on('click', '.btn-cookie-click', function () {
-        $('#cn-accept-cookie')[0].click();
-        setTimeout(function () {
-            cookieHeader();
-        }, 100);
-    });
-
-
     isWebPSupported();
     fixedHeader();
     scrollToIdSection();
