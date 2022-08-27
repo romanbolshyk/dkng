@@ -53,36 +53,18 @@ class Novyny {
 
         $count = !empty( $count ) ? $count : $this->count;
 
-        $user = wp_get_current_user();
         $query = array (
-            'post_type'      => 'news',
+            'post_type'      => 'novyny',
             'fields'         => 'ids',
             'posts_per_page' => $count,
             'paged'          => $page
         );
 
-        /*
-        $category_in = ( !empty( $campaign_type ) && ( $campaign_type == 'history' ) ) ? 'NOT IN' : 'IN';
+        $novyny   = new \WP_Query( $query );
 
-        $add_array = array(
-            'tax_query' => array(
-                array(
-                    'taxonomy' => 'announces-category',
-                    'field'    => 'slug',
-                    'terms'    => array( 'current' ),
-                    'operator' => $category_in,
-                ),
-            ),
-        );
-        $query = array_merge( $query, $add_array );
-        */
-
-        $announces   = new \WP_Query( $query );
-
-        return $announces;
+        return $novyny;
 
     }
-
 
 
     /**
@@ -94,7 +76,7 @@ class Novyny {
     public function categories_filters( $post_type, $which ) {
 
         if ( 'news' === $post_type ) {
-            $taxonomy = 'news-category';
+            $taxonomy = 'novyny-category';
             $tax = get_taxonomy( $taxonomy );
             $cat = filter_input( INPUT_GET, $taxonomy );
 

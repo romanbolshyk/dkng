@@ -385,9 +385,9 @@ function custom_breadcrumbs() {
                 $post_type_object = get_post_type_object($post_type);
                 $post_type_archive = get_post_type_archive_link($post_type);
 
-                if ( $post_type == 'news' ) {
+                if ( $post_type == 'novyny' ) {
                     $href = get_site_url() . '/novyny';
-                } if ( $post_type == 'announces' ) {
+                } if ( $post_type == 'ogoloshennya' ) {
                     $href = get_site_url() . '/ogoloshennya';
                 }
 

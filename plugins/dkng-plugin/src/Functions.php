@@ -10,8 +10,8 @@ class Functions {
      */
     public function init_actions() {
 
-        self::register_news();
-        self::register_announces();
+        self::register_novyny();
+        self::register_ogoloshennya();
         self::register_galereya();
         self::register_specialities();
         self::register_specialities_programs();
@@ -30,13 +30,13 @@ class Functions {
 
 
     /**
-     * Register CPT News
+     * Register CPT Novyny
      *
      */
-    public static function register_news() {
+    public static function register_novyny() {
 
-        $articles_url_slug          = 'news';
-        $articles_category_url_slug = 'news-category';
+        $articles_url_slug          = 'novyny';
+        $articles_category_url_slug = 'novyny-category';
 
         $taxonomy_labels = array(
             'name'                       => 'Category',
@@ -72,7 +72,7 @@ class Functions {
             'show_tagcloud'     => true,
             'rewrite'           => $taxonomy_rewrite,
         );
-        register_taxonomy( 'news-category', array( 'news' ), $taxonomy_args );
+        register_taxonomy( 'novyny-category', array( 'novyny' ), $taxonomy_args );
 
         $taxonomy_labels = array(
             'name'                       => 'Tag',
@@ -92,7 +92,7 @@ class Functions {
         );
 
         $taxonomy_rewrite = array(
-            'slug'         => 'news-tag',
+            'slug'         => 'novyny-tag',
             'with_front'   => true,
             'hierarchical' => true,
         );
@@ -108,7 +108,7 @@ class Functions {
             'show_tagcloud'     => true,
             'rewrite'           => $taxonomy_rewrite,
         );
-        register_taxonomy( 'news-tag', array( 'news' ), $taxonomy_args );
+        register_taxonomy( 'novyny-tag', array( 'novyny' ), $taxonomy_args );
 
         $post_type_labels = array(
             'name'               => 'Новини',
@@ -127,7 +127,7 @@ class Functions {
         );
 
         $post_type_rewrite = array(
-            'slug'       => 'news-item',
+            'slug'       => 'novyny-item',
             'with_front' => true,
             'pages'      => true,
             'feeds'      => true,
@@ -139,24 +139,24 @@ class Functions {
             'labels'             => $post_type_labels,
             'supports'           => array( 'title', 'editor', 'excerpt', 'thumbnail', 'comments', 'revisions', 'author'),
             'taxonomies'         => array( 'post' ),
-            'hierarchical'       => false,
+            'hierarchical'       => true,
             'public'             => true,
             'show_ui'            => true,
             'show_in_menu'       => true,
             'menu_icon'          => 'dashicons-format-aside',
             'menu_position'      =>  31,
-            'has_archive'        => true,
+            'has_archive'        => false,
             'publicly_queryable' => true,
-            'rewrite'            => array( 'slug' => $articles_url_slug ),
+            'rewrite'            => array( 'slug' => 'novyna' ),
             'capability_type'    => 'post',
         );
 
-        register_post_type( 'news', $post_type_args );
+        register_post_type( 'novyny', $post_type_args );
     }
 
 
     /**
-     * Register CPT News
+     * Register CPT CEMIJKoledzh Vidguky
      *
      */
     public static function register_cemiykoldzh_vidgгky() {
@@ -281,13 +281,13 @@ class Functions {
     }
 
     /**
-     * Register CPT Announces
+     * Register CPT ogoloshennya
      *
      */
-    public static function register_announces() {
+    public static function register_ogoloshennya() {
 
-        $announces_url_slug          = 'announces';
-        $announces_category_url_slug = 'announces-category';
+        $ogoloshennya_url_slug          = 'ogoloshennya';
+        $ogoloshennya_category_url_slug = 'ogoloshennya-category';
 
         $taxonomy_labels = array(
             'name'                       => 'Category',
@@ -307,7 +307,7 @@ class Functions {
         );
 
         $taxonomy_rewrite = array(
-            'slug'         => $announces_category_url_slug,
+            'slug'         => $ogoloshennya_category_url_slug,
             'with_front'   => true,
             'hierarchical' => true,
         );
@@ -323,7 +323,7 @@ class Functions {
             'show_tagcloud'     => true,
             'rewrite'           => $taxonomy_rewrite,
         );
-        register_taxonomy( 'announces-category', array( 'announces' ), $taxonomy_args );
+        register_taxonomy( 'ogoloshennya-category', array( 'ogoloshennya' ), $taxonomy_args );
 
         $taxonomy_labels = array(
             'name'                       => 'Tag',
@@ -343,7 +343,7 @@ class Functions {
         );
 
         $taxonomy_rewrite = array(
-            'slug'         => 'announces-tag',
+            'slug'         => 'ogoloshennya-tag',
             'with_front'   => true,
             'hierarchical' => true,
         );
@@ -359,13 +359,13 @@ class Functions {
             'show_tagcloud'     => true,
             'rewrite'           => $taxonomy_rewrite,
         );
-        register_taxonomy( 'announces-tag', array( 'announces' ), $taxonomy_args );
+        register_taxonomy( 'ogoloshennya-tag', array( 'ogoloshennya' ), $taxonomy_args );
 
         $post_type_labels = array(
             'name'               => 'Оголошення',
             'singular_name'      => 'Оголошення',
             'menu_name'          => 'Оголошення',
-            'parent_item_colon'  => 'Parent Announces:',
+            'parent_item_colon'  => 'Parent ogoloshennya:',
             'all_items'          => 'Всі Оголошення',
             'view_item'          => 'Дивитись Оголошення',
             'add_new_item'       => 'Додати Оголошення',
@@ -373,12 +373,12 @@ class Functions {
             'edit_item'          => 'Edit Оголошення',
             'update_item'        => 'Update Оголошення',
             'search_items'       => 'Search Оголошення',
-            'not_found'          => 'No Announces found',
+            'not_found'          => 'No ogoloshennya found',
             'not_found_in_trash' => 'No Article found in Trash',
         );
 
         $post_type_rewrite = array(
-            'slug'       => 'announces-item',
+            'slug'       => 'ogoloshennya-item',
             'with_front' => true,
             'pages'      => true,
             'feeds'      => true,
@@ -386,7 +386,7 @@ class Functions {
 
         $post_type_args = array(
             'label'              => 'Оголошення',
-            'description'        => 'Announces information pages',
+            'description'        => 'ogoloshennya information pages',
             'labels'             => $post_type_labels,
             'supports'           => array( 'title', 'editor', 'excerpt', 'thumbnail', 'comments', 'revisions', 'author'),
             'taxonomies'         => array( 'post' ),
@@ -396,18 +396,18 @@ class Functions {
             'show_in_menu'       => true,
             'menu_icon'          => 'dashicons-portfolio',
             'menu_position'      =>  31,
-            'has_archive'        => true,
+            'has_archive'        => false,
             'publicly_queryable' => true,
-            'rewrite'            => array( 'slug' => $announces_url_slug ),
+            'rewrite'            => array( 'slug' => 'ogoloshennia' ),
             'capability_type'    => 'post',
         );
 
-        register_post_type( 'announces', $post_type_args );
+        register_post_type( 'ogoloshennya', $post_type_args );
     }
 
 
     /**
-     * Register CPT Announces
+     * Register CPT ogoloshennya
      *
      */
     public static function register_galereya() {
@@ -550,7 +550,7 @@ class Functions {
 
         $post_type_args = array(
             'label'              => 'Оголошення',
-            'description'        => 'Announces information pages',
+            'description'        => 'ogoloshennya information pages',
             'labels'             => $post_type_labels,
             'supports'           => array( 'title',  'excerpt', 'thumbnail',  'revisions', 'author'),
             'taxonomies'         => array( 'post' ),
@@ -571,13 +571,13 @@ class Functions {
 
 
     /**
-     * Register CPT Announces
+     * Register CPT ogoloshennya
      *
      */
     public static function register_specialities() {
 
-        $announces_url_slug          = 'specialities';
-        $announces_category_url_slug = 'specialities-category';
+        $ogoloshennya_url_slug          = 'specialities';
+        $ogoloshennya_category_url_slug = 'specialities-category';
 
         $taxonomy_labels = array(
             'name'                       => 'Category',
@@ -597,7 +597,7 @@ class Functions {
         );
 
         $taxonomy_rewrite = array(
-            'slug'         => $announces_category_url_slug,
+            'slug'         => $ogoloshennya_category_url_slug,
             'with_front'   => true,
             'hierarchical' => true,
         );
@@ -688,7 +688,7 @@ class Functions {
             'menu_position'      =>  31,
             'has_archive'        => true,
             'publicly_queryable' => true,
-            'rewrite'            => array( 'slug' => $announces_url_slug ),
+            'rewrite'            => array( 'slug' => $ogoloshennya_url_slug ),
             'capability_type'    => 'post',
         );
 
@@ -696,13 +696,13 @@ class Functions {
     }
 
     /**
-     * Register CPT Announces
+     * Register CPT ogoloshennya
      *
      */
     public static function register_specialities_programs() {
 
-        $announces_url_slug          = 'speciality_detail';
-        $announces_category_url_slug = 'speciality_detail-category';
+        $ogoloshennya_url_slug          = 'speciality_detail';
+        $ogoloshennya_category_url_slug = 'speciality_detail-category';
 
         $taxonomy_labels = array(
             'name'                       => 'Category',
@@ -722,7 +722,7 @@ class Functions {
         );
 
         $taxonomy_rewrite = array(
-            'slug'         => $announces_category_url_slug,
+            'slug'         => $ogoloshennya_category_url_slug,
             'with_front'   => true,
             'hierarchical' => true,
         );
@@ -738,7 +738,7 @@ class Functions {
             'show_tagcloud'     => true,
             'rewrite'           => $taxonomy_rewrite,
         );
-        register_taxonomy( $announces_category_url_slug, array( $announces_url_slug ), $taxonomy_args );
+        register_taxonomy( $ogoloshennya_category_url_slug, array( $ogoloshennya_url_slug ), $taxonomy_args );
 
         $taxonomy_labels = array(
             'name'                       => 'Tag',
@@ -774,7 +774,7 @@ class Functions {
             'show_tagcloud'     => true,
             'rewrite'           => $taxonomy_rewrite,
         );
-        register_taxonomy( 'speciality_details-tag', array( $announces_url_slug ), $taxonomy_args );
+        register_taxonomy( 'speciality_details-tag', array( $ogoloshennya_url_slug ), $taxonomy_args );
 
         $post_type_labels = array(
             'name'               => 'Освітні Програми',
@@ -813,11 +813,11 @@ class Functions {
             'menu_position'      =>  31,
             'has_archive'        => true,
             'publicly_queryable' => true,
-            'rewrite'            => array( 'slug' => $announces_url_slug ),
+            'rewrite'            => array( 'slug' => $ogoloshennya_url_slug ),
             'capability_type'    => 'post',
         );
 
-        register_post_type( $announces_url_slug, $post_type_args );
+        register_post_type( $ogoloshennya_url_slug, $post_type_args );
     }
 
     /**

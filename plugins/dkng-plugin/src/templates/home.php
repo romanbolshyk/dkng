@@ -25,7 +25,7 @@ $video_module_title  = get_field( 'video_module_title', 'option' );
 $video_module_link   = get_field( 'video_module_link',  'option' );
 
 $args = array(
-    'post_type' => array( 'post', 'page', 'announces', 'novyny' ),
+    'post_type' => array( 'post', 'page', 'ogoloshennya', 'novyny', 'specialities', 'speciality_detail', 'galereya' ),
     'fields'    => 'ids',
     'orderby'   => 'date',
     'order'     => 'DESC',

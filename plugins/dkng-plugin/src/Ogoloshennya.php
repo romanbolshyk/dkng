@@ -24,8 +24,8 @@ class Ogoloshennya {
 
         add_action( 'restrict_manage_posts',                      [ $this,    'categories_filters'], 10, 2 );
 
-        add_action( 'wp_ajax_load_announces_by_ajax',             [ $this,  'load_announces_by_ajax' ] );
-        add_action( 'wp_ajax_nopriv_load_announces_by_ajax',      [ $this,  'load_announces_by_ajax' ] );
+        add_action( 'wp_ajax_load_ogoloshennya_by_ajax',             [ $this,  'load_ogoloshennya_by_ajax' ] );
+        add_action( 'wp_ajax_nopriv_load_ogoloshennya_by_ajax',      [ $this,  'load_ogoloshennya_by_ajax' ] );
 
 
     }
@@ -58,7 +58,7 @@ class Ogoloshennya {
         $count = !empty( $count ) ? $count : $this->count;
 
         $query = array (
-            'post_type'      => 'announces',
+            'post_type'      => 'ogoloshennya',
             'fields'         => 'ids',
             'posts_per_page' => $count,
             'paged'          => $page
@@ -69,7 +69,7 @@ class Ogoloshennya {
         $add_array = array(
             'tax_query' => array(
                 array(
-                    'taxonomy' => 'announces-category',
+                    'taxonomy' => 'ogoloshennya-category',
                     'field'    => 'slug',
                     'terms'    => array( 'current' ),
                     'operator' => $category_in,
@@ -78,9 +78,9 @@ class Ogoloshennya {
         );
         $query = array_merge( $query, $add_array );
 
-        $announces  = new \WP_Query( $query );
+        $ogoloshennya  = new \WP_Query( $query );
 
-        return $announces;
+        return $ogoloshennya;
 
     }
 
@@ -94,8 +94,8 @@ class Ogoloshennya {
      */
     public function categories_filters( $post_type, $which ) {
 
-        if ( 'announces' === $post_type ) {
-            $taxonomy = 'announces-category';
+        if ( 'ogoloshennya' === $post_type ) {
+            $taxonomy = 'ogoloshennya-category';
             $tax = get_taxonomy( $taxonomy );
             $cat = filter_input( INPUT_GET, $taxonomy );
 
@@ -129,7 +129,7 @@ class Ogoloshennya {
         $announce_type   = ( !empty( $params['$params'] ) ) ? true  : false;
         $user            = wp_get_current_user();
 
-        $announces = $this->get_ogoloshennya( $announce_type , $paged );
+        $ogoloshennya = $this->get_ogoloshennya( $announce_type , $paged );
 
         /*
         $args = $this->set_args_params( $get_cat, $post_type, $count_per_page, $paged, $mytaxonomy, $excluded_articles, $posts_in, $campaign_type );
