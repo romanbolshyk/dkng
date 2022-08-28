@@ -85,16 +85,17 @@ $template_dir = get_template_directory_uri();
                         </div>
 
                         <div class="c-header__social">
-                            <a href="#" target="_blank" class="c-header__social--item">
+                            <a href="<?php echo get_field('facebook_link', 'option');?>" target="_blank" class="c-header__social--item">
                                 <i class="fa fa-facebook" aria-hidden="true"></i>
                             </a>
-
-                            <a href="#" target="_blank" class="c-header__social--item">
-                                <i class="fa fa-twitter" aria-hidden="true"></i>
-                            </a>
-
-                            <a href="#" target="_blank" class="c-header__social--item">
+                            <a href="<?php echo get_field('linkedin_link', 'option');?>" target="_blank" class="c-header__social--item">
                                 <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                            <a href="<?php echo get_field('instagram_link', 'option');?>" target="_blank" class="c-header__social--item">
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                            </a>
+                            <a href="<?php echo get_field('youtube_link', 'option');?>" target="_blank" class="c-header__social--item">
+                                <i class="fa fa-youtube" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
