@@ -6,11 +6,14 @@ $project_type = ( isset( $_GET['realized'] ) ) ? true : false;
 $project_database_text = get_field( 'projects_database_text', get_the_ID() );
 $project_realized_text = get_field( 'projects_realized_text', get_the_ID() );
 
-$project_type = ( isset( $_GET['realized'] ) ) ? true : false;
-
 $projects     = empty( $project_type ) ? get_field( 'projects_database', get_the_ID() ) : get_field( 'projects_realized', get_the_ID() );
 $projects_txt = "Список проєктів: ";
 $projects_txt .= empty( $project_type ) ? $project_database_text : $project_realized_text;
+
+
+$project_style  = 'font-weight: bold;';
+$project_style1 = empty( $project_type ) ? $project_style . 'text-decoration: underline;' : '';
+$project_style2 = empty( $project_type ) ? '' : $project_style . 'text-decoration: underline;';
 
 ?>
 
@@ -28,11 +31,11 @@ $projects_txt .= empty( $project_type ) ? $project_database_text : $project_real
                     <div class="announces_block-banner-center">
                         <h2 class="aligncenter"><?php  echo get_the_title(); ?></h2>
                         <h4>
-                            <a href="<?php echo get_permalink( get_the_ID() );?>" style="padding: 10px;">
+                            <a href="<?php echo get_permalink( get_the_ID() );?>" style="padding: 10px; <?php echo $project_style1;?>">
                                 <?php  echo $project_database_text;?>
                             </a>
 
-                            <a href="<?php echo get_permalink( get_the_ID() ) . "?realized";?>" style="padding: 10px;">
+                            <a href="<?php echo get_permalink( get_the_ID() ) . "?realized";?>" style="padding: 10px; <?php echo $project_style2;?>"">
                                 <?php  echo $project_realized_text; ?>
                             </a>
                         </h4>
