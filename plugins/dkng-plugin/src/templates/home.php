@@ -53,12 +53,12 @@ $the_last_updated_posts = new WP_Query( $args );
 
 <div class="main-content">
     <div class="right-content">
-        <div class="container home-container default-padding">
+        <div class="container home-container inner_container">
 
             <div class="row">
                 <div class="col-12 col-lg-7">
                     <div class="white-element">
-                        <div class="row">
+                        <div>
                             <h3><?php echo $video_block2['title'];?></h3>
                             <p><?php  echo apply_filters('the_content', $video_block2['video_text'] );?></p>
                         </div>

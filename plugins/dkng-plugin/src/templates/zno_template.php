@@ -16,7 +16,7 @@ $i = 0;
             </div>
             <!-- Bread Crumbs -->
 
-            <div class="row">
+            <div>
                 <div class="announces_block-list zno_templates" >
                     <div class="container">
                         <div class="row">

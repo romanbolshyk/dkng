@@ -681,9 +681,9 @@ hr {
 	margin-top: -35px;
 	margin-left: -35px;
 	text-align: center;
-	animation: preloader-rotate 1.7s infinite linear;
+	/* animation: preloader-rotate 1.7s infinite linear; */
 }
-
+/*
 .preloader__item {
 	position: absolute;
 	display: inline-block;
@@ -699,7 +699,7 @@ hr {
 	top: auto;
 	bottom: 0;
 	animation-delay: -1s;
-}
+} */
 
 @keyframes preloader-rotate {
 	100% {
@@ -2742,7 +2742,6 @@ table.sv-filter-table thead .sv-filter-table__th, div.sv-contact-list-form__remo
 }
 .current-menu-item a{
 	font-weight: bold !important;
-	color: red !important;
 }
 .aligncenter {
 	text-align: center;

@@ -237,14 +237,14 @@ div .exit_popup_block .exit-popup {
   }
 }
 
-.template {
+/* .template {
   padding-bottom: 60px;
-}
-@media (max-width: 550px) {
+} */
+/* @media (max-width: 550px) {
   .template {
     padding-bottom: 10px;
   }
-}
+} */
 .template .sv-filter {
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.06);
   border-radius: 12px;
