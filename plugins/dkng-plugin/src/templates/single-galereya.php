@@ -15,7 +15,9 @@ get_header( 'custom' );
     <div class="inner_container  single-gallery gallery_photo_block">
         <div class="container">
             <h3><?php echo get_the_title();?></h3>
-            <div class="content item" style="width: 600px; height: 500px;">
+            <!-- <div class="content item" style="width: 600px; height: 500px;"> -->
+            <div class="row">
+            <div class="col-12">
             <?php if ( $type == 'video' ) { ?>
 
                 <iframe width="100%" height="100%" src="<?php echo get_the_excerpt( $post_id );?>" title="YouTube video player" frameborder="0"
@@ -24,9 +26,7 @@ get_header( 'custom' );
             <?php } else { ?>
 
                 <div class="item"  >
-
                     <div class="slider slider-1">
-
                         <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper top_swiper mySwiper2">
                             <div class="swiper-wrapper">
                                 <?php foreach ( $in_photos as $in_photo ) { ?>
@@ -74,7 +74,8 @@ get_header( 'custom' );
                     </script>
 
             <?php } ?>
-        </div>
+            </div>
+            </div>
         </div>
     </div>
 <?php endwhile;  ?>

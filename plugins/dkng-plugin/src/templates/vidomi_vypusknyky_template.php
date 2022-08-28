@@ -7,7 +7,7 @@ $kerivnyky = get_field( 'bosses', get_the_ID() );
 <div class="super_container vypusknyky_block">
     <div class="container content ">
 
-        <div class="white-element page-template-announces">
+        <!-- <div class="white-element page-template-announces">
             <div class="row">
                 <div class="announces_block-list">
                     <div class="container">
@@ -36,7 +36,7 @@ $kerivnyky = get_field( 'bosses', get_the_ID() );
 
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="white-element mb-100 vypysknyky_rows">
             <div class="row">
