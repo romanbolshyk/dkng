@@ -50,7 +50,7 @@ $projects_txt .= empty( $project_type ) ? $project_database_text : $project_real
                     <?php echo apply_filters('the_content', get_the_content() ); ?>
                 </div>
 
-                <div class="block">
+                <div class="block" style="margin-top: 30px;">
 
                     <h3 class="aligncenter"><?php echo $projects_txt; ?></h3>
 
