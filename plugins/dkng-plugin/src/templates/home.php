@@ -51,18 +51,23 @@ $the_last_updated_posts = new WP_Query( $args );
     </div>
 <?php } ?>
 
+<div class="default-padding news_block">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <?php include 'template-parts/home_page/home_dashboard_campaigns.php';?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 <div class="main-content">
     <div class="right-content">
         <div class="container home-container inner_container">
 
             <div class="row">
                 <div class="col-12 col-lg-7">
-                    <div class="white-element">
-                        <div>
-                            <h3><?php echo $video_block2['title'];?></h3>
-                            <p><?php  echo apply_filters('the_content', $video_block2['video_text'] );?></p>
-                        </div>
-                    </div>
 
                     <div class="white-element page-template-announces">
                         <div class="row">
@@ -99,6 +104,13 @@ $the_last_updated_posts = new WP_Query( $args );
                                 </div>
 
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="white-element">
+                        <div>
+                            <h3><?php echo $video_block2['title'];?></h3>
+                            <p><?php  echo apply_filters('the_content', $video_block2['video_text'] );?></p>
                         </div>
                     </div>
 
@@ -196,16 +208,6 @@ $the_last_updated_posts = new WP_Query( $args );
                 </div>
             </div>
 
-        </div>
-    </div>
-</div>
-
-<div class="default-padding news_block">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <?php include 'template-parts/home_page/home_dashboard_campaigns.php';?>
-            </div>
         </div>
     </div>
 </div>
