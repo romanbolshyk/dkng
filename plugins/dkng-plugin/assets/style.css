@@ -94,7 +94,7 @@ img.logo_main:hover {
 
 .download_block {
 	padding-bottom: 30px;
-	border-bottom: 3px solid #00c7c7;
+	border-bottom: 3px solid #184fa0;
 }
 
 
@@ -127,20 +127,20 @@ input[type="submit"]:hover, input[type="file"]:hover {
 	display: block;
 	width: 200px;
 	margin: 30px auto;
-	background: #00c7c7;
+	background: #184fa0;
 	color: #ffff;
 	border-radius: 20px;
 	cursor: pointer;
 }
 
 #load_more_button:hover, #load_more_button_filtering:hover {
-	background: rgb(0, 230, 230);
+	background: #142e4f;
 }
 
 .right-content .investment-right-holder .share-button:hover {
 	border: 1px solid #fff;
 	color: #fff !important;
-	background-color: #00c7c7 !important;
+	background-color: #184fa0 !important;
 }
 
 
@@ -157,7 +157,7 @@ input[type="submit"]:hover, input[type="file"]:hover {
 
 
 .footer.dark .related-edited-articles-sharing .socials a.share-button i {
-	background-color: #00c7c7 !important;
+	background-color: #184fa0 !important;
 	border-radius: 50px;
 	font-size: 24px;
 	height: 37px;
@@ -180,7 +180,7 @@ a.email_footer_ea {
 
 a.email_footer_ea:hover {
 	text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
-	color: #00c7c7;
+	color: #184fa0;
 	background: none;
 }
 
@@ -213,7 +213,7 @@ p.small.footer_ea_p {
 	display: inline-block;
 	padding: 5px 0;
 	cursor: pointer;
-	color: #00c7c7;
+	color: #184fa0;
 }
 
 .custom-file-upload + input[type="file"] {
@@ -278,7 +278,7 @@ p.small.footer_ea_p {
 }
 
 .card-header .sign_up_webinar {
-	color: #00c7c7;
+	color: #184fa0;
 	background: none;
 	border: none;
 	font-weight: bold;
@@ -342,7 +342,7 @@ ul.parent li.lesson {
 
 .single_course_bold {
 	font-weight: bold;
-	color: #00c7c7;
+	color: #184fa0;
 }
 
 #completed_recomendation_table {
@@ -537,7 +537,7 @@ ul.parent li.lesson {
 ul.single_course_list li.lesson_parent a:hover {
 	cursor: default;
 	background: none;
-	color: #00c7c7;
+	color: #184fa0;
 }
 
 .white-element.right-holder-video {
@@ -644,7 +644,7 @@ hr {
 .article_content_block .article_title_block .title_text,
 .article_content_block .article_content .title_text {
 	font-family: "Work Sans";
-	color: #00c7c7;
+	color: #184fa0;
 	font-size: 18px;
 	font-weight: 700;
 }
@@ -688,7 +688,7 @@ hr {
 	position: absolute;
 	display: inline-block;
 	top: 0;
-	background-color: rgb(0, 199, 199);
+	background-color: #184fa0;
 	border-radius: 100%;
 	width: 20px;
 	height: 20px;
@@ -768,7 +768,7 @@ hr {
 
 /*.sv-task .sv-task__aim:hover {*/
 /*    cursor: pointer;*/
-/*    color: #00c7c7 !important;*/
+/*    color: #184fa0 !important;*/
 /*}*/
 .sv-tooltip-container .tooltip-popup {
 	text-transform: initial !important;
@@ -1030,7 +1030,7 @@ div.left-border-with-circles .left-icon {
 	margin-bottom: 15px;
 }
 .sv-link-popup textarea:focus {
-	 border-color: #00c7c7;
+	 border-color: #184fa0;
 	 outline: none;
  }
 .sv-tale:nth-of-type(2){
@@ -1074,7 +1074,7 @@ div.left-border-with-circles .left-icon {
 	border-radius: 9px;
 	font-size: 14px;
 	color: #ffffff;
-	background-color: #00c7c7;
+	background-color: #184fa0;
 	cursor: pointer;
 	position: relative;
 }
@@ -1150,7 +1150,7 @@ div.left-border-with-circles .left-icon {
 
 .sv-link-popup__custom-checkbox:checked + label ,
 .sv-link-popup__personal-token:checked + label {
-	background-color: #00c7c7;
+	background-color: #184fa0;
 }
 .sv-email-campaign__custom-link .sv-custom-link i{
 	transform: translateY(2px);
@@ -1389,7 +1389,7 @@ table.sv-email-campaign__table tbody tr.canceled .js-cancel-email {
 	border-radius: 6px;
 	border: 1px solid #f1f1f1;
 	background-color: #ffffff;
-	color: #00c7c7;
+	color: #184fa0;
 	font-family: "Work Sans";
 	font-weight: 500;
 	letter-spacing: normal;
@@ -1399,7 +1399,7 @@ table.sv-email-campaign__table tbody tr.canceled .js-cancel-email {
 	box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
 	border-radius: 6px;
 	border: 1px solid #01b5b5;
-	background-color: #00c7c7;
+	background-color: #184fa0;
 	color: #ffffff;
 	font-family: "Work Sans";
 	font-weight: 500;
@@ -1444,7 +1444,7 @@ input.search .innericon {
 	border-left: 1px solid #fff !important;
 }
 #ajaxsearchprores1_1.vertical, #ajaxsearchprores1_2.vertical, div.asp_r.asp_r_1.vertical {
-	background: #00c7c7 !important;
+	background: #184fa0 !important;
 }
 #ajaxsearchpro1_1 .probox .promagnifier, #ajaxsearchpro1_2 .probox .promagnifier, div.asp_m.asp_m_1 .probox .promagnifier {
 	background: none !important;
@@ -1469,19 +1469,19 @@ input.search .innericon {
 	min-width: 85px;
 }
 .tabs .tab {
-	border: 1px solid #00c7c7;;
+	border: 1px solid #184fa0;;
 }
 .tabs .tab:hover {
-	background: #00c7c7;
+	background: #184fa0;
 	color: #ffffff!important;
 }
 .tabs .tab.active {
-	background: #00c7c7;
+	background: #184fa0;
 	color: #ffffff!important;
 }
 .tabs .tab.active:hover {
 	background: #ffffff;
-	color: #00c7c7!important;
+	color: #184fa0!important;
 }
 
 .cloned_name_textarea {
@@ -1542,10 +1542,10 @@ input.search .innericon {
 	padding: 13px 0px;
 	font-size: 18px;
 	line-height: 0.67;
-	background-color: #00c7c7;
+	background-color: #184fa0;
 	color: #fff!important;
 	box-shadow: none;
-	border-color: #00c7c7;
+	border-color: #184fa0;
 	transform: translateY(2px);
 	cursor: pointer;
 }
@@ -1800,7 +1800,7 @@ h3.sv-filter__title {
 	top: 50%;
 	transform: translateY(-50%);
 	pointer-events: none;
-	color: #00c7c7;
+	color: #184fa0;
 }
 .right-content .investor-holder .dropdown button.btn-secondary::after{
 	width: 10px;
@@ -1910,7 +1910,7 @@ div.template .template-items .item .item-image img {
 	.sv-content-detail .single_article_sharing_block div.download_block {
 		padding-bottom: 20px;
 		margin-bottom: 20px;
-		border-bottom: 3px solid #00c7c7;
+		border-bottom: 3px solid #184fa0;
 	}
 }
 
@@ -2315,7 +2315,7 @@ h2.sv-title,.sv-tale .sv-tale__table, div.sv-email-popup__body h5, div.sv-lead-n
 .left-menu a.nav-link:hover, .left-menu a.nav-link.active, .right-content div.white-element .grey-box p.bold:hover,
 .right-content div.small-white a:hover
 {
-	color: #00c7c7;
+	color: #184fa0;
 }
 
 .page-admin-dashboard p, .dashboard-page div.account-info p, .dashboard-page p span.bold_span, .sv-filter .sv-filter__description,
@@ -2366,7 +2366,7 @@ div.sv-email-popup__copy p
 .box form.rcp_form input[type="submit"]{
 	height: 46px!important;
 	border-radius: 6px!important;
-	background-color: rgb(0, 199, 199)!important;
+	background-color: #184fa0!important;
 	color:#fff!important;
 	text-align: center!important;
 	font-family: 'Work Sans'!important;
@@ -2393,7 +2393,7 @@ div.campaigns-report__link a, .sv-content-detail label, .sv-tabs__tab, div p spa
 }
 body .header_top_nav ul li a:hover, .topics-nav a.nav-link:hover, div.inner-page.profile .header .header_top_nav ul li a:hover ,
 div.footer ul li a:hover {
-	color: #00c7c7;
+	color: #184fa0;
 }
 div.sv-campaign-description p, div.post-holder p , div.post-holder li, div.post-holder span, div.post-holder strong,
 .page-terms-of-service p *, a.sv-button--grey-text, .sv-action-vertical__tag, .sv-upload__button span, .page-faq span
@@ -2474,12 +2474,12 @@ table.sv-filter-table thead .sv-filter-table__th, div.sv-contact-list-form__remo
 	left: 5px;
 	width: 4px;
 	height: 7px;
-	border: solid #00c7c7;
+	border: solid #184fa0;
 	border-width: 0 1px 1px 0;
 	transform: rotate(45deg);
 }
 .wealthbox_tags_block input:checked + label {
-	color: #00c7c7;
+	color: #184fa0;
 }
 .sv-filter-table thead th:last-of-type {
 	min-width: 150px;
@@ -2506,7 +2506,7 @@ table.sv-filter-table thead .sv-filter-table__th, div.sv-contact-list-form__remo
 	margin-bottom: 15px;
 }
 .import_wealthbox_page a.href_not_white:hover {
-	background: #00c7c7;
+	background: #184fa0;
 	color: #fff !important;
 }
 

@@ -283,7 +283,7 @@ body.page-postcard .announces_block-list .announces_block-item-text,
 }
 body.page-postcard .announces_block-list .announces_block-item-top-text,
 .page-template-announces .announces_block-list .announces_block-item-top-text {
-  color: #00c7c7;
+  color: #184fa0;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 1.5px;
@@ -538,9 +538,9 @@ body.page-postcard .announces_block-list .announces_block-item #progressBar::-we
   cursor: pointer;
   width: 0px;
   height: 4px;
-  background: #00c7c7;
-  border-right: 0px solid #00c7c7;
-  box-shadow: -500px 0 0 500px #00c7c7;
+  background: #184fa0;
+  border-right: 0px solid #184fa0;
+  box-shadow: -500px 0 0 500px #184fa0;
 }
 body.page-postcard .announces_block-list .announces_block-item #progressBar::-moz-range-thumb,
 .page-template-announces .announces_block-list .announces_block-item #progressBar::-moz-range-thumb {
@@ -548,10 +548,10 @@ body.page-postcard .announces_block-list .announces_block-item #progressBar::-mo
   cursor: pointer;
   width: 0px;
   height: 4px;
-  background: #00c7c7;
+  background: #184fa0;
   border: none;
-  border-right: 0px solid #00c7c7;
-  box-shadow: -500px 0 0 500px #00c7c7;
+  border-right: 0px solid #184fa0;
+  box-shadow: -500px 0 0 500px #184fa0;
 }
 body.page-postcard .announces_block-list .announces_block-item .track-time,
 .page-template-announces .announces_block-list .announces_block-item .track-time {
@@ -627,7 +627,7 @@ body.page-postcard .announces_block-list .announces_block-item #volumeslider::-w
   cursor: pointer;
   width: 10px;
   height: 10px;
-  background: #00c7c7;
+  background: #184fa0;
   border-radius: 50%;
 }
 body.page-postcard .announces_block-list .announces_block-item #volumeslider::-moz-range-thumb,
@@ -637,12 +637,12 @@ body.page-postcard .announces_block-list .announces_block-item #volumeslider::-m
   width: 10px;
   height: 10px;
   border: none;
-  background: #00c7c7;
+  background: #184fa0;
   border-radius: 50%;
 }
 body.page-postcard .announces_block-list .announces_block-item .slide,
 .page-template-announces .announces_block-list .announces_block-item .slide {
-  background: #00c7c7;
+  background: #184fa0;
   height: 4px;
   width: 0;
   position: absolute;
@@ -766,7 +766,7 @@ body.page-postcard .announces_block-list .announces_block-item .audio-buttons .a
   width: 35px;
   height: 35px;
   display: inline-block;
-  border: 2px solid #00c7c7;
+  border: 2px solid #184fa0;
   background-color: rgba(0, 199, 199, 0.2);
   transition: 0.5s;
   background-size: 80%;
@@ -808,8 +808,8 @@ body.page-postcard .announces_loadmore,
   margin: 30px auto 20px;
   padding: 10px 40px;
   border-radius: 8px;
-  border: 1px solid #00c7c7;
-  background-color: #00c7c7;
+  border: 1px solid #184fa0;
+  background-color: #184fa0;
   color: #ffffff;
   font-family: "Work Sans", sans-serif;
   font-size: 14px;
@@ -821,5 +821,5 @@ body.page-postcard .announces_loadmore,
 body.page-postcard .announces_loadmore:hover,
 .page-template-announces .announces_loadmore:hover {
   background-color: #ffffff;
-  color: #00c7c7;
+  color: #184fa0;
 }

@@ -30,7 +30,7 @@
     font-weight: bold;
 }
 .small .blue {
-    color: #00c7c7;
+    color: #184fa0;
     font-size: 8px;
     text-decoration: underline;
 }
@@ -109,7 +109,7 @@
 }
 .left-menu .nav-link:hover,
 .left-menu .nav-link.active {
-    color: #00c7c7;
+    color: #184fa0;
 }
 .left-menu {
     height: 100%;
@@ -196,7 +196,7 @@
     margin: 0;
 }
 .right-content .white-element .general-holder label {
-    color: #00c7c7;
+    color: #184fa0;
     font-size: 64px;
     margin: 0;
 }
@@ -213,7 +213,7 @@
 }
 .right-content .white-element h3 a {
     font-weight: 500;
-    color: #00c7c7;
+    color: #184fa0;
     text-decoration: underline;
 }
 .right-content .white-element h3 a:hover {
@@ -320,7 +320,7 @@
 }
 
 .right-content .white-element .grey-box p.bold:hover {
-    color: #00c7c7;
+    color: #184fa0;
 }
 
 .right-content .white-element .grey-box a.borders {
@@ -455,14 +455,14 @@
 .strategies-holder .point-holder .point-half {
     width: 5px;
     height: 5px;
-    background-color: #00c7c7;
+    background-color: #184fa0;
     border-radius: 50%;
     margin: 10px 5px 5px;
 }
 .strategies-holder .point-holder .point-full {
     width: 8px;
     height: 8px;
-    background-color: #00c7c7;
+    background-color: #184fa0;
     border-radius: 50%;
     margin: 10px 5px 5px;
 }
@@ -483,8 +483,8 @@
     text-align: center;
 }
 .white-element.right-holder .top-border .nav-tabs .nav-link.active {
-    color: #00c7c7;
-    border-bottom: 1px solid #00c7c7;
+    color: #184fa0;
+    border-bottom: 1px solid #184fa0;
 }
 .nav-tabs .nav-item {
     width: 25%;
@@ -522,7 +522,7 @@
     color: #000;
 }
 .upcoming-accordion .card .card-header.active {
-    background-color: #00c7c7;
+    background-color: #184fa0;
     color: #fff;
 }
 .upcoming-accordion .card .card-header.active h5,
@@ -532,7 +532,7 @@
     color: inherit;
 }
 /*.upcoming-accordion .card .card-header.active {
-    background-color: #00c7c7;
+    background-color: #184fa0;
     color: #fff;
 }*/
 .upcoming-accordion .card-header h5 {
@@ -557,7 +557,7 @@
     /*font-family: 'WorkSans';*/
     font-size: 10px;
     font-weight: 500;
-    color: #00c7c7;
+    color: #184fa0;
     padding: 0;
     cursor: pointer;
 }
@@ -595,7 +595,7 @@
 .white-element.campaigns .rate-box .circle-hoder {
     width: 24px;
     height: 24px;
-    border: 2px solid #00c7c7;
+    border: 2px solid #184fa0;
     border-radius: 50%;
 }
 .white-element.campaigns .table-responsive {
@@ -628,7 +628,7 @@
     min-width: 60px;
     height: 20px;
     border: none;
-    background-color: #00c7c7;
+    background-color: #184fa0;
     color: #fff;
     padding: 5px 15px;
     text-align: center;
@@ -637,7 +637,7 @@
 }
 .white-element.campaigns .table-responsive tbody td .more-info {
     font-size: 25px;
-    color: #00c7c7;
+    color: #184fa0;
     line-height: 23px;
     /*margin-top: 15px;*/
 }
@@ -656,7 +656,7 @@
     margin: 0 5px;
 }
 .white-element.campaigns .link-box.bigger-box .dot-link.active {
-    background-color: #00c7c7;
+    background-color: #184fa0;
 }
 .white-element.total-holder .btn-funds {
     font-family: 'Roboto';
@@ -668,14 +668,14 @@
     line-height: 43px;
     padding: 0 15px;
     border-radius: 4px;
-    background-color: #00c7c7;
+    background-color: #184fa0;
     border: 1px solid transparent;
 }
 .white-element.total-holder .btn-funds.line {
     min-width: 173px;
-    border: 1px solid #00c7c7;
+    border: 1px solid #184fa0;
     background-color: transparent;
-    color: #00c7c7;
+    color: #184fa0;
 }
 .white-element.total-holder .btn-funds img {
     margin-right: 10px;
@@ -694,7 +694,7 @@
     font-size: 11px;
     font-weight: 400;
     font-weight: bold;
-    color: #00c7c7;
+    color: #184fa0;
 }
 .white-element.total-holder .central {
     min-height: 40px;
@@ -778,7 +778,7 @@
 .right-content .investor-holder .btn-grid.active,
 .right-content .investor-holder .btn-list.active
 {
-    background-color: #00c7c7;
+    background-color: #184fa0;
     /*color: #fff;*/
 }
 .right-content .investor-holder .btn-grid:hover .square,
@@ -883,8 +883,8 @@
     padding: 1px 10px;
 }
 .right-content .table-responsive.video .table tbody td .btn-line:hover {
-    color: #00c7c7;
-    border: 1px solid #00c7c7;
+    color: #184fa0;
+    border: 1px solid #184fa0;
 }
 .right-content .table-responsive.video .table tbody td .btn-view {
     min-width: 67px;
@@ -893,7 +893,7 @@
     text-align: center;
     border-radius: 6px;
     padding: 7px 10px;
-    background-color: #00c7c7;
+    background-color: #184fa0;
     border: 1px solid transparent;
     color: #fff;
     font-size: 12px;
@@ -901,8 +901,8 @@
     box-shadow: none;
 }
 .right-content .table-responsive.video .table tbody td .btn-view:hover {
-    border: 1px solid #00c7c7;
-    color: #00c7c7;
+    border: 1px solid #184fa0;
+    color: #184fa0;
     background-color: transparent;
 }
 .right-content .table-responsive.video .table tbody td .btn-line.small {
@@ -914,7 +914,7 @@
     font-size: 20px;
 }
 .right-content .table-responsive.video .table tbody td .btn-line.small:hover {
-    color: #00c7c7;
+    color: #184fa0;
 }
 .right-content .table-responsive.video .table tbody tr {
     height: 2px;
@@ -980,7 +980,7 @@
     float: left;
     display: inline-block;
     border-radius: 4px;
-    background-color: #00c7c7;
+    background-color: #184fa0;
     border: 1px solid transparent;
     color: #fff;
     font-size: 26px;
@@ -989,13 +989,13 @@
 }
 .right-content .investment-right-holder .social-link.big:hover {
     border: 1px solid #fff;
-    color: #00c7c7;
+    color: #184fa0;
     background-color: #fff;
 }
 .right-content .investment-right-holder h5 {
     font-size: 14px;
     font-weight: bold;
-    color: #00c7c7;
+    color: #184fa0;
     margin: 43px 0 20px;
 }
 .right-content .investment-right-holder .useful-holder {
@@ -1040,7 +1040,7 @@
     color: #000;
 }
 .right-content .small-white a:hover {
-    color: #00c7c7;
+    color: #184fa0;
 }
 .right-content .small-white a i {
     margin-right: 8px;
@@ -1072,7 +1072,7 @@
     margin-top: 10px;
 }
 .right-content .small-white form input[type="checkbox"]:checked + label:after {
-    border: 1px solid #00c7c7;
+    border: 1px solid #184fa0;
 }
 .right-content .small-white form input[type="checkbox"]+label:before {
     width: 14px;
@@ -1087,7 +1087,7 @@
 }
 .right-content .small-white form input[type="checkbox"]:checked + label:before {
     right: 0;
-    background-color: #00c7c7;
+    background-color: #184fa0;
 }
 .right-content .small-white form label {
     font-size: 14px;
@@ -1121,7 +1121,7 @@
     color: #000000;
 }
 .dashboard-page .dark-header a:hover {
-    color: #00c7c7;
+    color: #184fa0;
 }
 .footer.dark .link-box .social-link i {
     font-size: 19px;
@@ -1149,8 +1149,8 @@
 }
 .dashboard-page .dark-header a.social-link:hover,
 .footer.dark .link-box .social-link:hover {
-    color: #00c7c7;
-    border: 1px solid #00c7c7;
+    color: #184fa0;
+    border: 1px solid #184fa0;
 }
 .dashboard-page .dark-header .right-link a{
     width: 100%;
@@ -1169,7 +1169,7 @@
     margin-bottom: 64px;
 }
 .right-content .investment-right-holder.white-investment h5:hover {
-    color: #00c7c7;
+    color: #184fa0;
 }
 .main-content-white .investment-holder .inv-img.smart {
     margin-top: 0px;
@@ -1204,7 +1204,7 @@
     color: #000000;
 }
 .footer.dark .info-box a:hover {
-    color: #00c7c7;
+    color: #184fa0;
 }
 .footer.dark p.small {
     font-weight: 400;
@@ -1238,7 +1238,7 @@
     color: #fff;
 }
 .footer.dark .footer-bottom li a:hover {
-    color: #00c7c7;
+    color: #184fa0;
 }
 .main-content .right-content.marketing .investment-right-holder h3 {
     font-size: 20px;
@@ -1257,13 +1257,13 @@
     color: #9f9fa0;
 }
 .main-content .right-content.marketing .investment-right-holder p.grey span {
-    color: #00c7c7;
+    color: #184fa0;
 }
 .main-content .right-content.marketing .investment-right-holder nav {
     margin-top: 40px;
 }
 .investment-right-holder .tab-pane h6 {
-    color: #00c7c7;
+    color: #184fa0;
     font-size: 18px;
     font-weight: bold;
     margin: 31px 0 7px;
@@ -1286,7 +1286,7 @@
     left: 0;
     width: 30px;
     height: 3px;
-    background-color: #00c7c7;
+    background-color: #184fa0;
 }
 .main-content .right-content.marketing .investment-right-holder .nav-tabs {
     width: 100%;
@@ -1294,8 +1294,8 @@
 
 }
 .main-content .right-content.marketing .investment-right-holder .nav-tabs .nav-link.active {
-    color: #00c7c7;
-    border-bottom-color: #00c7c7;
+    color: #184fa0;
+    border-bottom-color: #184fa0;
 }
 
 .slider-selection {
@@ -1304,7 +1304,7 @@
 }
 .slider-track-high {
     background: none;
-    background-color: #00c7c7;
+    background-color: #184fa0;
 }
 .slider.slider-disabled .slider-handle {
     background: none;
@@ -1337,7 +1337,7 @@
 }
 
 .dark-box label {
-    color: #00c7c7;
+    color: #184fa0;
     font-family: "Work Sans";
     font-size: 14px;
     font-weight: bold;
@@ -1443,13 +1443,13 @@
 }
 .progress.circle .h2 {
     font-size: 14px;
-    color: #00c7c7;
+    color: #184fa0;
     margin-bottom: 0;
     margin-bottom: 3px;
 }
 .top-info h3 {
     font-size: 20px;
-    color: #00c7c7;
+    color: #184fa0;
     margin-bottom: 0;
 }
 .top-info p {
@@ -1469,7 +1469,7 @@
     left: 0;
 }
 .progress.circle .border-primary {
-    border-color: #00c7c7!important;
+    border-color: #184fa0!important;
 }
 .progress.circle>span {
     width: 50%;
@@ -1530,7 +1530,7 @@
     background-color: #444444;
 }
 .progress:not(.circle) .progress-bar {
-    background-color: #00c7c7;
+    background-color: #184fa0;
 }
 
 @media (max-width: 990px) {
@@ -1650,7 +1650,7 @@
     margin-bottom: 20px;
 }
 #submit_file {
-    color: #00c7c7;
+    color: #184fa0;
     background: none;
     border: none;
 }
@@ -1681,7 +1681,7 @@
     z-index: 9999;
 }
 .save_button_profile {
-    color: #00c7c7;
+    color: #184fa0;
     background: none;
     border: none;
     margin-top: 15px;

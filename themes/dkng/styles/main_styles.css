@@ -79,7 +79,7 @@ p a
 	display: inline;
 	position: relative;
 	color: inherit;
-	/* border-bottom: solid 1px #ffa07f; */
+	/* border-bottom: solid 1px #142e4f; */
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
 	-ms-transition: all 200ms ease;
@@ -101,7 +101,7 @@ a, a:hover, a:visited, a:active, a:link
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
 	text-shadow: rgba(0,0,0,.01) 0 0 1px;
-	color: #00c7c7;
+	color: #184fa0;
 }
 
 .our-philosophy a, .our-philosophy a:link, .our-philosophy a:hover {
@@ -109,7 +109,7 @@ a, a:hover, a:visited, a:active, a:link
 }
 
 a:hover {
-	color: rgb(0, 230, 230);
+	color: #142e4f;
 }
 
 p a:active
@@ -120,7 +120,7 @@ p a:active
 p a:hover
 {
 	color: #FFFFFF;
-	background: #ffa07f;
+	background: #142e4f;
 }
 p a:hover::after
 {
@@ -469,7 +469,7 @@ section
 }
 .header_top_nav ul li a:hover
 {
-	color: rgb(0, 199, 199);
+	color: #184fa0;
 }
 .header_top_phone
 {
@@ -1789,7 +1789,7 @@ section
 	text-align: center;
 	border-radius: 6px;
 	padding: 7px 10px;
-	background-color: #00c7c7;
+	background-color: #184fa0;
 	border: 1px solid transparent;
 	color: #fff;
 	font-size: 12px;

@@ -90,8 +90,8 @@ div.left-border-with-circles .left-icon {
   text-shadow: 1px 0 0 #000000, 0 0 0 #000000, 0 0 0 #000000;
 }
 .cookies-not-set .cn-set-cookie.cn-button:hover {
-  color: #00c7c7;
-  text-shadow: 1px 0 0 #00c7c7, 0 0 0 #00c7c7, 0 0 0 #00c7c7;
+  color: #184fa0;
+  text-shadow: 1px 0 0 #184fa0, 0 0 0 #184fa0, 0 0 0 #184fa0;
 }
 @media screen and (max-width: 991px) {
   .cookies-not-set .cn-set-cookie.cn-button {
@@ -387,7 +387,7 @@ div .exit_popup_block .exit-popup {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
   border: 1px solid #01b5b5;
-  background-color: #00c7c7;
+  background-color: #184fa0;
   color: #ffffff;
   font-family: "Work Sans";
   font-weight: 500;
@@ -400,7 +400,7 @@ div .exit_popup_block .exit-popup {
 }
 .template .template-items .item .item-btn-wrap .btn-download:hover {
   background-color: #ffffff;
-  color: #00c7c7;
+  color: #184fa0;
 }
 .template .template-items .item .item-btn-wrap .btn-view {
   cursor: pointer;
@@ -410,14 +410,14 @@ div .exit_popup_block .exit-popup {
   border-radius: 6px;
   border: 1px solid #f1f1f1;
   background-color: #ffffff;
-  color: #00c7c7;
+  color: #184fa0;
   font-family: "Work Sans";
   font-weight: 500;
   letter-spacing: normal;
   transition: 0.5s;
 }
 .template .template-items .item .item-btn-wrap .btn-view:hover {
-  background-color: #00c7c7;
+  background-color: #184fa0;
   color: #ffffff;
 }
 .template .loading #load_more_template {
@@ -461,7 +461,7 @@ div .exit_popup_block .exit-popup {
   text-align: center;
   font-weight: bold;
   width: 200px;
-  background: #00c7c7;
+  background: #184fa0;
   color: #ffff;
   border-radius: 20px;
 }
@@ -507,7 +507,7 @@ div .exit_popup_block .exit-popup {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
   border: 1px solid #01b5b5;
-  background-color: #00c7c7;
+  background-color: #184fa0;
   color: #ffffff;
   font-family: "Work Sans";
   font-weight: 500;
@@ -520,7 +520,7 @@ div .exit_popup_block .exit-popup {
 }
 .template .template-modal-close-wrap .btn-download:hover, .search_page .template-modal-close-wrap .btn-download:hover {
   background-color: #ffffff;
-  color: #00c7c7;
+  color: #184fa0;
 }
 .template .template-modal-close, .search_page .template-modal-close  {
   height: 24px;
