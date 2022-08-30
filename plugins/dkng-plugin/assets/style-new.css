@@ -461,7 +461,7 @@ a {
   width: auto;
 }
 .c-footer__info {
-  margin-left: 50px;
+  margin-left: 0px;
 }
 .c-footer__info--item {
   color: #fff;

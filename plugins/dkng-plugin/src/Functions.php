@@ -14,6 +14,7 @@ class Functions {
         self::register_ogoloshennya();
         self::register_galereya();
         self::register_specialities();
+        self::register_pracivnyky();
         self::register_specialities_programs();
         self::register_cemiykoldzh_vidgгky();
 
@@ -693,6 +694,131 @@ class Functions {
         );
 
         register_post_type( 'specialities', $post_type_args );
+    }
+
+    /**
+     * Register CPT ogoloshennya
+     *
+     */
+    public static function register_pracivnyky() {
+
+        $ogoloshennya_url_slug          = 'pracivnyky';
+        $ogoloshennya_category_url_slug = 'pracivnyky-category';
+
+        $taxonomy_labels = array(
+            'name'                       => 'Category',
+            'singular_name'              => 'Category',
+            'menu_name'                  => 'Categories',
+            'all_items'                  => 'All Categories',
+            'parent_item'                => 'Parent Category',
+            'parent_item_colon'          => 'Parent Category:',
+            'new_item_name'              => 'New Category Name',
+            'add_new_item'               => 'Add New Category',
+            'edit_item'                  => 'Edit Category',
+            'update_item'                => 'Update Category',
+            'separate_items_with_commas' => 'Separate categories with commas',
+            'search_items'               => 'Search categories',
+            'add_or_remove_items'        => 'Add or remove categories',
+            'choose_from_most_used'      => 'Choose from the most used categories',
+        );
+
+        $taxonomy_rewrite = array(
+            'slug'         => $ogoloshennya_category_url_slug,
+            'with_front'   => true,
+            'hierarchical' => true,
+        );
+
+        $taxonomy_args = array(
+            'labels'            => $taxonomy_labels,
+            'hierarchical'      => true,
+            'public'            => true,
+            'show_ui'           => true,
+            'show_admin_column' => true,
+            'show_in_nav_menus' => true,
+            'query_var'         => true,
+            'show_tagcloud'     => true,
+            'rewrite'           => $taxonomy_rewrite,
+        );
+        register_taxonomy( 'pracivnyky-category', array( 'pracivnyky' ), $taxonomy_args );
+
+        $taxonomy_labels = array(
+            'name'                       => 'Tag',
+            'singular_name'              => 'Tag',
+            'menu_name'                  => 'Tags',
+            'all_items'                  => 'All Tags',
+            'parent_item'                => 'Parent Tag',
+            'parent_item_colon'          => 'Parent Tag:',
+            'new_item_name'              => 'New Tag Name',
+            'add_new_item'               => 'Add New Tag',
+            'edit_item'                  => 'Edit Tag',
+            'update_item'                => 'Update Tag',
+            'separate_items_with_commas' => 'Separate categories with commas',
+            'search_items'               => 'Search categories',
+            'add_or_remove_items'        => 'Add or remove categories',
+            'choose_from_most_used'      => 'Choose from the most used categories',
+        );
+
+        $taxonomy_rewrite = array(
+            'slug'         => 'pracivnyky-tag',
+            'with_front'   => true,
+            'hierarchical' => true,
+        );
+
+        $taxonomy_args = array(
+            'labels'            => $taxonomy_labels,
+            'hierarchical'      => true,
+            'public'            => true,
+            'show_ui'           => true,
+            'show_admin_column' => true,
+            'show_in_nav_menus' => true,
+            'query_var'         => true,
+            'show_tagcloud'     => true,
+            'rewrite'           => $taxonomy_rewrite,
+        );
+        register_taxonomy( 'pracivnyky-tag', array( 'pracivnyky' ), $taxonomy_args );
+
+        $post_type_labels = array(
+            'name'               => 'Працівники',
+            'singular_name'      => 'Працівник',
+            'menu_name'          => 'Працівники',
+            'parent_item_colon'  => 'Parent Працівники:',
+            'all_items'          => 'Всі Працівники',
+            'view_item'          => 'Дивитись Працівника',
+            'add_new_item'       => 'Додати Працівника',
+            'add_new'            => 'Додати нового Працівника',
+            'edit_item'          => 'Редагувати Працівника',
+            'update_item'        => 'Оновити Працівника',
+            'search_items'       => 'Search Працівника',
+            'not_found'          => 'Працівників не знайдено',
+            'not_found_in_trash' => 'No Працівники found in Trash',
+        );
+
+        $post_type_rewrite = array(
+            'slug'       => 'pracivnyky-item',
+            'with_front' => true,
+            'pages'      => true,
+            'feeds'      => true,
+        );
+
+        $post_type_args = array(
+            'label'              => 'pracivnyky',
+            'description'        => 'pracivnyky information pages',
+            'labels'             => $post_type_labels,
+            'supports'           => array( 'title', 'editor', 'excerpt', 'thumbnail', 'comments', 'revisions', 'author'),
+            'taxonomies'         => array( 'post' ),
+            'hierarchical'       => false,
+            'public'             => true,
+            'show_ui'            => true,
+            'show_in_menu'       => true,
+            'menu_icon'          => 'dashicons-buddicons-buddypress-logo',
+            'menu_position'      =>  31,
+            'has_archive'        => true,
+            'publicly_queryable' => true,
+            'rewrite'            => array( 'slug' => $ogoloshennya_url_slug ),
+            'capability_type'    => 'post',
+        );
+
+        register_post_type( 'pracivnyky', $post_type_args );
     }
 
     /**

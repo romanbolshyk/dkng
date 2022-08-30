@@ -387,8 +387,10 @@ function custom_breadcrumbs() {
 
                 if ( $post_type == 'novyny' ) {
                     $href = get_site_url() . '/novyny';
-                } if ( $post_type == 'ogoloshennya' ) {
+                } else if ( $post_type == 'ogoloshennya' ) {
                     $href = get_site_url() . '/ogoloshennya';
+                } else if ( $post_type == 'pracivnyky' ) {
+                    $href = get_site_url() . '/tsyklovi-komosiyi';
                 }
 
                 echo '<li class="item-cat item-custom-post-type-' . $post_type . '">

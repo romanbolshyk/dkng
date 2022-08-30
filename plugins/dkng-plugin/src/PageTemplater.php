@@ -72,6 +72,7 @@ class PageTemplater {
             'templates/cemiy_koledzh_template.php'  => 'ЦеМійКоледж Шаблон',
             'templates/kerivnytstvo_template.php'   => 'Керівництво Шаблон',
             'templates/vidomi_vypusknyky_template.php' => 'Відомі Випускники Шаблон',
+            'templates/tsyklovi_komisiyi.php'       => 'Циклові Комісії Шаблон',
             'templates/novyny_template.php'         => 'Новини Шаблон',
             'templates/speciality_template.php'     => 'Спеціальності Шаблон',
             'templates/speciality_details_template.php' => 'Спеціальності Деталі Шаблон',
