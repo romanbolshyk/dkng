@@ -74,24 +74,6 @@ a {
   word-break: break-all;
 }
 
-.news-block-list {
-  margin-top: 80px;
-}
-@media (max-width: 1199px) {
-  .news-block-list {
-    margin-top: 60px;
-  }
-}
-@media (max-width: 575px) {
-  .news-block-list {
-    margin-top: 50px;
-  }
-}
-
-.c-header__bg {
-  background: url(http://www.dkng.net.ua/images/fon1.jpg) 100% 100%;
-  background-size: contain;
-}
 .c-header__top {
   display: flex;
   align-items: center;
@@ -400,6 +382,7 @@ a {
   color: #fff;
   padding: 12px;
   font-weight: 600;
+  word-break: break-word;
 }
 .c-header__menu .menu-custom-header-menu-container li:hover {
   background-color: #142e4f;
@@ -433,6 +416,7 @@ a {
 
 .c-footer {
   padding: 20px 0;
+  background: #c4c4c4;
 }
 .c-footer__top {
   margin-bottom: 20px;
@@ -446,10 +430,12 @@ a {
 }
 .c-footer__left {
   display: flex;
+  flex-direction: column;
 }
 @media (max-width: 768px) {
   .c-footer__left {
-    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 }
 .c-footer__logo {
@@ -467,6 +453,23 @@ a {
   color: #fff;
   font-size: 16px;
   display: block;
+}
+.c-footer__social {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.c-footer__social--item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgb(223, 233, 242);
+  margin: 5px;
+  border-radius: 50%;
+  background-color: rgb(249, 249, 249);
+  font-size: 14px;
 }
 .c-footer__gallery {
   display: flex;

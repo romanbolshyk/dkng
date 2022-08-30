@@ -65,22 +65,29 @@ $template_dir = get_template_directory_uri();
 
                     <div class="c-header__info">
                         <div class="c-header__info--item">
-                            <span>e-mail:</span>
-                            <span><?php echo get_field('email', 'option') ;?></span>
+                            <!-- <span>e-mail:</span> -->
+                            <span>
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </span>
+                            
+                            <span> <?php echo get_field('email', 'option') ;?></span>
                         </div>
 
-                        <div class="c-header__info--item">
+                        <!-- <div class="c-header__info--item">
                             <span>skype:</span>
                             <span><?php echo get_field('skype', 'option') ;?></span>
-                        </div>
+                        </div> -->
 
-                        <div class="c-header__info--item">
+                        <!-- <div class="c-header__info--item">
                             <span>тел.:</span>
                             <span><?php echo get_field('phone', 'option') ;?></span>
-                        </div>
+                        </div> -->
 
                         <div class="c-header__info--item">
-                            <span>приймальна комісія:</span>
+                            <span>
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                            </span>
+                            <span> Приймальна комісія: </span>
                             <span><?php echo get_field('commision_phone', 'option') ;?></span>
                         </div>
 

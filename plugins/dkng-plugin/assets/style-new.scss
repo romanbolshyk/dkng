@@ -82,25 +82,25 @@ a {
   word-break: break-all;
 }
 
-.news-block-list {
-  margin-top: 80px;
+// .news-block-list {
+//   margin-top: 80px;
 
-  @media (max-width: 1199px) {
-    margin-top: 60px;
-  }
+//   @media (max-width: 1199px) {
+//     margin-top: 60px;
+//   }
 
-  @media (max-width: 575px) {
-    margin-top: 50px;
-  }
-}
+//   @media (max-width: 575px) {
+//     margin-top: 50px;
+//   }
+// }
 
 
 // Header
 .c-header {
-  &__bg {
-    background: url(http://www.dkng.net.ua/images/fon1.jpg) 100% 100%;
-    background-size: contain;
-  }
+  // &__bg {
+  //   background: url(http://www.dkng.net.ua/images/fon1.jpg) 100% 100%;
+  //   background-size: contain;
+  // }
 
   &__top {
     display: flex;
@@ -432,6 +432,7 @@ a {
           color: $c-text;
           padding: 12px;
           font-weight: 600;
+          word-break: break-word;
         }
 
         &:hover {
@@ -478,6 +479,7 @@ a {
 .c-footer {
   padding: 20px 0;
   // margin-top: 20px;
+  background: #c4c4c4;
 
   &__top {
     margin-bottom: 20px;
@@ -491,9 +493,11 @@ a {
 
   &__left {
     display: flex;
+    flex-direction: column;
 
     @media (max-width: 768px) {
-      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
   }
 
@@ -508,12 +512,31 @@ a {
   }
 
   &__info {
-    margin-left: 50px;
+    margin-left: 0px;
 
     &--item {
       color: #fff;
       font-size: 16px;
       display: block;
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+
+    &--item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      border: 1px solid rgb(223, 233, 242);
+      margin: 5px;
+      border-radius: 50%;
+      background-color: rgb(249, 249, 249);
+      font-size: 14px;
     }
   }
 
