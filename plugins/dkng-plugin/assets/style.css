@@ -2728,7 +2728,7 @@ table.sv-filter-table thead .sv-filter-table__th, div.sv-contact-list-form__remo
 /* */
 .bread_menu {
 	padding:0;
-	margin: 0 10px 10px 10px;
+	/* margin: 0 10px 10px 10px; */
 	font-size: 16px;
 	font-weight: bold;
 }
@@ -2757,13 +2757,16 @@ table.sv-filter-table thead .sv-filter-table__th, div.sv-contact-list-form__remo
 	overflow:hidden;
 	text-align: center;
 	list-style:none;
-	margin:11px 0;
+	margin: 0;
 }
 #tsh_breadcrumbs li{
 	font-weight: bold;
 	display:inline-block;
 	text-decoration: none;
 	padding: 4px;
+	margin-top: 0;
+	line-height: 1;
+	font-size: 14px;
 }
 #tsh_breadcrumbs li:before{
 	display: none;
