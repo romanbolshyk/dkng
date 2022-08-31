@@ -33,6 +33,10 @@ $args = array(
 );
 $the_last_updated_posts = new WP_Query( $args );
 
+$obj      = new \Dkng\Wp\Specialities();
+$programs = $obj->get_programs( false, 3, 1 );
+$programs = $programs->posts;
+
 ?>
 
 <?php if ( !empty( $slider_block ) ) { ?>
@@ -214,46 +218,7 @@ $the_last_updated_posts = new WP_Query( $args );
 
 
 <?php if ( $philosophy_block ) { ?>
-    <div class="default-padding our-philosophy">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2><?php echo $philosophy_block['title']; ?></h2>
-                </div>
-            </div>
-            <?php if ( $philosophy_block && $philosophy_block['philosophies'] ) {
-
-                foreach ( $philosophy_block['philosophies'] as $i => $philosophy ) {
-                    if ( $i > 4 ) break;
-                    if ( ( $i % 2 ) == 0 ) { ?>
-                        <div class="row">
-                    <?php  } ?>
-
-                    <div class="col-lg-6">
-                        <?php
-                        $philosophy_img_id = get_image_id( $philosophy['image'] );
-                        $philosophy_img_alt = get_post_meta($philosophy_img_id, '_wp_attachment_image_alt', TRUE);
-                        ?>
-                        <img src="<?php if ( $philosophy['image'] )  echo $philosophy['image']; ?>" alt="<?php echo esc_attr( $philosophy_img_alt ); ?>"/>
-                        <h3><?php if ( $philosophy['title'] )  echo $philosophy['title']; ?></h3>
-                        <p><?php if ( $philosophy['text'] )  echo $philosophy['text']; ?></p>
-                    </div>
-
-                    <?php if ( ( $i % 2 ) != 0 ) { ?>
-                        </div>
-                        <?php
-                    }
-                }
-            } ?>
-            <div class="row">
-                <div class="col-lg-12">
-                    <a href="<?php if ( $philosophy_block['page_link'] ) echo $philosophy_block['page_link'];?>"><?php echo $philosophy_block['page_title'];?>
-                        <img src="./dist/img/arrow-right.png" alt="arrow right"/>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php require_once 'template-parts/home_page/home_programs.php' ;?>
 <?php } ?>
 
 <?php
