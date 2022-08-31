@@ -513,6 +513,9 @@ a {
   color: #000;
   font-size: 16px;
 }
+.c-footer .separator {
+  border: solid 1px #000;
+}
 
 .vypysknyky_rows {
   padding: 60px 0;

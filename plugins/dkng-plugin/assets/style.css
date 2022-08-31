@@ -1723,6 +1723,10 @@ table.sv-table tbody tr,
 div.sv-progress-bar, div.campaign__info {
 	border-radius: 8px!important;
 }
+div.campaign__info {
+	border-top-left-radius: 0!important;
+	border-top-right-radius: 0!important;
+}
 .sv-content__block,
 .sv-content-detail .sv-content__block.article-block,
 div.sv-filter,
