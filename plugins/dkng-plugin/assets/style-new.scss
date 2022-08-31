@@ -78,10 +78,6 @@ p:empty {
   height: 16px;
 }
 
-a {
-  word-break: break-word
-}
-
 // .news-block-list {
 //   margin-top: 80px;
 
@@ -437,7 +433,6 @@ a {
           color: $c-text;
           padding: 12px;
           font-weight: 600;
-          word-break: break-word;
         }
 
         &:hover {
@@ -537,11 +532,17 @@ a {
       align-items: center;
       width: 30px;
       height: 30px;
-      border: 1px solid #dfe9f2;
+      // border: 1px solid #dfe9f2;
+      border: 1px solid #000;
       margin: 5px;
       border-radius: 50%;
-      background-color: #f9f9f9;
+      // background-color: #f9f9f9;
+      background-color: transparent;
       font-size: 14px;
+
+      
+      color: #000 !important;
+      
     }
   }
 

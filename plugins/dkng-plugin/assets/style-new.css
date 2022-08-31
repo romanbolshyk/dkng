@@ -70,10 +70,6 @@ p:empty {
   height: 16px;
 }
 
-a {
-  word-break: break-word;
-}
-
 .c-header__bg {
   background-color: #fff;
 }
@@ -388,7 +384,6 @@ a {
   color: #fff;
   padding: 12px;
   font-weight: 600;
-  word-break: break-word;
 }
 .c-header__menu .menu-custom-header-menu-container li:hover {
   background-color: #142e4f;
@@ -471,11 +466,12 @@ a {
   align-items: center;
   width: 30px;
   height: 30px;
-  border: 1px solid #dfe9f2;
+  border: 1px solid #000;
   margin: 5px;
   border-radius: 50%;
-  background-color: #f9f9f9;
+  background-color: transparent;
   font-size: 14px;
+  color: #000 !important;
 }
 .c-footer__gallery {
   display: flex;
