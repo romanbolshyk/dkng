@@ -79,7 +79,7 @@ p:empty {
 }
 
 a {
-  word-break: break-all;
+  word-break: break-word
 }
 
 // .news-block-list {
@@ -97,10 +97,9 @@ a {
 
 // Header
 .c-header {
-  // &__bg {
-  //   background: url(http://www.dkng.net.ua/images/fon1.jpg) 100% 100%;
-  //   background-size: contain;
-  // }
+  &__bg {
+    background-color: #fff;
+  }
 
   &__top {
     display: flex;
@@ -152,7 +151,7 @@ a {
   &__title {
     font-size: 22px;
     font-weight: 600;
-    color: #fff !important;
+    color: #041358;
     line-height: 1.2;
     padding: 0;
 
@@ -168,7 +167,7 @@ a {
   &__subtitle {
     font-size: 18px;
     font-weight: 400;
-    color: #fff !important;
+    color: #041358;
     line-height: 1.2;
     padding: 0;
 
@@ -190,7 +189,7 @@ a {
 
     &--item {
       font-size: 14px;
-      color: #fff;
+      color: #041358;
       font-weight: 400;
       line-height: 1.5;
       
@@ -214,11 +213,19 @@ a {
       align-items: center;
       width: 30px;
       height: 30px;
-      border: 1px solid rgb(223, 233, 242);
+      // border: 1px solid #dfe9f2;
+      border: 1px solid #041358;
       margin: 5px;
       border-radius: 50%;
-      background-color: rgb(249, 249, 249);
+      // background-color: #f9f9f9;
+      background-color: #fff;
       font-size: 14px;
+
+      a {
+        color: #041358;
+      }
+
+      //color: #041358;
     }
   }
 

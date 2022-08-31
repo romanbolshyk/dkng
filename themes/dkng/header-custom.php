@@ -48,7 +48,8 @@ $template_dir = get_template_directory_uri();
         </div>
 
         <div class="c-header">
-            <div class="c-header__bg" style="background: url(<?php echo get_field('header_background', 'option')?>) 100% 100%;  background-size: contain;">
+            <!-- <div class="c-header__bg" style="background: url(<?php echo get_field('header_background', 'option')?>) 100% 100%;  background-size: contain;"> -->
+            <div class="c-header__bg">
                 <div class="c-header__top container">
                     <div class="c-header__top--left">
                         <div class="c-header__logo">
