@@ -8,7 +8,7 @@
         <div class="news-block-list">
 
             <div class="sv-container all_campaigns_block sv-section">
-                <h2 class="sv-title"><?php echo __( "Останні Новини", "dkng" );?>:</h2>
+                <h2 class="sv-title"><?php echo $philosophy_block['title']; ?>:</h2>
 
                 <div class="columns-grid">
                     <?php if ( !empty( $programs ) ) {
