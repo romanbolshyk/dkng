@@ -1,6 +1,6 @@
 <div class="default-padding  home_programs_block">
     <div class="container">
-        <div class="row">
+        <div class="row" style="padding-top: 20px;">
             <div class="col-lg-12 text-center">
                 <h3 ><?php echo $philosophy_block['title']; ?></h3>
             </div>
