@@ -2,13 +2,13 @@
     <div class="container">
         <div class="row" style="padding-top: 20px;">
             <div class="col-lg-12 text-center">
-                <h3 ><?php echo $philosophy_block['title']; ?></h3>
             </div>
         </div>
 
         <div class="news-block-list">
 
             <div class="sv-container all_campaigns_block sv-section">
+                <h2 class="sv-title"><?php echo __( "Останні Новини", "dkng" );?>:</h2>
 
                 <div class="columns-grid">
                     <?php if ( !empty( $programs ) ) {
