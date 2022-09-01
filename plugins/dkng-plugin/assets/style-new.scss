@@ -1,6 +1,5 @@
 $c-main: #184fa0;
 $c-secondary: #142e4f;
-// $c-text: #ffc907;
 $c-text: #fff;
 
 body.page-postcard .header .header_top_nav ul li a, body.page-announces .header .header_top_nav ul li a {
@@ -78,23 +77,11 @@ p:empty {
   height: 16px;
 }
 
-// .news-block-list {
-//   margin-top: 80px;
-
-//   @media (max-width: 1199px) {
-//     margin-top: 60px;
-//   }
-
-//   @media (max-width: 575px) {
-//     margin-top: 50px;
-//   }
-// }
-
-
 // Header
 .c-header {
   &__bg {
-    background-color: #fff;
+    // background: #c4c4c4;
+    background: rgb(219, 219, 219);
   }
 
   &__top {
@@ -478,8 +465,7 @@ p:empty {
 // Footer
 .c-footer {
   padding: 20px 0;
-  // margin-top: 20px;
-  background: #c4c4c4;
+  background: rgb(219, 219, 219);
 
   &__top {
     margin-bottom: 20px;

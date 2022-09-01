@@ -71,7 +71,7 @@ p:empty {
 }
 
 .c-header__bg {
-  background-color: #fff;
+  background: rgb(219, 219, 219);
 }
 .c-header__top {
   display: flex;
@@ -417,7 +417,7 @@ p:empty {
 
 .c-footer {
   padding: 20px 0;
-  background: #c4c4c4;
+  background: rgb(219, 219, 219);
 }
 .c-footer__top {
   margin-bottom: 20px;
