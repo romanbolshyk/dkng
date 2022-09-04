@@ -5,7 +5,8 @@ get_header('custom');
 $obj        = new \Dkng\Wp\Specialities();
 $categories = get_terms([
     'taxonomy'   => 'speciality_detail-category',
-    'orderby'    => 'id',
+    'orderby'    => 'name',
+    'order'      => 'desc',
     'hide_empty' => false,
 ]);
 
